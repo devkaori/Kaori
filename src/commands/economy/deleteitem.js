@@ -20,10 +20,10 @@ module.exports = async (client, interaction, args) => {
             var remove = await store.deleteOne({ Guild: interaction.guild.id, Role: role.id });
 
             client.succNormal({
-                text: `The role was deleted from the store`,
+                text: `Le rôle a été supprimé du magasin`,
                 fields: [
                     {
-                        name: `🛒┆Role`,
+                        name: `Rôle`,
                         value: `${role}`
                     }
                 ],
@@ -33,11 +33,9 @@ module.exports = async (client, interaction, args) => {
         else {
 
             client.errNormal({
-                error: `This role is not in the store!`,
+                error: `Ce rôle n'est pas dans le magasin !`,
                 type: 'editreply'
             }, interaction);
         }
     })
 }
-
- 
