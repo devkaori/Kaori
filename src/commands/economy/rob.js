@@ -7,10 +7,10 @@ const Schema2 = require("../../database/models/economyTimeout");
 module.exports = async (client, interaction, args) => {
 
     const user = interaction.options.getUser('user');
-    if (!user) return client.errUsage({ usage: "rob [mention user]", type: 'editreply' }, interaction);
+    if (!user) return client.errUsage({ usage: "rob [mention utilisateur]", type: 'editreply' }, interaction);
 
     if (user.bot) return client.errNormal({
-        error: "You rob a bot!",
+        error: "Vous volez un bot !",
         type: 'editreply'
     }, interaction);
 
@@ -25,13 +25,13 @@ module.exports = async (client, interaction, args) => {
             else {
                 Schema.findOne({ Guild: interaction.guild.id, User: interaction.user.id }, async (err, authorData) => {
                     if (authorData) {
-                        if (authorData.Money < 200) return client.errNormal({ error: `You need atleast 200 coins in your wallet to rob someone!`, type: 'editreply' }, interaction);
+                        if (authorData.Money < 200) return client.errNormal({ error: `Vous devez avoir au moins 200 pièces dans votre portefeuille pour voler quelqu'un !`, type: 'editreply' }, interaction);
 
                         Schema.findOne({ Guild: interaction.guild.id, User: user.id }, async (err, targetData) => {
                             if (targetData) {
                                 var targetMoney = targetData.Money;
-                                if (targetData = undefined || !targetData || targetMoney == 0 || targetMoney < 0) {
-                                    return client.errNormal({ error: `${user.username} does not have anything you can rob!`, type: 'editreply' }, interaction);
+                                if (targetData === undefined || !targetData || targetMoney === 0 || targetMoney < 0) {
+                                    return client.errNormal({ error: `${user.username} n'a rien que vous pouvez voler !`, type: 'editreply' }, interaction);
                                 }
 
                                 if (dataTime) {
@@ -63,15 +63,15 @@ module.exports = async (client, interaction, args) => {
                                 }
 
                                 client.succNormal({
-                                    text: `Your robbed a user and got away!`,
+                                    text: `Vous avez volé un utilisateur et vous êtes échappé !`,
                                     fields: [
                                         {
-                                            name: `👤┆User`,
+                                            name: `Utilisateur`,
                                             value: `${user}`,
                                             inline: true
                                         },
                                         {
-                                            name: `${client.emotes.economy.coins}┆Robbed`,
+                                            name: `Volé`,
                                             value: `$${random}`,
                                             inline: true
                                         }
@@ -80,7 +80,7 @@ module.exports = async (client, interaction, args) => {
                                 }, interaction);
                             }
                             else {
-                                return client.errNormal({ error: `${user.username} does not have anything you can rob!`, type: 'editreply' }, interaction);
+                                return client.errNormal({ error: `${user.username} n'a rien que vous pouvez voler !`, type: 'editreply' }, interaction);
                             }
                         })
                     }
@@ -90,5 +90,3 @@ module.exports = async (client, interaction, args) => {
     }
     catch { }
 }
-
- 
