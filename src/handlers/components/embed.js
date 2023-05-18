@@ -11,10 +11,6 @@ const Schema = require("../../database/models/functions");
 module.exports = (client) => {
     client.templateEmbed = function () {
         return new Discord.EmbedBuilder()
-            .setAuthor({
-                name: client.user.username,
-                iconURL: client.user.avatarURL({ size: 1024 })
-            })
             .setColor(client.config.colors.normal)
             .setTimestamp();
     }
