@@ -14,10 +14,10 @@ module.exports = async (client, interaction, args) => {
 
     if (name.toUpperCase() == "HELP") {
         return client.embed({
-            title: `ℹ️・Channel name options`,
-            desc: `These are the channel name options: \n
-            \`{emoji}\` - Channel emoji
-            \`{name}\` - Channel name`,
+            title: `Options de nom de salon`,
+            desc: `Voici les options de nom de salon : \n
+            \`{emoji}\` - Émoji du salon
+            \`{name}\` - Nom du salon`,
             type: 'editreply'
         }, interaction)
     }
@@ -35,10 +35,10 @@ module.exports = async (client, interaction, args) => {
         }
 
         client.succNormal({
-            text: `The channel name has been set successfully`,
+            text: `Le nom du salon a été configuré avec succès`,
             fields: [
                 {
-                    name: `💬┆Name`,
+                    name: `Nom`,
                     value: `${name}`,
                     inline: true
                 },
@@ -47,5 +47,3 @@ module.exports = async (client, interaction, args) => {
         }, interaction)
     })
 }
-
- 
