@@ -10,7 +10,7 @@ module.exports = async (client, interaction, args) => {
 
             if (data && data.Movies) {
                 if (!data.Movies.includes(movie)) {
-                    return client.errNormal({ error: `That movie doesn't exist in the database!`, type: 'editreply' }, interaction);
+                    return client.errNormal({ error: `Ce film n'existe pas dans la base de données !`, type: 'editreply' }, interaction);
                 }
 
                 const filtered = data.Movies.filter((target) => target !== movie);
@@ -20,9 +20,9 @@ module.exports = async (client, interaction, args) => {
                 });
             }
             client.succNormal({
-                text: "Removed your movie",
+                text: "Votre film a été supprimé",
                 fields: [{
-                    name: "🎬┆Movies",
+                    name: "Films",
                     value: `\`\`\`${movie}\`\`\``,
                     inline: true,
                 }],
@@ -30,10 +30,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec la commande 'createprofile'", type:'editreply' }, interaction);
         }
     })
 
 }
-
- 
