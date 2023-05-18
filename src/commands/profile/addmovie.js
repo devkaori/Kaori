@@ -9,7 +9,7 @@ module.exports = async (client, interaction, args) => {
 
             if (data && data.Movies) {
                 if (data.Movies.includes(movie)) {
-                    return client.errNormal({ error: `That movie is already exists in your database!`, type: 'editreply' }, interaction);
+                    return client.errNormal({ error: `Ce film existe déjà dans votre base de données !`, type: 'editreply' }, interaction);
                 }
                 data.Movies.push(movie);
                 data.save();
@@ -19,9 +19,9 @@ module.exports = async (client, interaction, args) => {
                 data.save();
             }
             client.succNormal({
-                text: "Added your movie",
+                text: "Film ajouté",
                 fields: [{
-                    name: "🎬┆Movies",
+                    name: "Films",
                     value: `\`\`\`${movie}\`\`\``,
                     inline: true,
                 }],
@@ -29,10 +29,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec createprofile", type:'editreply' }, interaction);
         }
     })
 
 }
-
- 
