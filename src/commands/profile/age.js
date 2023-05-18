@@ -6,15 +6,15 @@ module.exports = async (client, interaction, args) => {
 
     Schema.findOne({ User: interaction.user.id }, async (err, data) => {
         if (data) {
-            if (isNaN(age)) return client.errNormal({ error: "No valid number provided", type: 'editreply' }, interaction)
+            if (isNaN(age)) return client.errNormal({ error: "Aucun nombre valide fourni", type: 'editreply' }, interaction)
 
             data.Age = age;
             data.save();
 
             client.succNormal({
-                text: "Your age is set",
+                text: "Votre âge est défini",
                 fields: [{
-                    name: "📆┆Age",
+                    name: "Âge",
                     value: `\`\`\`${age}\`\`\``,
                     inline: true,
                 }],
@@ -22,9 +22,7 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec createprofile", type:'editreply' }, interaction);
         }
     })
 }
-
- 
