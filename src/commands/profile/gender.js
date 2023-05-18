@@ -7,22 +7,22 @@ module.exports = async (client, interaction, args) => {
         if (data) {
             const menu = new Discord.StringSelectMenuBuilder()
                 .setCustomId('gender-setup')
-                .setPlaceholder('❌┆Nothing selected')
+                .setPlaceholder('Rien sélectionné')
                 .addOptions(
                     {
                         emoji: "👨",
-                        label: `Male`,
-                        value: `Male`,
+                        label: `Homme`,
+                        value: `Homme`,
                     },
                     {
                         emoji: "👩",
-                        label: `Female`,
-                        value: `Female`,
+                        label: `Femme`,
+                        value: `Femme`,
                     },
                     {
                         emoji: "👪",
-                        label: `Other`,
-                        value: `Other`,
+                        label: `Autre`,
+                        value: `Autre`,
                     }
                 );
 
@@ -30,7 +30,7 @@ module.exports = async (client, interaction, args) => {
                 .addComponents(menu)
 
             client.embed({
-                desc: `Select a gender`,
+                desc: `Sélectionnez un genre`,
                 type: 'editreply',
                 components: [row],
             }, interaction).then(msg => {
@@ -42,7 +42,7 @@ module.exports = async (client, interaction, args) => {
                         data.save();
 
                         client.succNormal({
-                            text: "Set your gender to " + i.values[0],
+                            text: "Votre genre a été défini sur " + i.values[0],
                             type: 'editreply',
                             components: [],
                         }, interaction);
@@ -51,9 +51,7 @@ module.exports = async (client, interaction, args) => {
             })
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type: 'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec la commande 'profilecreate'", type: 'editreply' }, interaction);
         }
     })
 }
-
- 
