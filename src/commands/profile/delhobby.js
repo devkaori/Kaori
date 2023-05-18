@@ -10,7 +10,7 @@ module.exports = async (client, interaction, args) => {
 
             if (data && data.Hobbys) {
                 if (!data.Hobbys.includes(hobby)) {
-                    return client.errNormal({ error: `That hobby doesn't exist in the database!`, type: 'editreply' }, interaction);
+                    return client.errNormal({ error: `Ce passe-temps n'existe pas dans la base de données !`, type: 'editreply' }, interaction);
                 }
 
                 const filtered = data.Hobbys.filter((target) => target !== hobby);
@@ -20,9 +20,9 @@ module.exports = async (client, interaction, args) => {
                 });
             }
             client.succNormal({
-                text: "Removed your hobby",
+                text: "Votre passe-temps a été supprimé",
                 fields: [{
-                    name: "⚽┆Hobby",
+                    name: "Passe-temps",
                     value: `\`\`\`${hobby}\`\`\``,
                     inline: true,
                 }],
@@ -30,10 +30,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec la commande 'createprofile'", type:'editreply' }, interaction);
         }
     })
 
 }
-
- 
