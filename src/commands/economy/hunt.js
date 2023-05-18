@@ -15,19 +15,19 @@ module.exports = async (client, interaction, args) => {
 
     let timeout = 60000;
     let hunt =
-        ["Rabbit :rabbit:",
-            "Frog :frog:",
-            "Monkey :monkey:",
-            "Chicken :chicken:",
-            "Wolf :wolf:",
-            "Rooster :rooster:",
-            "Turkey :turkey:",
-            "Chipmunk :chipmunk:",
-            "Water Buffalo :water_buffalo:",
-            "Race Horse :racehorse:",
-            "Pig :pig:",
-            "Snake :snake:",
-            "Cow :cow:"];
+        ["Lapin :rabbit:",
+            "Grenouille :frog:",
+            "Singe :monkey:",
+            "Poulet :chicken:",
+            "Loup :wolf:",
+            "Coq :rooster:",
+            "Dinde :turkey:",
+            "Tamia :chipmunk:",
+            "Buffle d'eau :water_buffalo:",
+            "Cheval de course :racehorse:",
+            "Cochon :pig:",
+            "Serpent :snake:",
+            "Vache :cow:"];
 
     let randn = rand(0, parseInt(hunt.length));
     let randrod = rand(15, 30);
@@ -41,7 +41,7 @@ module.exports = async (client, interaction, args) => {
             return client.errWait({ time: time, type: 'editreply' }, interaction);
         }
         else {
-            client.succNormal({ text: `You've hunted and gotten a ${huntToWin}`, type: 'editreply' }, interaction);
+            client.succNormal({ text: `Vous avez chassé et obtenu un ${huntToWin}`, type: 'editreply' }, interaction);
 
             if (dataTime) {
                 dataTime.Hunt = Date.now();
@@ -58,5 +58,3 @@ module.exports = async (client, interaction, args) => {
     })
 
 }
-
- 
