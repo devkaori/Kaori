@@ -7,7 +7,7 @@ module.exports = (client) => {
 
         reactions.map((emoji) => {
             let btn = new Discord.ButtonBuilder()
-                .setStyle(Discord.ButtonStyle.Primary)
+                .setStyle(Discord.ButtonStyle.Danger)
                 .setEmoji(`${emoji}`)
                 .setCustomId(`reaction_button-${emoji}`);
             return labels.push(btn);
