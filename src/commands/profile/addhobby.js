@@ -9,7 +9,7 @@ module.exports = async (client, interaction, args) => {
 
             if (data && data.Hobbys) {
                 if (data.Hobbys.includes(hobby)) {
-                    return client.errNormal({ error: `That hobby is already exists in your database!`, type: 'editreply' }, interaction);
+                    return client.errNormal({ error: `Ce passe-temps existe déjà dans votre base de données !`, type: 'editreply' }, interaction);
                 }
                 data.Hobbys.push(hobby);
                 data.save();
@@ -19,9 +19,9 @@ module.exports = async (client, interaction, args) => {
                 data.save();
             }
             client.succNormal({
-                text: "Added your hobby",
+                text: "Passe-temps ajouté",
                 fields: [{
-                    name: "⚽┆Hobby",
+                    name: "Passe-temps",
                     value: `\`\`\`${hobby}\`\`\``,
                     inline: true,
                 }],
@@ -29,10 +29,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec createprofile", type:'editreply' }, interaction);
         }
     })
 
 }
-
- 
