@@ -16,23 +16,23 @@ module.exports = async (client, interaction, args) => {
       }, interaction);
     }
     else {
-      let replies = ['Programmer', 'Hacker', 'Waiter', 'Busboy', 'Chief', 'Mechanic']
+      let replies = ['Programmeur', 'Hacker', 'Serveur', 'Commis de salle', 'Chef', 'Mécanicien']
 
       let result = Math.floor((Math.random() * replies.length));
       let amount = Math.floor(Math.random() * 100) + 1;
 
-      client.succNormal({ text: `You worked as a ${replies[result]} and earned: **${client.emotes.economy.coins} $${amount}**`, type: 'editreply' }, interaction);
+      client.succNormal({ text: `Vous avez travaillé en tant que ${replies[result]} et gagné : **${client.emotes.economy.coins} $${amount}**`, type: 'editreply' }, interaction);
 
       client.succNormal({
-        text: `You've wokred and earned some money!`,
+        text: `Vous avez travaillé et gagné de l'argent !`,
         fields: [
           {
-            name: `🦹‍♂️┆Crime`,
+            name: `Métier`,
             value: `${replies[result]}`,
             inline: true
           },
           {
-            name: `${client.emotes.economy.coins}┆Earned`,
+            name: `Gains`,
             value: `$${amount}`,
             inline: true
           }
@@ -56,5 +56,3 @@ module.exports = async (client, interaction, args) => {
     }
   })
 }
-
- 
