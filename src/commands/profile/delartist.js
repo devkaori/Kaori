@@ -10,7 +10,7 @@ module.exports = async (client, interaction, args) => {
 
             if (data && data.Artists) {
                 if (!data.Artists.includes(artist)) {
-                    return client.errNormal({ error: `That artist doesn't exist in the database!`, type: 'editreply' }, interaction);
+                    return client.errNormal({ error: `Cet artiste n'existe pas dans la base de données !`, type: 'editreply' }, interaction);
                 }
 
                 const filtered = data.Artists.filter((target) => target !== artist);
@@ -20,9 +20,9 @@ module.exports = async (client, interaction, args) => {
                 });
             }
             client.succNormal({
-                text: "Removed your artist",
+                text: "Votre artiste a été supprimé",
                 fields: [{
-                    name: "🎤┆Artist",
+                    name: "Artiste",
                     value: `\`\`\`${artist}\`\`\``,
                     inline: true,
                 }],
@@ -30,10 +30,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil en exécutant la commande createprofile", type:'editreply' }, interaction);
         }
     })
 
 }
-
- 
