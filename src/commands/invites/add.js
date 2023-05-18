@@ -30,10 +30,10 @@ module.exports = async (client, interaction, args) => {
     }
 
     client.succNormal({
-        text: `Added **${amount}** invites to ${user}`,
+        text: `Ajouté **${amount}** invitations à ${user}`,
         fields: [
             {
-                name: "📨┆Total invites",
+                name: "Invitations totales",
                 value: `${data.Invites}`,
                 inline: true,
             }
@@ -41,5 +41,3 @@ module.exports = async (client, interaction, args) => {
         type: 'editreply'
     }, interaction);
 }
-
- 
