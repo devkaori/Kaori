@@ -13,23 +13,23 @@ module.exports = async (client, interaction, args) => {
     }, interaction)
 
     if (perms == false) return;
-    
+
     if (data && data.Levels == true) {
         const target = interaction.options.getUser('user');
         const xp = interaction.options.getNumber('amount');
 
         const user = await client.setXP(target.id, interaction.guild.id, xp);
 
-        client.succNormal({ 
-            text: `XP has been modified successfully`,
+        client.succNormal({
+            text: "L'XP a été modifiée avec succès",
             fields: [
                 {
-                    name: "🆕┆New XP",
+                    name: "Nouvelle XP",
                     value: `${user.xp}`,
                     inline: true,
                 },
                 {
-                    name: "👤┆User",
+                    name: "Utilisateur",
                     value: `${target} (${target.tag})`,
                     inline: true,
                 }
@@ -39,10 +39,8 @@ module.exports = async (client, interaction, args) => {
     }
     else {
         client.errNormal({
-            error: "Levels are disabled in this guild!",
+            error: "Les niveaux sont désactivés dans cette guilde !",
             type: 'editreply'
         }, interaction);
     }
 }
-
- 
