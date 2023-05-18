@@ -9,68 +9,68 @@ module.exports = async (client, interaction, args) => {
 
     Schema.findOne({ Guild: interaction.guild.id, User: user.id }, async (err, data) => {
         if (data) {
-            let money = parseInt(interaction.options.getNumber('amount'));
-            let win = false;
+            let argent = parseInt(interaction.options.getNumber('amount'));
+            let gagné = false;
 
-            if (!money) return client.errUsage({ usage: "slots [amount]", type: 'editreply' }, interaction);
-            if (money > data.Money) return client.errNormal({ error: `You are betting more than you have!`, type: 'editreply' }, interaction);
+            if (!argent) return client.errUsage({ usage: "slots [montant]", type: 'editreply' }, interaction);
+            if (argent > data.Money) return client.errNormal({ error: `Vous misez plus que vous n'avez !`, type: 'editreply' }, interaction);
 
-            let number = []
-            for (i = 0; i < 3; i++) { number[i] = Math.floor(Math.random() * slotItems.length); }
+            let nombres = []
+            for (i = 0; i < 3; i++) { nombres[i] = Math.floor(Math.random() * slotItems.length); }
 
-            if (number[0] == number[1] && number[1] == number[2]) {
-                money *= 9
-                win = true;
-            } else if (number[0] == number[1] || number[0] == number[2] || number[1] == number[2]) {
-                money *= 2
-                win = true;
+            if (nombres[0] == nombres[1] && nombres[1] == nombres[2]) {
+                argent *= 9
+                gagné = true;
+            } else if (nombres[0] == nombres[1] || nombres[0] == nombres[2] || nombres[1] == nombres[2]) {
+                argent *= 2
+                gagné = true;
             }
 
             const row = new Discord.ActionRowBuilder()
                 .addComponents(
                     new Discord.ButtonBuilder()
                         .setCustomId('slots_1')
-                        .setLabel(`${slotItems[number[0]]}`)
+                        .setLabel(`${slotItems[nombres[0]]}`)
                         .setStyle(Discord.ButtonStyle.Primary),
 
                     new Discord.ButtonBuilder()
                         .setCustomId('slots_2')
-                        .setLabel(`${slotItems[number[1]]}`)
+                        .setLabel(`${slotItems[nombres[1]]}`)
                         .setStyle(Discord.ButtonStyle.Primary),
 
                     new Discord.ButtonBuilder()
                         .setCustomId('slots_3')
-                        .setLabel(`${slotItems[number[2]]}`)
+                        .setLabel(`${slotItems[nombres[2]]}`)
                         .setStyle(Discord.ButtonStyle.Primary),
                 );
-            if (win) {
+            if (gagné) {
 
                 client.embed({
-                    title: `🎰・Slots`,
-                    desc: `You won **${client.emotes.economy.coins} $${money}**`,
+                    title: `Machines à sous`,
+                    desc: `Vous avez gagné **${client.emotes.economy.coins} $${argent}**`,
                     color: client.config.colors.succes, 
                     components: [row], 
                     type: 'editreply'
                 }, interaction)
 
-                data.Money += money;
+                data.Money += argent;
                 data.save();
             } else {
 
                 client.embed({
-                    title: `🎰・Slots`,
-                    desc: `You lost **${client.emotes.economy.coins} $${money}**`,
+                    title: `Machines à sous`,
+                    desc: `Vous avez perdu **${client.emotes.economy.coins} $${argent}**`,
                     components: [row], 
                     color: client.config.colors.error, 
                     type: 'editreply'
                 }, interaction)
 
-                data.Money -= money;
+                data.Money -= argent;
                 data.save();
             }
         }
         else {
-            client.errNormal({ error: `You has no ${client.emotes.economy.coins}!`, type: 'editreply' }, interaction);
+            client.errNormal({ error: `Vous n'avez pas de ${client.emotes.economy.coins} !`, type: 'editreply' }, interaction);
         }
     })
 }
