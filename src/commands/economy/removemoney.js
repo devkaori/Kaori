@@ -13,12 +13,12 @@ module.exports = async (client, interaction, args) => {
     const user = interaction.options.getUser('user');
     let amount = interaction.options.getNumber('amount');
 
-    if (!user || !amount) return client.errUsage({ usage: "addmoney [user] [amount]", type: 'editreply' }, interaction);
+    if (!user || !amount) return client.errUsage({ usage: "addmoney [utilisateur] [montant]", type: 'editreply' }, interaction);
 
-    if (isNaN(amount)) return client.errNormal({ error: "Enter a valid number!", type: 'editreply' }, interaction);
+    if (isNaN(amount)) return client.errNormal({ error: "Entrez un nombre valide !", type: 'editreply' }, interaction);
 
     if (user.bot) return client.errNormal({
-        error: "You cannot remove money from a bot!",
+        error: "Vous ne pouvez pas retirer de l'argent à un bot !",
         type: 'editreply'
     }, interaction);
 
@@ -29,15 +29,15 @@ module.exports = async (client, interaction, args) => {
             if (data) {
 
                 client.succNormal({
-                    text: `Removed money from a user!`,
+                    text: `De l'argent a été retiré à un utilisateur !`,
                     fields: [
                         {
-                            name: `👤┆User`,
+                            name: `Utilisateur`,
                             value: `<@!${user.id}>`,
                             inline: true
                         },
                         {
-                            name: `${client.emotes.economy.coins}┆Amount`,
+                            name: `Montant`,
                             value: `$${amount}`,
                             inline: true
                         }
@@ -46,9 +46,8 @@ module.exports = async (client, interaction, args) => {
                 }, interaction);
             }
             else {
-                client.errNormal({ error: `This user doesn't have any money!`, type: 'editreply' }, interaction);
+                client.errNormal({ error: `Cet utilisateur n'a pas d'argent !`, type: 'editreply' }, interaction);
             }
         }, 500)
     })
 }
- 
