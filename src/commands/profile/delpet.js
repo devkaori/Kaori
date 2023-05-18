@@ -10,7 +10,7 @@ module.exports = async (client, interaction, args) => {
 
             if (data && data.Pets) {
                 if (!data.Pets.includes(pet)) {
-                    return client.errNormal({ error: `That pet doesn't exist in the database!`, type: 'editreply' }, interaction);
+                    return client.errNormal({ error: `Cet animal de compagnie n'existe pas dans la base de données !`, type: 'editreply' }, interaction);
                 }
 
                 const filtered = data.Pets.filter((target) => target !== pet);
@@ -20,9 +20,9 @@ module.exports = async (client, interaction, args) => {
                 });
             }
             client.succNormal({
-                text: "Removed your pet",
+                text: "Votre animal de compagnie a été supprimé",
                 fields: [{
-                    name: "🐶┆Pet",
+                    name: "Animal de compagnie",
                     value: `\`\`\`${pet}\`\`\``,
                     inline: true,
                 }],
@@ -30,10 +30,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec la commande 'createprofile'", type:'editreply' }, interaction);
         }
     })
 
 }
-
- 
