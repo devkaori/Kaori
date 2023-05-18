@@ -11,20 +11,20 @@ module.exports = async (client, interaction, args) => {
 
     if (choice == "counting") {
         client.embed({
-            title: `🔢・Counting`,
-            desc: `This is the start of counting! The first number is **1**`
-        }, channel)
+            title: `Comptage`,
+            desc: `Ceci est le début du comptage ! Le premier nombre est **1**.`
+        }, channel);
 
-        client.createChannelSetup(Counting, channel, interaction)
+        client.createChannelSetup(Counting, channel, interaction);
     }
 
     if (choice == "gtn") {
         client.embed({
-            title: `🔢・Guess the number`,
-            desc: `Guess the number between **1** and **10.000**!`
-        }, channel)
+            title: `Devinez le nombre`,
+            desc: `Devinez le nombre entre **1** et **10 000** !`
+        }, channel);
 
-        client.createChannelSetup(GTN, channel, interaction)
+        client.createChannelSetup(GTN, channel, interaction);
     }
 
     if (choice == "gtw") {
@@ -32,22 +32,20 @@ module.exports = async (client, interaction, args) => {
         var shuffled = word.split('').sort(function () { return 0.5 - Math.random() }).join('');
 
         client.embed({
-            title: `💬・Guess the word`,
-            desc: `Put the letters in the right position!`,
+            title: `Devinez le mot`,
+            desc: `Placez les lettres dans la bonne position !`,
             fields: [
                 {
-                    name: `🔀┆Word`,
+                    name: `Mot`,
                     value: `${shuffled.toLowerCase()}`
                 }
             ],
-        }, channel)
+        }, channel);
 
-        client.createChannelSetup(GTW, channel, interaction)
+        client.createChannelSetup(GTW, channel, interaction);
     }
 
     if (choice == "wordsnake") {
-        client.createChannelSetup(WordSnake, channel, interaction)
+        client.createChannelSetup(WordSnake, channel, interaction);
     }
 }
-
- 
