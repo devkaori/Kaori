@@ -13,12 +13,12 @@ module.exports = async (client, interaction, args) => {
     const user = interaction.options.getUser('user');
     let amount = interaction.options.getNumber('amount');
 
-    if (!user || !amount) return client.errUsage({ usage: "addmoney [user] [amount]", type: 'editreply' }, interaction);
+    if (!user || !amount) return client.errUsage({ usage: "addmoney [user] [montant]", type: 'editreply' }, interaction);
 
-    if (isNaN(amount)) return client.errNormal({ error: "Enter a valid number!", type: 'editreply' }, interaction);
+    if (isNaN(amount)) return client.errNormal({ error: "Entrez un nombre valide !", type: 'editreply' }, interaction);
 
     if (user.bot) return client.errNormal({
-        error: "You cannot add money to a bot!",
+        error: "Vous ne pouvez pas ajouter d'argent à un bot !",
         type: 'editreply'
     }, interaction);
 
@@ -29,15 +29,15 @@ module.exports = async (client, interaction, args) => {
             if (data) {
 
                 client.succNormal({
-                    text: `Added money to a user!`,
+                    text: "Argent ajouté à un utilisateur !",
                     fields: [
                         {
-                            name: `👤┆User`,
+                            name: "Utilisateur",
                             value: `<@!${user.id}>`,
                             inline: true
                         },
                         {
-                            name: `${client.emotes.economy.coins}┆Amount`,
+                            name: `Montant`,
                             value: `$${amount}`,
                             inline: true
                         }
@@ -46,9 +46,8 @@ module.exports = async (client, interaction, args) => {
                 }, interaction);
             }
             else {
-                client.errNormal({ error: `This user doesn't have any money!`, type: 'editreply' }, interaction);
+                client.errNormal({ error: "Cet utilisateur n'a pas d'argent !", type: 'editreply' }, interaction);
             }
         }, 500)
     })
 }
- 
