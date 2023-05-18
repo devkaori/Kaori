@@ -16,10 +16,10 @@ module.exports = async (client, interaction, args) => {
         if (data) {
             Schema.findOneAndDelete({ Guild: interaction.guild.id, Level: level }).then(() => {
                 client.succNormal({
-                    text: `Level reward removed`,
+                    text: `Récompense de niveau supprimée`,
                     fields: [
                         {
-                            name: "🆙┆Level",
+                            name: "Niveau",
                             value: `${level}`,
                             inline: true,
                         }
@@ -30,11 +30,9 @@ module.exports = async (client, interaction, args) => {
         }
         else {
             return client.errNormal({
-                error: "No level reward found at this level!",
+                error: "Aucune récompense de niveau trouvée à ce niveau !",
                 type: 'editreply'
             }, interaction);
         }
     })
 }
-
- 
