@@ -15,19 +15,19 @@ module.exports = async (client, interaction, args) => {
 
     let timeout = 60000;
     let fish =
-        ["Yellow Fish :tropical_fish:",
-            "Fat Fish :blowfish:",
-            "Blue Fish :fish:",
-            "Coconut :coconut:",
-            "Dolphin :dolphin:",
-            "Lobster :lobster:",
-            "Shark :shark:",
-            "Crab :crab:",
-            "Squid :squid:",
-            "Whale :whale2:",
-            "Shrimp :shrimp:",
-            "Octopus :octopus:",
-            "Diamond :gem:"];
+        ["Poisson jaune :tropical_fish:",
+            "Gros poisson :blowfish:",
+            "Poisson bleu :fish:",
+            "Noix de coco :coconut:",
+            "Dauphin :dolphin:",
+            "Homard :lobster:",
+            "Requin :shark:",
+            "Crabe :crab:",
+            "Calmar :squid:",
+            "Baleine :whale2:",
+            "Crevette :shrimp:",
+            "Poulpe :octopus:",
+            "Diamant :gem:"];
 
     let randn = rand(0, parseInt(fish.length));
     let randrod = rand(15, 30);
@@ -36,14 +36,14 @@ module.exports = async (client, interaction, args) => {
 
     const userItems = await itemSchema.findOne({ Guild: interaction.guild.id, User: user.id });
 
-    if (!userItems || userItems.FishingRod == false) return client.errNormal({ error: "You have to buy a fishing rod!", type: 'editreply' }, interaction);
+    if (!userItems || userItems.FishingRod == false) return client.errNormal({ error: "Vous devez acheter une canne à pêche !", type: 'editreply' }, interaction);
 
     if (userItems) {
         if (userItems.FishingRodUsage >= randrod) {
             userItems.FishingRod = false;
             userItems.save();
 
-            return client.errNormal({ error: "Your fishing rod has broken! Go buy a new one!", type: 'editreply' }, interaction);
+            return client.errNormal({ error: "Votre canne à pêche est cassée ! Achetez-en une nouvelle !", type: 'editreply' }, interaction);
         }
     }
 
@@ -54,7 +54,7 @@ module.exports = async (client, interaction, args) => {
             return client.errWait({ time: time, type: 'editreply' }, interaction);
         }
         else {
-            client.succNormal({ text: `You've fished and gotten a ${fishToWin}`, type: 'editreply' }, interaction);
+            client.succNormal({ text: `Vous avez pêché et obtenu un ${fishToWin}`, type: 'editreply' }, interaction);
 
             if (userItems) {
                 userItems.FishingRodUsage += 1;
@@ -76,5 +76,3 @@ module.exports = async (client, interaction, args) => {
     })
 
 }
-
- 
