@@ -10,7 +10,7 @@ module.exports = async (client, interaction, args) => {
 
             if (data && data.Songs) {
                 if (!data.Songs.includes(song)) {
-                    return client.errNormal({ error: `That song doesn't exist in the database!`, type: 'editreply' }, interaction);
+                    return client.errNormal({ error: `Cette chanson n'existe pas dans la base de données !`, type: 'editreply' }, interaction);
                 }
 
                 const filtered = data.Songs.filter((target) => target !== song);
@@ -20,9 +20,9 @@ module.exports = async (client, interaction, args) => {
                 });
             }
             client.succNormal({
-                text: "Removed your song",
+                text: "Votre chanson a été supprimée",
                 fields: [{
-                    name: "🎶┆Song",
+                    name: "Chanson",
                     value: `\`\`\`${song}\`\`\``,
                     inline: true,
                 }],
@@ -30,10 +30,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec la commande 'createprofile'", type:'editreply' }, interaction);
         }
     })
 
 }
-
- 
