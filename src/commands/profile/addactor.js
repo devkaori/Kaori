@@ -9,7 +9,7 @@ module.exports = async (client, interaction, args) => {
 
             if (data && data.Actors) {
                 if (data.Actors.includes(actor)) {
-                    return client.errNormal({ error: `That actor is already exists in your database!`, type: 'editreply' }, interaction);
+                    return client.errNormal({ error: `Cet acteur existe déjà dans votre base de données !`, type: 'editreply' }, interaction);
                 }
                 data.Actors.push(actor);
                 data.save();
@@ -19,9 +19,9 @@ module.exports = async (client, interaction, args) => {
                 data.save();
             }
             client.succNormal({
-                text: "Added your actor",
+                text: "Acteur ajouté",
                 fields: [{
-                    name: "👨‍🎤┆Actor",
+                    name: "Acteur",
                     value: `\`\`\`${actor}\`\`\``,
                     inline: true,
                 }],
@@ -29,10 +29,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec createprofile", type:'editreply' }, interaction);
         }
     })
 
 }
-
- 
