@@ -10,7 +10,7 @@ module.exports = async (client, interaction, args) => {
 
             if (data && data.Food) {
                 if (!data.Food.includes(food)) {
-                    return client.errNormal({ error: `That food doesn't exist in the database!`, type: 'editreply' }, interaction);
+                    return client.errNormal({ error: `Ce plat n'existe pas dans la base de données !`, type: 'editreply' }, interaction);
                 }
 
                 const filtered = data.Food.filter((target) => target !== food);
@@ -20,9 +20,9 @@ module.exports = async (client, interaction, args) => {
                 });
             }
             client.succNormal({
-                text: "Removed your food",
+                text: "Votre plat a été supprimé",
                 fields: [{
-                    name: "🥐┆Food",
+                    name: "Plat",
                     value: `\`\`\`${food}\`\`\``,
                     inline: true,
                 }],
@@ -30,10 +30,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec la commande 'createprofile'", type:'editreply' }, interaction);
         }
     })
 
 }
-
- 
