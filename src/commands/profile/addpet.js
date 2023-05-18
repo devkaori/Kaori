@@ -9,7 +9,7 @@ module.exports = async (client, interaction, args) => {
 
             if (data && data.Pets) {
                 if (data.Pets.includes(pet)) {
-                    return client.errNormal({ error: `That pet is already exists in your database!`, type: 'editreply' }, interaction);
+                    return client.errNormal({ error: `Cet animal de compagnie existe déjà dans votre base de données !`, type: 'editreply' }, interaction);
                 }
                 data.Pets.push(pet);
                 data.save();
@@ -19,9 +19,9 @@ module.exports = async (client, interaction, args) => {
                 data.save();
             }
             client.succNormal({
-                text: "Added your pet",
+                text: "Animal de compagnie ajouté",
                 fields: [{
-                    name: "🐶┆Pet",
+                    name: "Animal de compagnie",
                     value: `\`\`\`${pet}\`\`\``,
                     inline: true,
                 }],
@@ -29,10 +29,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec createprofile", type:'editreply' }, interaction);
         }
     })
 
 }
-
- 
