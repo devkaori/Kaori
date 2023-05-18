@@ -11,14 +11,9 @@ module.exports = async (client, interaction, args) => {
                 .setLabel("Assistance")
                 .setStyle(Discord.ButtonStyle.Danger)
                 .setEmoji('1089244218033193022')
-            const button2 = new Discord.ButtonBuilder()
-                .setCustomId('Bot_openticket2')
-                .setLabel("Autre Demande")
-                .setStyle(Discord.ButtonStyle.Danger)
-                .setEmoji('1089244188660486174')
 
             const row = new Discord.ActionRowBuilder()
-                .addComponents(button, button2)
+                .addComponents(button)
 
             client.embed({
                 title: "Tickets",
