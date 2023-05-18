@@ -7,17 +7,17 @@ module.exports = async (client, interaction, args) => {
 
     let [day, month] = split;
 
-    if (!day || !month) return client.errUsage({ usage: "setbday [day]/[month]", type: 'editreply' }, interaction);
+    if (!day || !month) return client.errUsage({ usage: "setbday [jour]/[mois]", type: 'editreply' }, interaction);
 
     if (isNaN(day) || isNaN(month)) {
-        return client.errNormal({ error: "The date you gave is not a valid number", type: 'editreply' }, interaction);
+        return client.errNormal({ error: "La date que vous avez donnée n'est pas un nombre valide", type: 'editreply' }, interaction);
     }
 
     day = parseInt(day);
     month = parseInt(month);
 
-    if (!day || day > 31) return client.errNormal({ error: "Wrong day format!", type: 'editreply' }, interaction);
-    if (!month || month > 12) return client.errNormal({ error: "Wrong month format!", type: 'editreply' }, interaction);
+    if (!day || day > 31) return client.errNormal({ error: "Format de jour incorrect !", type: 'editreply' }, interaction);
+    if (!month || month > 12) return client.errNormal({ error: "Format de mois incorrect !", type: 'editreply' }, interaction);
 
     const bday = `${day}/${month}`;
 
@@ -27,9 +27,9 @@ module.exports = async (client, interaction, args) => {
             data.save();
 
             client.succNormal({
-                text: "Your birthday is set",
+                text: "Votre date de naissance est définie",
                 fields: [{
-                    name: "🎂┆Bday",
+                    name: "Date de naissance",
                     value: `\`\`\`${bday}\`\`\``,
                     inline: true,
                 }],
@@ -37,9 +37,7 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil avec createprofile", type:'editreply' }, interaction);
         }
     })
 }
-
- 
