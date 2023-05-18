@@ -10,7 +10,7 @@ module.exports = async (client, interaction, args) => {
 
             if (data && data.Actors) {
                 if (!data.Actors.includes(actor)) {
-                    return client.errNormal({ error: `That actor doesn't exist in the database!`, type: 'editreply' }, interaction);
+                    return client.errNormal({ error: `Cet acteur n'existe pas dans la base de données !`, type: 'editreply' }, interaction);
                 }
 
                 const filtered = data.Actors.filter((target) => target !== actor);
@@ -20,9 +20,9 @@ module.exports = async (client, interaction, args) => {
                 });
             }
             client.succNormal({
-                text: "Removed your actor",
+                text: "Votre acteur a été supprimé",
                 fields: [{
-                    name: "👨‍🎤┆Actor",
+                    name: "Acteur",
                     value: `\`\`\`${actor}\`\`\``,
                     inline: true,
                 }],
@@ -30,10 +30,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with createprofile", type:'editreply' }, interaction);
+            return client.errNormal({ error: "Aucun profil trouvé ! Ouvrez un profil en exécutant la commande createprofile", type:'editreply' }, interaction);
         }
     })
 
 }
-
- 
