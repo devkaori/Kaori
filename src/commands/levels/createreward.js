@@ -1,45 +1,48 @@
 const Discord = require('discord.js');
 
-const Schema = require("../../database/models/levelRewards");
+const Schema = require("../../database/models/invites");
 
 module.exports = async (client, interaction, args) => {
-    let level = interaction.options.getNumber('level');
-    let role = interaction.options.getRole('role');
+    let user = interaction.options.getUser('user') || interaction.user;
 
-    const perms = await client.checkUserPerms({
-        flags: [Discord.PermissionsBitField.Flags.ManageMessages],
-        perms: [Discord.PermissionsBitField.Flags.ManageMessages]
-    }, interaction)
-
-    if (perms == false) return;
-
-    Schema.findOne({ Guild: interaction.guild.id, Level: level }, async (err, data) => {
+    Schema.findOne({ Guild: interaction.guild.id, User: user.id }, async (err, data) => {
         if (data) {
-            return client.errNormal({ 
-                error: "This level already has a reward!",
-                type: 'editreply'
-            }, interaction);
-        }
-        else {
-            new Schema({
-                Guild: interaction.guild.id,
-                Level: level,
-                Role: role.id
-            }).save();
-
-            client.succNormal({ 
-                text: `Level reward created`,
+            client.embed({
+                title: "Invitations",
+                desc: `**${user.tag}** a \`${data.Invites}\` invitations`,
                 fields: [
                     {
-                        name: "📘┆Role",
-                        value: `${role}`,
-                        inline: true,
+                        name: "Total",
+                        value: `${data.Total}`,
+                        inline: true
+                    },
+                    {
+                        name: "Restantes",
+                        value: `${data.Left}`,
+                        inline: true
                     }
                 ],
                 type: 'editreply'
-            }, interaction);
+            }, interaction)
         }
-    })
+        else {
+            client.embed({
+                title: "Invitations",
+                desc: `**${user.tag}** n'a aucune invitation`,
+                fields: [
+                    {
+                        name: "Total",
+                        value: `0`,
+                        inline: true
+                    },
+                    {
+                        name: "Restantes",
+                        value: `0`,
+                        inline: true
+                    }
+                ],
+                type: 'editreply'
+            }, interaction)
+        }
+    });
 }
-
- 
