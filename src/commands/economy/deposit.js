@@ -7,15 +7,15 @@ module.exports = async (client, interaction, args) => {
     let amount = interaction.options.getNumber('amount');
     let user = interaction.user;
 
-    if (!amount) return client.errUsage({ usage: "deposit [amount]", type: 'editreply' }, interaction);
+    if (!amount) return client.errUsage({ usage: "deposit [montant]", type: 'editreply' }, interaction);
 
-    if (isNaN(amount)) return client.errNormal({ error: "Enter a valid number!", type: 'editreply' }, interaction);
+    if (isNaN(amount)) return client.errNormal({ error: "Entrez un nombre valide !", type: 'editreply' }, interaction);
 
-    if (amount < 0) return client.errNormal({ error: `You can't deposit negative money!`, type: 'editreply' }, interaction);
+    if (amount < 0) return client.errNormal({ error: `Vous ne pouvez pas déposer une somme d'argent négative !`, type: 'editreply' }, interaction);
 
     Schema.findOne({ Guild: interaction.guild.id, User: user.id }, async (err, data) => {
         if (data) {
-            if (data.Money < parseInt(amount)) return client.errNormal({ error: `You don't have that much money!`, type: 'editreply' }, interaction);
+            if (data.Money < parseInt(amount)) return client.errNormal({ error: `Vous n'avez pas autant d'argent !`, type: 'editreply' }, interaction);
 
             let money = parseInt(amount);
 
@@ -24,10 +24,10 @@ module.exports = async (client, interaction, args) => {
             data.save();
 
             client.succNormal({
-                text: `You've have deposited some money into your bank!`,
+                text: `Vous avez déposé de l'argent dans votre banque !`,
                 fields: [
                     {
-                        name: `${client.emotes.economy.coins}┆Amount`,
+                        name: `Montant`,
                         value: `$${amount}`,
                         inline: true
                     }
@@ -36,8 +36,7 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            client.errNormal({ text: `You don't have any money to deposit!`, type: 'editreply' }, interaction);
+            client.errNormal({ text: `Vous n'avez pas d'argent à déposer !`, type: 'editreply' }, interaction);
         }
     })
 }
- 
