@@ -14,8 +14,8 @@ module.exports = async (client, interaction, args) => {
         );
 
         client.embed({
-            title: `Channel Nuked by **${interaction.user.tag}**`,
-            image: `https://i.imgur.com/Da7ScU4.gif`
+            title: `Canal détruit par **${interaction.user.tag}**`,
+            image: `https://tenor.com/view/owl-house-the-owl-house-owl-house-luz-luz-noceda-gif-25802069`
         }, channel)
     })
 }
