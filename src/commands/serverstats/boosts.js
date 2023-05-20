@@ -4,12 +4,13 @@ const Schema = require("../../database/models/stats");
 
 module.exports = async (client, interaction, args) => {
     var channelName = await client.getTemplate(interaction.guild);
-    channelName = channelName.replace(`{emoji}`, "💎")
-    channelName = channelName.replace(`{name}`, `Boosts: ${interaction.guild.premiumSubscriptionCount || '0'}`)
+    channelName = channelName.replace(`{emoji}`, "💎");
+    channelName = channelName.replace(`{name}`, `Boosts : ${interaction.guild.premiumSubscriptionCount || '0'}`);
 
     interaction.guild.channels.create({
         name: channelName,
-        type:  Discord.ChannelType.GuildVoice, permissionOverwrites: [
+        type: Discord.ChannelType.GuildVoice,
+        permissionOverwrites: [
             {
                 deny: [Discord.PermissionsBitField.Flags.Connect],
                 id: interaction.guild.id
@@ -20,26 +21,23 @@ module.exports = async (client, interaction, args) => {
             if (data) {
                 data.Boost = channel.id;
                 data.save();
-            }
-            else {
+            } else {
                 new Schema({
                     Guild: interaction.guild.id,
                     Boost: channel.id
                 }).save();
             }
-        })
+        });
 
         client.succNormal({
-            text: `Boost count created!`,
+            text: `Nombre de boosts créé !`,
             fields: [
                 {
-                    name: `📘┆Channel`,
+                    name: `Canal`,
                     value: `${channel}`
                 }
             ],
             type: 'editreply'
         }, interaction);
-    })
-
+    });
 }
-
