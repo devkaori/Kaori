@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 
 const Schema = require("../../database/models/warnings");
 const Case = require("../../database/models/warnCase");
+
 module.exports = async (client, interaction, args) => {
     const perms = await client.checkUserPerms({
         flags: [Discord.PermissionsBitField.Flags.ManageMessages],
@@ -10,7 +11,7 @@ module.exports = async (client, interaction, args) => {
 
     if (perms == false) {
         client.errNormal({
-            error: "You don't have the required permissions to use this command!",
+            error: "Vous n'avez pas les permissions requises pour utiliser cette commande !",
             type: 'editreply'
         }, interaction);
         return;
@@ -19,6 +20,7 @@ module.exports = async (client, interaction, args) => {
     var member = interaction.options.getUser('user');
     var reason = interaction.options.getString('reason');
     var caseNumber;
+
     await Case.findOne({ Guild: interaction.guild.id }).then(async data => {
         if (!data) {
             new Case({
@@ -56,41 +58,41 @@ module.exports = async (client, interaction, args) => {
                 }]
             }).save();
         }
-    })
+    });
 
     client.embed({
-        title: `🔨・Warn`,
-        desc: `You've been warned in **${interaction.guild.name}**`,
+        title: `Warn`,
+        desc: `Vous avez reçu un avertissement dans **${interaction.guild.name}**`,
         fields: [
             {
-                name: "👤┆Moderator",
+                name: "Modérateur",
                 value: interaction.user.tag,
                 inline: true
             },
             {
-                name: "📄┆Reason",
+                name: "Raison",
                 value: reason,
                 inline: true
             }
         ]
-    }, member).catch(() => { })
+    }, member).catch(() => { });
 
-    client.emit('warnAdd', member, interaction.user, reason)
+    client.emit('warnAdd', member, interaction.user, reason);
     client.succNormal({
-        text: `User has received a warning!`,
+        text: `L'utilisateur a reçu un avertissement !`,
         fields: [
             {
-                name: "👤┆User",
+                name: "Utilisateur",
                 value: `${member}`,
                 inline: true
             },
             {
-                name: "👤┆Moderator",
+                name: "Modérateur",
                 value: `${interaction.user}`,
                 inline: true
             },
             {
-                name: "📄┆Reason",
+                name: "Raison",
                 value: reason,
                 inline: false
             }
@@ -98,5 +100,3 @@ module.exports = async (client, interaction, args) => {
         type: 'editreply'
     }, interaction);
 }
-
- 
