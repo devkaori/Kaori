@@ -15,7 +15,7 @@ module.exports = async (client, interaction, args) => {
 
         client.embed({
             title: `Canal détruit par **${interaction.user.tag}**`,
-            image: `https://tenor.com/view/owl-house-the-owl-house-owl-house-luz-luz-noceda-gif-25802069`
+            image: `https://i.imgur.com/t5UHE3l.png`
         }, channel)
     })
 }
