@@ -15,7 +15,7 @@ module.exports = async (client, interaction, args) => {
 
         client.embed({
             title: `Canal détruit par **${interaction.user.tag}**`,
-            image: `https://i.imgur.com/t5UHE3l.png`
+            image: `https://i.imgur.com/umkZXCn.png`
         }, channel)
     })
 }
