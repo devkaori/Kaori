@@ -16,10 +16,10 @@ module.exports = async (client, interaction, args) => {
         if (data) {
             Schema.findOneAndDelete({ Guild: interaction.guild.id, Messages: messages }).then(() => {
                 client.succNormal({
-                    text: `Message reward removed`,
+                    text: `Récompense de message supprimée`,
                     fields: [
                         {
-                            name: "💬┆Messages",
+                            name: "Messages",
                             value: `${messages}`,
                             inline: true,
                         }
@@ -30,11 +30,9 @@ module.exports = async (client, interaction, args) => {
         }
         else {
             return client.errNormal({
-                error: "No message reward found at this message amount!",
+                error: "Aucune récompense de message trouvée avec cette quantité de messages !",
                 type: 'editreply'
             }, interaction);
         }
     })
 }
-
- 
