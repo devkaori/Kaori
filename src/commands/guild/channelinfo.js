@@ -4,8 +4,8 @@ module.exports = async (client, interaction, args) => {
   const channel = interaction.options.getChannel('channel');
 
   client.embed({
-      title: `ℹ・Channel information`,
-      desc: `Channel information about: <#${channel.id}>`,
+      title: `ℹ・Informations sur le canal`,
+      desc: `Informations sur le canal : <#${channel.id}>`,
       fields: [
           {
               name: "Type",
@@ -23,12 +23,12 @@ module.exports = async (client, interaction, args) => {
               inline: true,
           },
           {
-              name: "Made on",
+              name: "Créé le",
               value: `${channel.createdAt}`,
               inline: true,
           },
           {
-              name: "Subject",
+              name: "Sujet",
               value: `${channel.topic ? channel.topic : 'N/A'}`,
               inline: true,
           },
@@ -46,5 +46,3 @@ module.exports = async (client, interaction, args) => {
       type: 'editreply'
   }, interaction)
 }
-
-   
