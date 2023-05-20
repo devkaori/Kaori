@@ -4,7 +4,7 @@ module.exports = async (client, interaction, args) => {
   const channel = interaction.options.getChannel('channel');
 
   client.embed({
-      title: `ℹ・Informations sur le canal`,
+      title: `Informations sur le canal`,
       desc: `Informations sur le canal : <#${channel.id}>`,
       fields: [
           {
