@@ -20,16 +20,16 @@ module.exports = async (client, interaction, args) => {
     }
     else {
         return client.errNormal({
-            error: `No message data found for ${user}`,
+            error: `Aucune donnée de message trouvée pour ${user}`,
             type: 'editreply'
         }, interaction);
     }
 
     client.succNormal({
-        text: `Removed **${amount}** messages from ${user}`,
+        text: `Supprimé **${amount}** messages de ${user}`,
         fields: [
             {
-                name: "💬┆Total messages",
+                name: "Total des messages",
                 value: `${data.Messages}`,
                 inline: true,
             }
@@ -37,5 +37,3 @@ module.exports = async (client, interaction, args) => {
         type: 'editreply'
     }, interaction);
 }
-
- 
