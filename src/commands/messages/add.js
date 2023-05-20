@@ -27,10 +27,10 @@ module.exports = async (client, interaction, args) => {
     }
 
     client.succNormal({
-        text: `Added **${amount}** messages to ${user}`,
+        text: `Ajouté **${amount}** messages à ${user}`,
         fields: [
             {
-                name: "💬┆Total messages",
+                name: "Total des messages",
                 value: `${data.Messages}`,
                 inline: true,
             }
@@ -38,5 +38,3 @@ module.exports = async (client, interaction, args) => {
         type: 'editreply'
     }, interaction);
 }
-
- 
