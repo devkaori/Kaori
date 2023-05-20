@@ -15,15 +15,13 @@ module.exports = async (client, interaction, args) => {
     });
 
     client.succNormal({
-        text: "Channel locked successfully!",
+        text: "Le canal a été verrouillé avec succès !",
         fields: [
             {
-                name: `📘┆Channel`,
+                name: `Canal`,
                 value: `${channel} (${channel.name})`
             }
         ],
         type: 'editreply'
     }, interaction);
 }
-
- 
