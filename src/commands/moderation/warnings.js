@@ -29,7 +29,7 @@ module.exports = async (client, interaction, args) => {
                 });
             });
             client.embed({
-                title: `${client.emotes.normal.error}・Avertissements`,
+                title: `Avertissements`,
                 desc: `Les avertissements de **${member.tag}**`,
                 fields: [
                     {
