@@ -19,20 +19,20 @@ module.exports = async (client, interaction, args) => {
 
       interaction.guild.emojis.create({ attachment: url, name: parsedEmoji.name, roles: [role.id] }).then(emoji => {
         client.succNormal({
-          text: `Emoji successfully added to the server`,
+          text: `Emoji ajouté avec succès sur le serveur`,
           fields: [
             {
-              name: "😛┇Emoji",
+              name: "Emoji",
               value: `${emoji}`,
               inline: true,
             },
             {
-              name: "😜┇Emoji name",
+              name: "Nom de l'emoji",
               value: `${emoji.name}`,
               inline: true,
             },
             {
-              name: "😝┇Emoji id",
+              name: "ID de l'emoji",
               value: `${emoji.id}`,
               inline: true,
             },
@@ -40,23 +40,23 @@ module.exports = async (client, interaction, args) => {
           type: 'editreply'
         }, interaction)
       })
-    }else{
+    } else {
       interaction.guild.emojis.create({ attachment: url, name: parsedEmoji.name }).then(emoji => {
         client.succNormal({
-          text: `Emoji successfully added to the server`,
+          text: `Emoji ajouté avec succès sur le serveur`,
           fields: [
             {
-              name: "😛┇Emoji",
+              name: "Emoji",
               value: `${emoji}`,
               inline: true,
             },
             {
-              name: "😜┇Emoji name",
+              name: "Nom de l'emoji",
               value: `${emoji.name}`,
               inline: true,
             },
             {
-              name: "😝┇Emoji id",
+              name: "ID de l'emoji",
               value: `${emoji.id}`,
               inline: true,
             },
@@ -68,9 +68,8 @@ module.exports = async (client, interaction, args) => {
   }
   else {
     client.errNormal({
-      error: "Emoji not found!",
+      error: "Emoji introuvable !",
       type: 'editreply'
     }, interaction)
   }
 }
-
