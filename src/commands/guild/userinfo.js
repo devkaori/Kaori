@@ -53,7 +53,7 @@ module.exports = async (client, interaction, args) => {
   const userFlags = member.user.flags ? member.user.flags.toArray() : [];
 
   return client.embed({
-    title: `👤・Informations utilisateur`,
+    title: `Informations utilisateur`,
     desc: `Informations sur ${member.user.username}`,
     thumbnail: member.user.displayAvatarURL({ dynamic: true, size: 1024 }),
     image: member.user.bannerURL({ dynamic: true, size: 1024 }),
