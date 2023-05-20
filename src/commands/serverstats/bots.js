@@ -6,12 +6,13 @@ module.exports = async (client, interaction, args) => {
     const members = await interaction.guild.members.fetch();
 
     var channelName = await client.getTemplate(interaction.guild);
-    channelName = channelName.replace(`{emoji}`, "🤖")
-    channelName = channelName.replace(`{name}`, `Bots: ${members.filter(member => member.user.bot).size || 0}`)
+    channelName = channelName.replace(`{emoji}`, "🤖");
+    channelName = channelName.replace(`{name}`, `Bots : ${members.filter(member => member.user.bot).size || 0}`);
 
     await interaction.guild.channels.create({
         name: channelName,
-        type:  Discord.ChannelType.GuildVoice, permissionOverwrites: [
+        type: Discord.ChannelType.GuildVoice,
+        permissionOverwrites: [
             {
                 deny: [Discord.PermissionsBitField.Flags.Connect],
                 id: interaction.guild.id
@@ -22,27 +23,23 @@ module.exports = async (client, interaction, args) => {
             if (data) {
                 data.Bots = channel.id;
                 data.save();
-            }
-            else {
+            } else {
                 new Schema({
                     Guild: interaction.guild.id,
                     Bots: channel.id
                 }).save();
             }
-        })
+        });
 
         client.succNormal({
-            text: `Bots count created!`,
+            text: `Nombre de bots créé !`,
             fields: [
                 {
-                    name: `📘┆Channel`,
+                    name: `Canal`,
                     value: `${channel}`
                 }
             ],
             type: 'editreply'
         }, interaction);
-    })
-
+    });
 }
-
- 
