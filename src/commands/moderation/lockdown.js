@@ -17,9 +17,7 @@ module.exports = async (client, interaction, args) => {
     })
 
     client.succNormal({
-        text: "Channels locked successfully",
+        text: "Les canaux ont été verrouillés avec succès",
         type: 'editreply'
     }, interaction);
 }
-
- 
