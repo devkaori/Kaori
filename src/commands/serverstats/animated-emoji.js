@@ -18,11 +18,12 @@ module.exports = async (client, interaction, args) => {
 
     var channelName = await client.getTemplate(interaction.guild);
     channelName = channelName.replace(`{emoji}`, "🤡")
-    channelName = channelName.replace(`{name}`, `Animated Emojis: ${Animated || '0'}`)
+    channelName = channelName.replace(`{name}`, `Emojis animés : ${Animated || '0'}`)
 
     await interaction.guild.channels.create({
         name: channelName,
-        type:  Discord.ChannelType.GuildVoice, permissionOverwrites: [
+        type:  Discord.ChannelType.GuildVoice,
+        permissionOverwrites: [
             {
                 deny: [Discord.PermissionsBitField.Flags.Connect],
                 id: interaction.guild.id
@@ -33,27 +34,23 @@ module.exports = async (client, interaction, args) => {
             if (data) {
                 data.AnimatedEmojis = channel.id;
                 data.save();
-            }
-            else {
+            } else {
                 new Schema({
                     Guild: interaction.guild.id,
                     AnimatedEmojis: channel.id
                 }).save();
             }
-        })
+        });
 
         client.succNormal({
-            text: `Animated emoji's count created!`,
+            text: `Nombre d'emojis animés créé !`,
             fields: [
                 {
-                    name: `📘┆Channel`,
+                    name: `Canal`,
                     value: `${channel}`
                 }
             ],
             type: 'editreply'
         }, interaction);
-    })
-
+    });
 }
-
- 
