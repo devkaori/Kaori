@@ -1,7 +1,7 @@
 module.exports = {
     release: "11-1-2022",
     bugs: [
-        "Better music system",
+        "Better music systm",
         "Better bot setups",
         "Giveaways fixed",
         "A new invite tracker system",
