@@ -41,11 +41,11 @@ module.exports = async (client) => {
                         `${totalGuilds} serveurs`,
                         `discord.gg/kaori`,
                         `kaoricafe.fr`,
-                        `Un singe dans un zoo`
+                        `ko-fi.com/kaorifr`
                     ];
                 }
                 const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
-                client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Playing }], status: 'online' });
+                client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Watching }], status: 'online' });
             })
     }, 50000)
 
