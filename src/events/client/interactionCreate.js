@@ -7,7 +7,7 @@ const verify = require("../../database/models/verify");
 const Commands = require("../../database/models/customCommand");
 const CommandsSchema = require("../../database/models/customCommandAdvanced");
 module.exports = async (client, interaction) => {
-    // Commands
+    // Gestion des commandes
     if (interaction.isCommand() || interaction.isUserContextMenuCommand()) {
         banSchema.findOne({ User: interaction.user.id }, async (err, data) => {
             if (data) {
@@ -32,7 +32,7 @@ module.exports = async (client, interaction) => {
                         Name: interaction.commandName,
                     });
                     if (cmdx) {
-                        // Remove interaction
+                        // Supprimer l'interaction
                         if (cmdx.Action == "Normal") {
                             return interaction.reply({ content: cmdx.Responce });
                         } else if (cmdx.Action == "Embed") {
@@ -45,11 +45,11 @@ module.exports = async (client, interaction) => {
                             );
                         } else if (cmdx.Action == "DM") {
                             await interaction.deferReply({ ephemeral: true });
-                            interaction.editReply({ content: "Je t'ai envoyé quelque chose en DM" });
+                            interaction.editReply({ content: "Je vous ai envoyé quelque chose en message privé" });
                             return interaction.user.send({ content: cmdx.Responce }).catch((e) => {
                                 client.errNormal(
                                     {
-                                        error: "Je ne peux pas t'envoyer de DM, peut-être que tu as désactivé les DM !",
+                                        error: "Je ne peux pas vous envoyer de message privé, peut-être avez-vous désactivé les DM !",
                                         type: 'ephemeral'
                                     },
                                     interaction,
@@ -62,8 +62,8 @@ module.exports = async (client, interaction) => {
                     const commands = interaction.client.commands.filter(x => x.data.name == interaction.commandName).map((x) => x.data.options.map((c) => '`' + c.name + '` - ' + c.description).join("\n"));
 
                     return client.embed({
-                        title: `Panel d'aide`,
-                        desc: `Obtenez de l'aide sur les commandes dans \`${interaction.commandName}\` \n\n${commands}`,
+                        title: `Panneau d'aide`,
+                        desc: `Obtenez de l'aide avec les commandes dans \`${interaction.commandName}\` \n\n${commands}`,
                         type: 'reply'
                     }, interaction)
                 }
@@ -127,7 +127,7 @@ module.exports = async (client, interaction) => {
         }
     }
 
-    // Bouton rôles par réaction
+    // Bouton des rôles de réaction
     if (interaction.isButton()) {
         var buttonID = interaction.customId.split("-");
 
@@ -151,7 +151,7 @@ module.exports = async (client, interaction) => {
         }
     }
 
-    // Sélecteur de rôles par réaction
+    // Sélection des rôles de réaction
     if (interaction.isStringSelectMenu()) {
         if (interaction.customId == "reaction_select") {
             reactionSchema.findOne(
