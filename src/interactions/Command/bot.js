@@ -23,11 +23,6 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
-                .setName('changelogs')
-                .setDescription('Obtenir les journaux des modifications du bot')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
                 .setName('links')
                 .setDescription('Obtenir un message avec tous les liens du bot')
         )
@@ -35,11 +30,6 @@ module.exports = {
             subcommand
                 .setName('owner')
                 .setDescription('Obtenir des informations sur le propriétaire')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('socials')
-                .setDescription('Obtenir les réseaux sociaux du bot')
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -55,12 +45,6 @@ module.exports = {
             subcommand
                 .setName('vote')
                 .setDescription('Voir si vous avez voté')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('feedback')
-                .setDescription('Envoyer votre opinion sur le bot aux développeurs')
-                .addStringOption(option => option.setName("feedback").setDescription("Votre opinion").setRequired(true))
         ),
 
     /** 
