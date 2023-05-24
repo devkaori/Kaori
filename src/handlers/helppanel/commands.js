@@ -53,11 +53,6 @@ module.exports = async (client) => {
             inline: true
         },
         {
-            name: `Dcredits`,
-            value: `\`/dcredits help\``,
-            inline: true
-        },
-        {
             name: `Économie`,
             value: `\`/economy help\``,
             inline: true
@@ -65,11 +60,6 @@ module.exports = async (client) => {
         {
             name: `Famille`,
             value: `\`/family help\``,
-            inline: true
-        },
-        {
-            name: `Divertissement`,
-            value: `\`/fun help\``,
             inline: true
         },
         {
@@ -85,11 +75,6 @@ module.exports = async (client) => {
         {
             name: `Paramètres du serveur`,
             value: `\`/guild help\``,
-            inline: true
-        },
-        {
-            name: `Images`,
-            value: `\`/images help\``,
             inline: true
         },
         {
@@ -110,11 +95,6 @@ module.exports = async (client) => {
         {
             name: `Modération`,
             value: `\`/moderation help\``,
-            inline: true
-        },
-        {
-            name: `Musique`,
-            value: `\`/music help\``,
             inline: true
         },
         {
@@ -150,11 +130,6 @@ module.exports = async (client) => {
         {
             name: `Configuration`,
             value: `\`/setup help\``,
-            inline: true
-        },
-        {
-            name: `Tableau de sons`,
-            value: `\`/soundboard help\``,
             inline: true
         },
         {
