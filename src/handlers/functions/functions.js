@@ -226,7 +226,7 @@ module.exports = async (client) => {
                     );
 
                 client.embed({
-                    title: `${client.emotes.normal.tv}・Activities`,
+                    title: `Activities`,
                     desc: `Clique sur le **bouton** pour commencer **${name}** dans **${channel.name}**`,
                     components: [row],
                     type: 'editreply'
