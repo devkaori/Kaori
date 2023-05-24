@@ -43,25 +43,6 @@ module.exports = {
                         )
                 )
                 .addChannelOption(option => option.setName('channel').setDescription('Le salon pour les logs').setRequired(true).addChannelTypes(ChannelType.GuildText))
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('fun')
-                .setDescription('Configurer les salons de divertissement du serveur')
-                .addStringOption(option =>
-                    option.setName('setup')
-                        .setDescription('La configuration que vous souhaitez')
-                        .setRequired(true)
-                        .addChoices(
-                            { name: 'Anniversaires', value: 'birthdays' },
-                            { name: 'Chatbot', value: 'chatbot' },
-                            { name: 'Avis', value: 'reviews' },
-                            { name: 'Suggestions', value: 'suggestions' },
-                            { name: 'Starboard', value: 'starboard' }
-                        )
-                )
-                .addChannelOption(option => option.setName('channel').setDescription('Le salon pour le divertissement').setRequired(true).addChannelTypes(ChannelType.GuildText))
-        )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('games')
