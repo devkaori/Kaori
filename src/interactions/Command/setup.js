@@ -1,6 +1,5 @@
 const { CommandInteraction, Client } = require('discord.js');
-const { SlashCommandBuilder } = require('discord.js');
-const { ChannelType } = require('discord.js');
+const { SlashCommandBuilder, ChannelType } = require('discord.js');
 const Discord = require('discord.js');
 
 module.exports = {
@@ -43,6 +42,7 @@ module.exports = {
                         )
                 )
                 .addChannelOption(option => option.setName('channel').setDescription('Le salon pour les logs').setRequired(true).addChannelTypes(ChannelType.GuildText))
+        )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('games')
@@ -128,9 +128,9 @@ module.exports = {
         const perms = await client.checkUserPerms({
             flags: [Discord.PermissionsBitField.Flags.Administrator],
             perms: [Discord.PermissionsBitField.Flags.Administrator]
-        }, interaction)
+        }, interaction);
 
-        if (perms == false) return;
+        if (!perms) return;
 
         client.loadSubcommands(client, interaction, args);
     },
