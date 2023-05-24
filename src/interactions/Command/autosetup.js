@@ -28,23 +28,6 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
-                .setName('fun')
-                .setDescription('Définir les salons amusants du serveur')
-                .addStringOption(option =>
-                    option.setName('setup')
-                        .setDescription('La configuration que vous souhaitez')
-                        .setRequired(true)
-                        .addChoices(
-                            { name: 'Anniversaires', value: 'birthdays' },
-                            { name: 'Chatbot', value: 'chatbot' },
-                            { name: 'Avis', value: 'reviews' },
-                            { name: 'Suggestions', value: 'suggestions' },
-                            { name: 'Starboard', value: 'starboard' }
-                        )
-                )
-        )
-        .addSubcommand(subcommand =>
-            subcommand
                 .setName('games')
                 .setDescription('Définir les salons de jeux du serveur')
                 .addStringOption(option =>
