@@ -1,6 +1,5 @@
-const { CommandInteraction, Client } = require('discord.js');
-const { SlashCommandBuilder, ChannelType } = require('discord.js');
-const Discord = require('discord.js');
+import { CommandInteraction, Client, ChannelType } from 'discord.js';
+import { SlashCommandBuilder } from 'discord.js';
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -9,71 +8,89 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Obtenir des informations sur les commandes de la catégorie de configuration')
+                .setDescription("Obtenir des informations sur les commandes de la catégorie 'setup'")
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('tickets')
                 .setDescription('Configurer les tickets')
-                .addChannelOption(option => option.setName('category').setDescription('Sélectionner une catégorie où les tickets doivent être créés').setRequired(true).addChannelTypes(ChannelType.GuildCategory))
-                .addRoleOption(option => option.setName('role').setDescription('Sélectionner le rôle de support').setRequired(true))
-                .addChannelOption(option => option.setName('channel').setDescription('Le salon pour le panneau des tickets').setRequired(true).addChannelTypes(ChannelType.GuildText))
-                .addChannelOption(option => option.setName('logs').setDescription('Le salon pour les logs des tickets').setRequired(true).addChannelTypes(ChannelType.GuildText))
+                .addChannelOption(option => option.setName('category').setDescription('Sélectionnez une catégorie pour les tickets').setRequired(true).addChannelTypes(ChannelType.GuildCategory))
+                .addRoleOption(option => option.setName('role').setDescription('Sélectionnez le rôle de support').setRequired(true))
+                .addChannelOption(option => option.setName('channel').setDescription('Le canal pour le panneau des tickets').setRequired(true).addChannelTypes(ChannelType.GuildText))
+                .addChannelOption(option => option.setName('logs').setDescription('Le canal pour les journaux des tickets').setRequired(true).addChannelTypes(ChannelType.GuildText))
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('customvoice')
-                .setDescription('Configurer les salons vocaux personnalisés')
-                .addChannelOption(option => option.setName('category').setDescription('Sélectionner une catégorie où les salons doivent être créés').setRequired(true).addChannelTypes(ChannelType.GuildCategory))
-                .addStringOption(option => option.setName('channelname').setDescription('Le modèle des noms de salons').setRequired(true))
+                .setDescription('Configurer les canaux vocaux personnalisés')
+                .addChannelOption(option => option.setName('category').setDescription('Sélectionnez une catégorie pour les canaux').setRequired(true).addChannelTypes(ChannelType.GuildCategory))
+                .addStringOption(option => option.setName('channelname').setDescription('Le modèle pour les noms de canaux').setRequired(true))
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('logs')
-                .setDescription('Configurer les logs du serveur')
+                .setDescription('Définir les journaux du serveur')
                 .addStringOption(option =>
                     option.setName('setup')
                         .setDescription('La configuration que vous souhaitez')
                         .setRequired(true)
                         .addChoices(
-                            { name: 'Logs du serveur', value: 'serverLogs' },
-                            { name: 'Logs de niveau', value: 'levelLogs' },
-                            { name: 'Logs de boosts', value: 'boostLogs' }
+                            { name: 'Journaux du serveur', value: 'serverLogs' },
+                            { name: 'Journaux de niveau', value: 'levelLogs' },
+                            { name: 'Journaux de boost', value: 'boostLogs' }
                         )
                 )
-                .addChannelOption(option => option.setName('channel').setDescription('Le salon pour les logs').setRequired(true).addChannelTypes(ChannelType.GuildText))
+                .addChannelOption(option => option.setName('channel').setDescription('Le canal pour les journaux').setRequired(true).addChannelTypes(ChannelType.GuildText))
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('fun')
+                .setDescription('Définir les canaux de divertissement du serveur')
+                .addStringOption(option =>
+                    option.setName('setup')
+                        .setDescription('La configuration que vous souhaitez')
+                        .setRequired(true)
+                        .addChoices(
+                            { name: 'Anniversaires', value: 'birthdays' },
+                            { name: 'Chatbot', value: 'chatbot' },
+                            { name: 'Avis', value: 'reviews' },
+                            { name: 'Suggestions', value: 'suggestions' },
+                            { name: 'Starboard', value: 'starboard' }
+                        )
+                )
+                .addChannelOption(option => option.setName('channel').setDescription('Le canal pour le divertissement').setRequired(true).addChannelTypes(ChannelType.GuildText))
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('games')
-                .setDescription('Configurer les salons de jeux du serveur')
+                .setDescription('Définir les canaux de jeu du serveur')
                 .addStringOption(option =>
                     option.setName('setup')
                         .setDescription('La configuration que vous souhaitez')
                         .setRequired(true)
                         .addChoices(
                             { name: 'Comptage', value: 'counting' },
-                            { name: 'Devinez le nombre', value: 'gtn' },
-                            { name: 'Devinez le mot', value: 'gtw' },
-                            { name: 'Word snake', value: 'wordsnake' }
+                            { name: 'Devine le nombre', value: 'gtn' },
+                            { name: 'Devine le mot', value: 'gtw' },
+                            { name: 'Serpent de mots', value: 'wordsnake' }
                         )
                 )
-                .addChannelOption(option => option.setName('channel').setDescription('Le salon pour le jeu').setRequired(true).addChannelTypes(ChannelType.GuildText))
+                .addChannelOption(option => option.setName('channel').setDescription('Le canal pour le jeu').setRequired(true).addChannelTypes(ChannelType.GuildText))
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('welcomechannels')
-                .setDescription('Configurer les salons de bienvenue')
+                .setDescription('Configurer les canaux de bienvenue')
                 .addStringOption(option =>
                     option.setName('setup')
                         .setDescription('La configuration que vous souhaitez')
                         .setRequired(true)
                         .addChoices(
-                            { name: 'Salon de bienvenue', value: 'welcomechannel' },
-                            { name: 'Salon de départ', value: 'leavechannel' }
+                            { name: 'Canal de bienvenue', value: 'welcomechannel' },
+                            { name: 'Canal de départ', value: 'leavechannel' }
                         )
                 )
-                .addChannelOption(option => option.setName('channel').setDescription('Le salon que vous souhaitez').setRequired(true).addChannelTypes(ChannelType.GuildText))
+                .addChannelOption(option => option.setName('channel').setDescription('Le canal que vous souhaitez').setRequired(true).addChannelTypes(ChannelType.GuildText))
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -98,39 +115,39 @@ module.exports = {
                         .setRequired(true)
                         .addChoices(
                             { name: 'Tickets', value: 'tickets' },
-                            { name: 'Salons vocaux personnalisés', value: 'customvoice' },
-                            { name: 'Logs du serveur', value: 'serverlogs' },
-                            { name: 'Logs de niveau', value: 'levellogs' },
-                            { name: 'Logs de boosts', value: 'boostlogs' },
+                            { name: 'Canaux vocaux personnalisés', value: 'customvoice' },
+                            { name: 'Journaux du serveur', value: 'serverlogs' },
+                            { name: 'Journaux de niveau', value: 'levellogs' },
+                            { name: 'Journaux de boost', value: 'boostlogs' },
                             { name: 'Anniversaires', value: 'birthdays' },
                             { name: 'Chatbot', value: 'chatbot' },
                             { name: 'Avis', value: 'reviews' },
                             { name: 'Suggestions', value: 'suggestions' },
                             { name: 'Comptage', value: 'counting' },
-                            { name: 'Devinez le nombre', value: 'gtn' },
-                            { name: 'Devinez le mot', value: 'gtw' },
-                            { name: 'Salon de bienvenue', value: 'welcomechannel' },
-                            { name: 'Salon de départ', value: 'leavechannel' },
+                            { name: 'Devine le nombre', value: 'gtn' },
+                            { name: 'Devine le mot', value: 'gtw' },
+                            { name: 'Canal de bienvenue', value: 'welcomechannel' },
+                            { name: 'Canal de départ', value: 'leavechannel' },
                             { name: 'Rôle de bienvenue', value: 'welcomerole' },
-                            { name: 'Word snake', value: 'wordsnake' }
+                            { name: 'Serpent de mots', value: 'wordsnake' }
                         )
                 )
-        ),
+        )
+    ,
 
     /** 
      * @param {Client} client
      * @param {CommandInteraction} interaction
      * @param {String[]} args
      */
-
     run: async (client, interaction, args) => {
         await interaction.deferReply({ fetchReply: true });
         const perms = await client.checkUserPerms({
-            flags: [Discord.PermissionsBitField.Flags.Administrator],
-            perms: [Discord.PermissionsBitField.Flags.Administrator]
-        }, interaction);
+            flags: [Discord.Permissions.FLAGS.ADMINISTRATOR],
+            perms: [Discord.Permissions.FLAGS.ADMINISTRATOR]
+        }, interaction)
 
-        if (!perms) return;
+        if (perms == false) return;
 
         client.loadSubcommands(client, interaction, args);
     },
