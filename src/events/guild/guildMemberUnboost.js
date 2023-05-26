@@ -34,7 +34,7 @@ module.exports = async (client, member) => {
                     var channel = client.channels.cache.get(channelData.Channel)
 
                     await client.embed({
-                        title: `New unboost`,
+                        title: `Nouveau déboost`,
                         desc: boostMessage
                     }, channel)
                 }
@@ -49,8 +49,8 @@ module.exports = async (client, member) => {
                     var channel = client.channels.cache.get(channelData.Channel)
 
                     await client.embed({
-                        title: `New unboost`,
-                        desc: `${member} unboosted the server!`
+                        title: `Nouveau déboost`,
+                        desc: `${member} a déboosté le serveur !`
                     }, channel)
                 }
                 catch { }
