@@ -1,5 +1,6 @@
 const { CommandInteraction, Client } = require('discord.js');
 const { SlashCommandBuilder } = require('discord.js');
+const Discord = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -8,7 +9,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Obtenir des informations sur les commandes de la catégorie "invites"')
+                .setDescription('Obtenir des informations sur les commandes de la catégorie invitations')
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -20,7 +21,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('remove')
-                .setDescription('Retirer des invitations à un utilisateur')
+                .setDescription('Supprimer des invitations à un utilisateur')
                 .addUserOption(option => option.setName('user').setDescription('Sélectionner un utilisateur').setRequired(true))
                 .addNumberOption(option => option.setName('amount').setDescription('Entrer un nombre d\'invitations').setRequired(true))
         )
@@ -35,13 +36,14 @@ module.exports = {
                 .setName('leaderboard')
                 .setDescription('Voir le classement des invitations')
         ),
-
-    /**
+    
+    /** 
      * @param {Client} client
      * @param {CommandInteraction} interaction
      * @param {String[]} args
      */
-    async execute(client, interaction, args) {
+    
+    run: async (client, interaction, args) => {
         await interaction.deferReply({ fetchReply: true });
         client.loadSubcommands(client, interaction, args);
     },
