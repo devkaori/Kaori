@@ -1,48 +1,43 @@
 const Discord = require('discord.js');
 
-const Schema = require("../../database/models/invites");
+const Schema = require("../../database/models/levelRewards");
 
 module.exports = async (client, interaction, args) => {
-    let user = interaction.options.getUser('user') || interaction.user;
+    let level = interaction.options.getNumber('level');
+    let role = interaction.options.getRole('role');
 
-    Schema.findOne({ Guild: interaction.guild.id, User: user.id }, async (err, data) => {
+    const perms = await client.checkUserPerms({
+        flags: [Discord.PermissionsBitField.Flags.ManageMessages],
+        perms: [Discord.PermissionsBitField.Flags.ManageMessages]
+    }, interaction);
+
+    if (perms == false) return;
+
+    Schema.findOne({ Guild: interaction.guild.id, Level: level }, async (err, data) => {
         if (data) {
-            client.embed({
-                title: "Invitations",
-                desc: `**${user.tag}** a \`${data.Invites}\` invitations`,
-                fields: [
-                    {
-                        name: "Total",
-                        value: `${data.Total}`,
-                        inline: true
-                    },
-                    {
-                        name: "Restantes",
-                        value: `${data.Left}`,
-                        inline: true
-                    }
-                ],
+            return client.errNormal({ 
+                error: "Ce niveau possède déjà une récompense !",
                 type: 'editreply'
-            }, interaction)
+            }, interaction);
         }
         else {
-            client.embed({
-                title: "Invitations",
-                desc: `**${user.tag}** n'a aucune invitation`,
+            new Schema({
+                Guild: interaction.guild.id,
+                Level: level,
+                Role: role.id
+            }).save();
+
+            client.succNormal({ 
+                text: `Récompense de niveau créée`,
                 fields: [
                     {
-                        name: "Total",
-                        value: `0`,
-                        inline: true
-                    },
-                    {
-                        name: "Restantes",
-                        value: `0`,
-                        inline: true
+                        name: "Rôle",
+                        value: `${role}`,
+                        inline: true,
                     }
                 ],
                 type: 'editreply'
-            }, interaction)
+            }, interaction);
         }
     });
 }
