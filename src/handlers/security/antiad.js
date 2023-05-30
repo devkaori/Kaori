@@ -15,7 +15,7 @@ module.exports = (client) => {
                     if (code) {
                         Schema2.findOne({ Guild: message.guild.id }, async (err, data2) => {
                             if (data2) {
-                                if (data2.Channels.includes(message.channel.id) || message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_MESSAGES)) {
+                                if (data2.Channels.includes(message.channel.id) || message.member.permissions.has(Discord.PermissionsBitField.Flags.ManageMessages)) {
                                     return;
                                 }
 
@@ -29,7 +29,7 @@ module.exports = (client) => {
                                 }, message.channel)
                             }
                             else {
-                                if (message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_MESSAGES)) return;
+                                if (message.member.permissions.has(Discord.PermissionsBitField.Flags.ManageMessages)) return;
                                 message.delete();
 
                                 client.embed({
@@ -48,7 +48,7 @@ module.exports = (client) => {
                     if (content.includes('http://') || content.includes('https://') || content.includes('www.')) {
                         Schema2.findOne({ Guild: message.guild.id }, async (err, data2) => {
                             if (data2) {
-                                if (data2.Channels.includes(message.channel.id) || message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_MESSAGES)) {
+                                if (data2.Channels.includes(message.channel.id) || message.member.permissions.has(Discord.PermissionsBitField.Flags.ManageMessages)) {
                                     return;
                                 }
 
@@ -62,7 +62,7 @@ module.exports = (client) => {
                                 }, message.channel)
                             }
                             else {
-                                if (message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_MESSAGES)) return;
+                                if (message.member.permissions.has(Discord.PermissionsBitField.Flags.ManageMessages)) return;
                                 message.delete();
 
                                 client.embed({
@@ -91,7 +91,7 @@ module.exports = (client) => {
                     if (code) {
                         Schema2.findOne({ Guild: newMessage.guild.id }, async (err, data2) => {
                             if (data2) {
-                                if (data2.Channels.includes(newMessage.channel.id) || newMessage.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_MESSAGES)) {
+                                if (data2.Channels.includes(newMessage.channel.id) || newMessage.member.permissions.has(Discord.PermissionsBitField.Flags.ManageMessages)) {
                                     return;
                                 }
 
@@ -112,7 +112,7 @@ module.exports = (client) => {
                                 }, 5000)
                             }
                             else {
-                                if (newMessage.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_MESSAGES)) return;
+                                if (newMessage.member.permissions.has(Discord.PermissionsBitField.Flags.ManageMessages)) return;
                                 newMessage.delete();
                                 let error = new Discord.MessageEmbed()
                                     .setTitle(`Modérateur`)
@@ -138,7 +138,7 @@ module.exports = (client) => {
                     if (content.includes('http://') || content.includes('https://') || content.includes('www.')) {
                         Schema2.findOne({ Guild: newMessage.guild.id }, async (err, data2) => {
                             if (data2) {
-                                if (data2.Channels.includes(newMessage.channel.id) || newMessage.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_MESSAGES)) {
+                                if (data2.Channels.includes(newMessage.channel.id) || newMessage.member.permissions.has(Discord.PermissionsBitField.Flags.ManageMessages)) {
                                     return;
                                 }
 
@@ -160,7 +160,7 @@ module.exports = (client) => {
                                 }, 5000)
                             }
                             else {
-                                if (newMessage.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_MESSAGES)) return;
+                                if (newMessage.member.permissions.has(Discord.PermissionsBitField.Flags.ManageMessages)) return;
                                 newMessage.delete();
                                 var error = new Discord.MessageEmbed()
                                     .setTitle(`Modérateur`)
