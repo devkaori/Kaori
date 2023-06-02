@@ -1,6 +1,6 @@
 module.exports = {
     colors: {
-        succes: '#57F287',
+        succes: '#2b2d31',
         error: "#ED4245",
         normal: "#2b2d31"
     },
