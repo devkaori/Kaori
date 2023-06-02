@@ -176,12 +176,12 @@ module.exports = async (client) => {
                     .addComponents(
                         new Discord.ButtonBuilder()
                             .setCustomId('helpPrev')
-                            .setEmoji('⬅️')
+                            .setEmoji('1114167680539316325')
                             .setStyle(Discord.ButtonStyle.Secondary),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('helpNext')
-                            .setEmoji('➡️')
+                            .setEmoji('1114167654777888798')
                             .setStyle(Discord.ButtonStyle.Secondary),
 
                         new Discord.ButtonBuilder()
@@ -204,19 +204,19 @@ module.exports = async (client) => {
                                 {
                                     label: `Commandes`,
                                     description: `Afficher les commandes du bot !`,
-                                    emoji: "💻",
+                                    emoji: "1114167872646819961",
                                     value: "commands-Bothelp",
                                 },
                                 {
                                     label: `Invitation`,
                                     description: `Inviter le bot sur votre serveur`,
-                                    emoji: "📨",
+                                    emoji: "1114167747627208815",
                                     value: "invite-Bothelp",
                                 },
                                 {
                                     label: `Serveur de support`,
                                     description: `Rejoindre le serveur de support`,
-                                    emoji: "❓",
+                                    emoji: "1114167700999118878",
                                     value: "support-Bothelp",
                                 },
                             ]),
