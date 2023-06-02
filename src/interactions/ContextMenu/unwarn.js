@@ -17,8 +17,8 @@ module.exports = {
 
     run: async (client, interaction, args) => {
         const perms = await client.checkPerms({
-            flags: [Discord.Permissions.FLAGS.MANAGE_MESSAGES],
-            perms: [Discord.Permissions.FLAGS.MANAGE_MESSAGES]
+            flags: [Discord.PermissionsBitField.Flags.ManageMessages],
+            perms: [Discord.PermissionsBitField.Flags.ManageMessages]
         }, interaction);
 
         if (!perms) {
