@@ -29,12 +29,12 @@ module.exports = async (client, interaction, args) => {
             giveaway: `**GIVEAWAY**`,
             giveawayEnded: `**GIVEAWAY TERMINÉ**`,
             drawing: `Se termine le : **{timestamp}** !`,
-            inviteToParticipate: "Réagissez avec la réaction pour participer au giveaway ! \n",
-            winMessage: "Félicitations {winners} ! Vous venez de remporter **{this.prize}** !",
+            inviteToParticipate: "- <:icons_gift:1114165331213172796> Réagissez avec la réaction pour participer au giveaway ! \n",
+            winMessage: "- <:icons_tada:1114165284127916072> Félicitations {winners} ! Vous venez de remporter **{this.prize}** !",
             embedFooter: "Giveaway !",
             embedColor: client.config.colors.normal,
-            noWinner: "Giveaway annulé, pas assez de participants. \n",
-            hostedBy: `${client.emotes.normal.party} - Organisé par : {this.hostedBy}`,
+            noWinner: "- <:icons_tada:1114165284127916072> Giveaway annulé, pas assez de participants. \n",
+            hostedBy: `- <:icons_tada:1114165284127916072> Organisé par : {this.hostedBy}`,
             winners: `Gagnant(s)`,
             endedAt: "Se termine à :",
             units: {
@@ -48,7 +48,7 @@ module.exports = async (client, interaction, args) => {
 
     }).then((gData) => {
         client.succNormal({ 
-            text: `Giveaway lancé dans ${gchannel}`,
+            text: `- <:icons_awardcup:1114165417238347866> Giveaway lancé dans ${gchannel}`,
             type: 'ephemeraledit'
         }, interaction);
     });
