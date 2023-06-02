@@ -24,7 +24,6 @@ module.exports = async (client, interaction, args) => {
         },
         winnerCount: parseInt(winnerCount),
         hostedBy: interaction.user,
-        thumbnail: interaction.guild.iconURL({ dynamic: true, size: 1024 }),
         messages: {
             giveaway: `**GIVEAWAY**`,
             giveawayEnded: `**GIVEAWAY TERMINÉ**`,
