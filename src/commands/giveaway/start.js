@@ -12,7 +12,7 @@ module.exports = async (client, interaction, args) => {
         prize: `${prize}`,
         lastChance: {
             enabled: true,
-            content: `**DERNIÈRE CHANCE POUR PARTICIPER !** ${client.emotes.normal.error}`,
+            content: `**DERNIÈRE CHANCE POUR PARTICIPER !**`,
             threshold: 5000,
             embedColor: '#FF0000'
         },
@@ -30,13 +30,13 @@ module.exports = async (client, interaction, args) => {
             giveawayEnded: `**GIVEAWAY TERMINÉ**`,
             drawing: `Se termine le : **{timestamp}** !`,
             inviteToParticipate: "- <:icons_gift:1114165331213172796> Réagissez avec la réaction pour participer au giveaway ! \n",
-            winMessage: "- <:icons_tada:1114165284127916072> Félicitations {winners} ! Vous venez de remporter **{this.prize}** !",
+            winMessage: "Félicitations {winners} ! Vous venez de remporter **{this.prize}** !",
             embedFooter: "Giveaway !",
             embedColor: client.config.colors.normal,
             noWinner: "- <:icons_tada:1114165284127916072> Giveaway annulé, pas assez de participants. \n",
             hostedBy: `- <:icons_tada:1114165284127916072> Organisé par : {this.hostedBy}`,
-            winners: `Gagnant(s)`,
-            endedAt: "Se termine à :",
+            winners: `<:icons_gift:1114165331213172796> Gagnant(s)`,
+            endedAt: "<:icons_announce:1114165367607152660> Se termine à :",
             units: {
                 seconds: "secondes",
                 minutes: "minutes",
