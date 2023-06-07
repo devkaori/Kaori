@@ -75,7 +75,7 @@ module.exports = async (client, interaction, args) => {
             });
 
             await client.embed({
-                title: `💬・FastType`,
+                title: `FastType`,
                 desc: `Écris ceci en ${ms(timeLength, { long: true })} ! \n${sentence}`,
                 type: 'editreply'
             }, interaction)
