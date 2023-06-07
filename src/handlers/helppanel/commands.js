@@ -4,7 +4,7 @@ module.exports = async (client) => {
     const fields = [
         {
             name: `Activités`,
-            value: `\`/activités\``,
+            value: `\`/activities\``,
             inline: true
         },
         {
@@ -14,7 +14,7 @@ module.exports = async (client) => {
         },
         {
             name: `Annonce`,
-            value: `\`/annonce help\``,
+            value: `\`/announce help\``,
             inline: true
         },
         {
