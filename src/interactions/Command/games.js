@@ -24,12 +24,6 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
-                .setName('music-trivia')
-                .setDescription('Jouer à un jeu de questions musicales')
-                .addNumberOption(option => option.setName('number').setDescription('Le nombre de chansons').setRequired(true))
-        )
-        .addSubcommand(subcommand =>
-            subcommand
                 .setName('roll')
                 .setDescription('Lancer un dé')
         )
@@ -42,9 +36,9 @@ module.exports = {
                         .setDescription('Choisissez votre option')
                         .setRequired(true)
                         .addChoices(
-                            { name: '🪨 Pierre', value: 'rock' },
-                            { name: '📃 Papier', value: 'paper' },
-                            { name: '✂️ Ciseaux', value: 'scissors' }
+                            { name: '🪨 Pierre', value: 'pierre' },
+                            { name: '📃 Papier', value: 'feuille' },
+                            { name: '✂️ Ciseaux', value: 'ciseaux' }
                         )
                 )
         )
@@ -57,21 +51,6 @@ module.exports = {
             subcommand
                 .setName('snake')
                 .setDescription('Jouer au jeu du serpent')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('trivia')
-                .setDescription('Jouer à Trivia')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('willyoupressthebutton')
-                .setDescription('Jouer à "Appuieras-tu sur le bouton ?"')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('wouldyourather')
-                .setDescription('Jouer à "Préférerais-tu ?"')
         ),
 
     /**
