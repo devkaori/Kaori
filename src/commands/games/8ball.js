@@ -24,7 +24,7 @@ module.exports = async (client, interaction, args) => {
     var result = Math.floor((Math.random() * answers.length));
 
     client.embed({
-        title: `${client.emotes.normal.ball}・8ball`,
+        title: `8ball`,
         desc: `Voici la réponse à ta question !`,
         fields: [
             {
