@@ -4,56 +4,56 @@ const ms = require('ms');
 let timeLength = 50000;
 module.exports = async (client, interaction, args) => {
 
-    let list = `Because we were lost, we had to go back the way we came.
-    He's in a boy band which doesn't make much sense for a snake.
-    A dead duck doesn't fly backward.
-    Don't piss in my garden and tell me you're trying to help my plants grow.
-    Her scream silenced the rowdy teenagers.
-    The team members were hard to tell apart since they all wore their hair in a ponytail.
-    I hear that Nancy is very pretty.
-    Nudist colonies shun fig-leaf couture.
-    A song can make or ruin a person’s day if they let it get to them.
-    She saw no irony asking me to change but wanting me to accept her for who she is.
-    My uncle's favorite pastime was building cars out of noodles.
-    In the end, he realized he could see sound and hear words.
-    Please look up a recipe for chicken soup on the internet.
-    It didn't take long for Gary to detect the robbers were amateurs.
-    How did you get hurt?
-    It was obvious she was hot, sweaty, and tired.
-    He appeared to be confusingly perplexed.
-    Love is not like pizza.
-    It was always dangerous to drive with him since he insisted the safety cones were a slalom course.
-    As he waited for the shower to warm, he noticed that he could hear water change temperature.
-    Greetings from the galaxy MACS0647-JD, or what we call home.
-    The world has changed a lot during the last ten years.
-    As he entered the church he could hear the soft voice of someone whispering into a cell phone.
-    Now I need to ponder my existence and ask myself if I'm truly real
-    Yesterday's weather was good for climbing.
-    Waffles are always better without fire ants and fleas.
-    Nancy was proud that she ran a tight shipwreck.
-    He was so preoccupied with whether or not he could that he failed to stop to consider if he should.
-    If eating three-egg omelets causes weight-gain, budgie eggs are a good substitute.
-    I don’t respect anybody who can’t tell the difference between Pepsi and Coke.
-    He found the end of the rainbow and was surprised at what he found there.
-    He wondered why at 18 he was old enough to go to war, but not old enough to buy cigarettes.
-    She lived on Monkey Jungle Road and that seemed to explain all of her strangeness.
-    Julie wants a perfect husband.
-    Can I get you something to drink?
-    Please wait outside of the house.
-    His son quipped that power bars were nothing more than adult candy bars.
-    My older sister looks like my mom.
-    The thick foliage and intertwined vines made the hike nearly impossible.
-    A glittering gem is not enough.
-    Thirty years later, she still thought it was okay to put the toilet paper roll under rather than over.
-    Each person who knows you has a different perception of who you are.
-    Go down the stairs carefully.
-    Facing his greatest fear, he ate his first marshmallow.
-    She cried diamonds.
-    Tomorrow will bring something new, so leave today as a memory.
-    Erin accidentally created a new universe.
-    David subscribes to the "stuff your tent into the bag" strategy over nicely folding it.
-    The waitress was not amused when he ordered green eggs and ham.
-    All you need to do is pick up the pen and begin.`;
+    let list = `Parce que nous étions perdus, nous avons dû revenir par où nous sommes venus.
+    Il est dans un boys band, ce qui n'a pas beaucoup de sens pour un serpent.
+    Un canard mort ne vole pas en arrière.
+    Ne pisse pas dans mon jardin et dis-moi que tu essaies d'aider mes plantes à pousser.
+    Son cri a fait taire les adolescents bruyants.
+    Les membres de l'équipe étaient difficiles à distinguer car ils avaient tous les cheveux attachés en queue de cheval.
+    J'entends dire que Nancy est très jolie.
+    Les colonies nudistes rejettent la couture en feuilles de figuier.
+    Une chanson peut rendre ou ruiner la journée d'une personne si elle se laisse envahir par celle-ci.
+    Elle ne voyait aucune ironie à me demander de changer tout en voulant que je l'accepte telle qu'elle est.
+    Le passe-temps préféré de mon oncle était de construire des voitures en nouilles.
+    Finalement, il a réalisé qu'il pouvait voir le son et entendre les mots.
+    Cherche une recette de soupe au poulet sur internet.
+    Il n'a pas fallu longtemps à Gary pour remarquer que les cambrioleurs étaient des amateurs.
+    Comment t'es-tu blessé ?
+    Il était évident qu'elle avait chaud, qu'elle transpirait et qu'elle était fatiguée.
+    Il avait l'air confus de manière déconcertante.
+    L'amour n'est pas comme une pizza.
+    C'était toujours dangereux de conduire avec lui car il insistait pour dire que les cônes de sécurité étaient un parcours de slalom.
+    En attendant que l'eau de la douche se réchauffe, il a remarqué qu'il pouvait entendre l'eau changer de température.
+    Salutations de la galaxie MACS0647-JD, ou ce que nous appelons chez nous.
+    Le monde a beaucoup changé au cours des dix dernières années.
+    Lorsqu'il est entré dans l'église, il a pu entendre la voix douce de quelqu'un qui parlait à un téléphone portable.
+    Maintenant, je dois réfléchir à mon existence et me demander si je suis réellement réel.
+    Le temps d'hier était propice à l'escalade.
+    Les gaufres sont toujours meilleures sans fourmis de feu et puces.
+    Nancy était fière de diriger un navire échoué.
+    Il était tellement préoccupé par le fait de savoir s'il le pouvait ou non qu'il a omis de se demander s'il devait le faire.
+    Si manger des omelettes aux trois œufs fait prendre du poids, les œufs de perruche sont un bon substitut.
+    Je ne respecte personne qui ne peut pas faire la différence entre Pepsi et Coca-Cola.
+    Il a trouvé la fin de l'arc-en-ciel et a été surpris de ce qu'il a trouvé là-bas.
+    Il s'est demandé pourquoi à 18 ans, il était assez vieux pour aller à la guerre, mais pas assez vieux pour acheter des cigarettes.
+    Elle habitait sur Monkey Jungle Road et cela semblait expliquer toute sa bizarrerie.
+    Julie veut un mari parfait.
+    Puis-je te proposer quelque chose à boire ?
+    Attends dehors, devant la maison.
+    Son fils a plaisanté en disant que les barres énergétiques n'étaient rien de plus que des barres de bonbons pour adultes.
+    Ma sœur aînée ressemble à ma mère.
+    La végétation dense et les lianes entrelacées rendaient la randonnée presque impossible.
+    Un joyau étincelant ne suffit pas.
+    Trente ans plus tard, elle pensait toujours qu'il était acceptable de mettre le rouleau de papier toilette en dessous plutôt qu'au-dessus.
+    Chaque personne qui te connaît a une perception différente de qui tu es.
+    Descends les escaliers avec précaution.
+    Affrontant sa plus grande peur, il a mangé sa première guimauve.
+    Elle pleurait des diamants.
+    Demain apportera quelque chose de nouveau, alors laisse aujourd'hui en souvenir.
+    Erin a accidentellement créé un nouvel univers.
+    David préfère la stratégie consistant à "fourrer sa tente dans le sac" plutôt qu'à la plier soigneusement.
+    La serveuse n'était pas amusée lorsqu'il a commandé des œufs verts et du jambon.
+    Tout ce que tu as à faire, c'est de prendre le stylo et de commencer.`;
 
     async function start() {
         const inGame = new Set();
@@ -76,7 +76,7 @@ module.exports = async (client, interaction, args) => {
 
             await client.embed({
                 title: `💬・FastType`,
-                desc: `Type the below in ${ms(timeLength, { long: true })}! \n${sentence}`,
+                desc: `Écris ceci en ${ms(timeLength, { long: true })} ! \n${sentence}`,
                 type: 'editreply'
             }, interaction)
 
@@ -89,7 +89,7 @@ module.exports = async (client, interaction, args) => {
                 });
             } catch (ex) {
                 client.errNormal({
-                    error: "Time\'s up!",
+                    error: "Le temps est écoulé !",
                     type: 'editreply'
                 }, interaction)
                 inGame.delete(interaction.user.id)
@@ -99,7 +99,7 @@ module.exports = async (client, interaction, args) => {
             if (['cancel', 'end'].includes(msg.first().content.toLowerCase().trim())) {
                 msg.first().delete();
                 client.succNormal({
-                    text: "Ended!",
+                    text: "Terminé !",
                     type: 'editreply'
                 }, interaction)
                 inGame.delete(interaction.user.id)
@@ -107,13 +107,13 @@ module.exports = async (client, interaction, args) => {
             } else if (msg.first().content.toLowerCase().trim() === ogSentence.toLowerCase()) {
                 msg.first().delete();
                 client.succNormal({
-                    text: `You did it in ${ms(Date.now() - time, { long: true })}!`,
+                    text: `Tu l'as fait en ${ms(Date.now() - time, { long: true })} !`,
                     type: 'editreply'
                 }, interaction)
                 break;
             } else {
                 client.errNormal({
-                    error: "Unfortunately you didn't succeed!",
+                    error: "Malheureusement, tu n'as pas réussi !",
                     type: 'editreply'
                 }, interaction)
                 inGame.delete(interaction.user.id)
@@ -121,7 +121,7 @@ module.exports = async (client, interaction, args) => {
             }
 
             if (i === 25) {
-                client.succNormal({ text: `You did it!`, type: 'editreply' }, interaction)
+                client.succNormal({ text: `Tu l'as fait !`, type: 'editreply' }, interaction)
                 inGame.delete(interaction.user.id)
                 break
             }
@@ -130,5 +130,3 @@ module.exports = async (client, interaction, args) => {
 
     start()
 }
-
- 
