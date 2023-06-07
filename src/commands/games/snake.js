@@ -100,7 +100,7 @@ module.exports = async (client, interaction, args) => {
                 let flag = true;
                 for (let s = 0; s < snake.length; s++) {
                     if (x == snake[s].x && y == snake[s].y) {
-                        str += "🐍";
+                        str += "🟩";
                         flag = false;
                     }
                 }
@@ -172,7 +172,7 @@ module.exports = async (client, interaction, args) => {
 
 
         client.embed({
-            title: `🐍・Snake`,
+            title: `Serpent`,
             desc: gameBoardToString(),
             components: [
                 {
@@ -232,7 +232,7 @@ module.exports = async (client, interaction, args) => {
             .setDisabled(true);
 
         client.embed({
-            title: `🐍・Snake`,
+            title: `Serpent`,
             desc: `GG, you scored **${score}** points!`,
             components: [
                 {
@@ -287,7 +287,7 @@ module.exports = async (client, interaction, args) => {
         .setCustomId(id6);
 
     client.embed({
-        title: `🐍・Snake`,
+        title: `Serpent`,
         desc: gameBoardToString(),
         components: [
             {
