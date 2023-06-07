@@ -4,10 +4,8 @@ module.exports = async (client, interaction, args) => {
     var result = Math.ceil(Math.random() * 6);
 
     client.embed({
-        title: `🎲・Roll`,
-        desc: `You rolled ${result}`,
+        title: `Lancer de dés`,
+        desc: `Vous avez obtenu ${result}`,
         type: 'editreply'
     }, interaction);
 }
-
- 
