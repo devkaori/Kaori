@@ -3,70 +3,68 @@ const Discord = require('discord.js');
 module.exports = async (client, interaction, args) => {
     const option = interaction.options.getString("option");
 
-    let options = ["rock", "paper", "scissors"];
+    let options = ["pierre", "feuille", "ciseaux"];
     const result = options[Math.floor(Math.random() * options.length)];
 
     switch (option) {
-        case "rock":
-            if (result == "paper") return client.embed({
-                title: `${client.emotes.normal.paper}・Rock paper scissors`,
-                desc: `I have ${result}, I win!`,
+        case "pierre":
+            if (result == "feuille") return client.embed({
+                title: `Pierre Feuille Ciseaux`,
+                desc: `J'ai choisi ${result}, je gagne !`,
                 type: 'editreply'
             }, interaction);
 
-            if (result == "scissors") return client.embed({
-                title: `${client.emotes.normal.paper}・Rock paper scissors`,
-                desc: `I have ${result}, You win!`,
+            if (result == "ciseaux") return client.embed({
+                title: `Pierre Feuille Ciseaux`,
+                desc: `J'ai choisi ${result}, tu gagnes !`,
                 type: 'editreply'
             }, interaction);
 
-            if (result == "rock") return client.embed({
-                title: `${client.emotes.normal.paper}・Rock paper scissors`,
-                desc: `I have ${result}, It's a draw!`,
-                type: 'editreply'
-            }, interaction);
-            break;
-
-        case "paper":
-            if (result == "paper") return client.embed({
-                title: `${client.emotes.normal.paper}・Rock paper scissors`,
-                desc: `I have ${result}, It's a draw!`,
-                type: 'editreply'
-            }, interaction);
-
-            if (result == "scissors") return client.embed({
-                title: `${client.emotes.normal.paper}・Rock paper scissors`,
-                desc: `I have ${result}, I win!`,
-                type: 'editreply'
-            }, interaction);
-
-            if (result == "rock") return client.embed({
-                title: `${client.emotes.normal.paper}・Rock paper scissors`,
-                desc: `I have ${result}, You win!`,
+            if (result == "pierre") return client.embed({
+                title: `Pierre Feuille Ciseaux`,
+                desc: `J'ai choisi ${result}, c'est une égalité !`,
                 type: 'editreply'
             }, interaction);
             break;
 
-        case "scissors":
-            if (result == "paper") return client.embed({
-                title: `${client.emotes.normal.paper}・Rock paper scissors`,
-                desc: `I have ${result}, You win!`,
+        case "feuille":
+            if (result == "feuille") return client.embed({
+                title: `Pierre Feuille Ciseaux`,
+                desc: `J'ai choisi ${result}, c'est une égalité !`,
                 type: 'editreply'
             }, interaction);
 
-            if (result == "scissors") return client.embed({
-                title: `${client.emotes.normal.paper}・Rock paper scissors`,
-                desc: `I have ${result}, It's a draw!`,
+            if (result == "ciseaux") return client.embed({
+                title: `Pierre Feuille Ciseaux`,
+                desc: `J'ai choisi ${result}, je gagne !`,
                 type: 'editreply'
             }, interaction);
 
-            if (result == "rock") return client.embed({
-                title: `${client.emotes.normal.paper}・Rock paper scissors`,
-                desc: `I have ${result}, I win!`,
+            if (result == "pierre") return client.embed({
+                title: `Pierre Feuille Ciseaux`,
+                desc: `J'ai choisi ${result}, tu gagnes !`,
+                type: 'editreply'
+            }, interaction);
+            break;
+
+        case "ciseaux":
+            if (result == "feuille") return client.embed({
+                title: `Pierre Feuille Ciseaux`,
+                desc: `J'ai choisi ${result}, tu gagnes !`,
+                type: 'editreply'
+            }, interaction);
+
+            if (result == "ciseaux") return client.embed({
+                title: `Pierre Feuille Ciseaux`,
+                desc: `J'ai choisi ${result}, c'est une égalité !`,
+                type: 'editreply'
+            }, interaction);
+
+            if (result == "pierre") return client.embed({
+                title: `Pierre Feuille Ciseaux`,
+                desc: `J'ai choisi ${result}, je gagne !`,
                 type: 'editreply'
             }, interaction);
             break;
     }
 }
-
- 
