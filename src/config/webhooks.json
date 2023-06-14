@@ -1,31 +1,31 @@
 {
     "startLogs": {
-        "id": "",
-        "token": ""
+        "id": "1108853304483651695",
+        "token": "iplEyi9lkzUC4da03aTMbYGurAKKpkrBj7pTALpB0K1SGAGlbt2Skmdm-y_HTL7wpqlw"
     },
     "shardLogs": {
-        "id": "",
-        "token": ""
+        "id": "1108853304483651695",
+        "token": "iplEyi9lkzUC4da03aTMbYGurAKKpkrBj7pTALpB0K1SGAGlbt2Skmdm-y_HTL7wpqlw"
     },
     "errorLogs": {
-        "id": "",
-        "token": ""
+        "id": "1108853304483651695",
+        "token": "iplEyi9lkzUC4da03aTMbYGurAKKpkrBj7pTALpB0K1SGAGlbt2Skmdm-y_HTL7wpqlw"
     },
     "dmLogs": {
-        "id": "",
-        "token": ""
+        "id": "1108853304483651695",
+        "token": "iplEyi9lkzUC4da03aTMbYGurAKKpkrBj7pTALpB0K1SGAGlbt2Skmdm-y_HTL7wpqlw"
     },
     "voiceLogs": {
-        "id": "",
-        "token": ""
+        "id": "1118497159982092318",
+        "token": "S6sAwle72F2Zbiai4S3v4YgqigOkPwQAJlMlN4RX7IzmF7T9U_1dGeoECoJpqLbgR4p3"
     },
     "serverLogs": {
-        "id": "",
-        "token": ""
+        "id": "1118496954876432414",
+        "token": "6utLVcQ5GygvrvMhyFmrrHuukW7cr2IBF_yF56yWLkhUHmSJR2xkfx9hUmGadMe5N6u5"
     },
     "serverLogs2": {
-        "id": "",
-        "token": ""
+        "id": "1118496954876432414",
+        "token": "6utLVcQ5GygvrvMhyFmrrHuukW7cr2IBF_yF56yWLkhUHmSJR2xkfx9hUmGadMe5N6u5"
     },
     "commandLogs": {
         "id": "1115974113425625119",
@@ -52,11 +52,11 @@
         "token": ""
     },
     "interactionLogs": {
-        "id": "",
-        "token": ""
+        "id": "1118497510089039993",
+        "token": "GvwPFU5l4uKqMjZxWmzFq1IXo2HPnljDZxc3Jt6v1m2JKYIb1hvbCUGwXLrTDZS-wC9O"
     },
     "bugReportLogs": {
-        "id": "",
-        "token": ""
+        "id": "1118497677773127761",
+        "token": "AAGj7XfNydDWYzsPW41qXd124-mY26BxskvWbm0-h59Q6KM-UdOjKlL17VYJ3W0r82xQ"
     }
 }
