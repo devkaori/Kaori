@@ -11,32 +11,32 @@ module.exports = async (client, interaction, args) => {
 
     Schema.findOne({ Guild: interaction.guild.id, Category: category }, async (err, data) => {
         if (!data) return client.errNormal({ 
-            error: `No data found!`,
+            error: `Aucune donnée trouvée !`,
             type: 'editreply'
         }, interaction);
 
         const map = Object.keys(data.Roles)
             .map((value, index) => {
                 const role = interaction.guild.roles.cache.get(data.Roles[value][0]);
-                if(!role) return;
+                if (!role) return;
 
-                return `${data.Roles[value][1].raw} | ${role}`;
+                return `- ${data.Roles[value][1].raw} ${role}`;
             }).join("\n");
 
         const menu = new Discord.StringSelectMenuBuilder()
             .setCustomId('reaction_select')
-            .setPlaceholder('❌┇Nothing selected')
+            .setPlaceholder('Aucune sélection')
             .setMinValues(1)
 
         var labels = [];
 
         const mapped = Object.keys(data.Roles).map((value, index) => {
             const role = interaction.guild.roles.cache.get(data.Roles[value][0]);
-            if(!role) return;
+            if (!role) return;
 
             const generated = {
                 label: `${role.name}`,
-                description: `Add or remove the role ${role.name}`,
+                description: `Ajoutez ou supprimez le rôle ${role.name}`,
                 emoji: data.Roles[value][1].raw,
                 value: data.Roles[value][1].raw,
             }
@@ -50,13 +50,13 @@ module.exports = async (client, interaction, args) => {
             .addComponents(menu)
 
         client.embed({
-            title: `${upper}・Roles`,
-            desc: `_____ \n\nChoose your roles in the menu! \n\n${map}`,
+            title: `${upper} Rôles`,
+            desc: `Choisissez vos rôles dans le menu ! \n\n${map}`,
             components: [row]
-        }, channel).then(async(msg) => {
-            if(!msg){
+        }, channel).then(async (msg) => {
+            if (!msg) {
                 client.errNormal({
-                    error: "I couldn't send the message!\nMake sure I have the correct permissions!",
+                    error: "Je n'ai pas pu envoyer le message !\nAssurez-vous que j'ai les autorisations correctes !",
                     type: 'editreply'
                 }, interaction);
                 return;
@@ -66,10 +66,8 @@ module.exports = async (client, interaction, args) => {
         })
 
         client.succNormal({ 
-            text: "Reaction panel successfully created!",
+            text: "Panneau de réactions créé avec succès !",
             type: 'ephemeraledit'
         }, interaction);
     })
 }
-
- 
