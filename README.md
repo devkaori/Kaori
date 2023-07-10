@@ -22,4 +22,4 @@ Toute contribution au projet est la bienvenue ! Si vous souhaitez apporter des a
 
 Pour toute question ou suggestion, vous pouvez me contacter sur Discord :
 
-[![Discord](https://img.shields.io/badge/Discord-Masha%231000-blue?style=for-the-badge&logo=discord)](https://discord.com/users/9876)
+[![Discord](https://img.shields.io/badge/Discord-cosymasha-blue?style=for-the-badge&logo=discord)](https://discord.com/users/9876)
