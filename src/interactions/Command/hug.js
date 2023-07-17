@@ -19,7 +19,7 @@ module.exports = {
         const user = interaction.options.getUser('utilisateur');
         
         try {
-            const response = await axios.get('https://nekos.fun/api/hug');
+            const response = await axios.get('http://api.nekos.fun:8080/api/hug');
             const imageUrl = response.data.url;
             
             const embed = new EmbedBuilder()
