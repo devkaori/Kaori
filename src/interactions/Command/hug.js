@@ -1,37 +1,37 @@
 const { CommandInteraction, Client } = require('discord.js');
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const Discord = require('discord.js');
-const axios = require('axios');
+const fetch = require('node-fetch');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('hug')
-        .setDescription('Fait un câlin à un utilisateur')
-        .addUserOption(option => option.setName('utilisateur').setDescription('Sélectionnez un utilisateur').setRequired(true)),
+        .setDescription('Faites un câlin à quelqu\'un')
+        .addUserOption(option =>
+            option.setName('utilisateur')
+                .setDescription('L\'utilisateur à qui vous voulez faire un câlin')
+                .setRequired(true)),
 
     /**
      * @param {Client} client
      * @param {CommandInteraction} interaction
      * @param {String[]} args
      */
-
     run: async (client, interaction, args) => {
         const user = interaction.options.getUser('utilisateur');
-        
+        const author = interaction.user;
+
         try {
-            const response = await axios.get('http://api.nekos.fun:8080/api/hug');
-            const imageUrl = response.data.url;
-            
+            const response = await fetch('	http://api.nekos.fun:8080/api/hug');
+            const data = await response.json();
+
             const embed = new EmbedBuilder()
-                .setColor('#ff9f43')
-                .setDescription(`${interaction.user} fait un câlin à ${user} ❤️`)
-                .setImage(imageUrl)
-                .setFooter('Image fournie par nekos.fun');
-            
-            await interaction.followUp({ embeds: [embed] });
+                .setDescription(`${author} fait un câlin à ${user} ❤️`)
+                .setImage(data.image);
+
+            interaction.reply({ embeds: [embed] });
         } catch (error) {
-            console.error('Erreur lors de la récupération de l\'image de câlin :', error);
-            await interaction.followUp('Désolé, une erreur s\'est produite lors de la commande. Veuillez réessayer plus tard.');
+            console.error(error);
+            interaction.reply('Une erreur s\'est produite lors de la récupération de l\'image de câlin.');
         }
     },
 };
