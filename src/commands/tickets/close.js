@@ -115,12 +115,12 @@ module.exports = async (client, interaction, args) => {
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_transcriptTicket')
                             .setEmoji('📝')
-                            .setStyle(Discord.ButtonStyle.Primary),
+                            .setStyle(Discord.ButtonStyle.Secondary),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_openTicket')
                             .setEmoji('🔓')
-                            .setStyle(Discord.ButtonStyle.Primary),
+                            .setStyle(Discord.ButtonStyle.Success),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_deleteTicket')
@@ -130,7 +130,7 @@ module.exports = async (client, interaction, args) => {
 
                 client.embed({
                     title: "Fermé",
-                    desc: `📝 - Sauvegarder la transcription \n🔓 - Réouvrir le ticket \n⛔ - Supprimer le ticket`,
+                    desc: `- Sauvegarder la transcription \n- Réouvrir le ticket \n- Supprimer le ticket`,
                     components: [row],
                 }, interaction.channel);
             }
