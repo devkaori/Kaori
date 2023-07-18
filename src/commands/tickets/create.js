@@ -33,7 +33,7 @@ module.exports = async (client, interaction, args) => {
                     let role = interaction.guild.roles.cache.find(r => r.id === ticketRole.id);
 
                     try {
-                        var openTicket = "Merci d'avoir créé un ticket ! \nUn membre du support sera avec vous sous peu. \n\n🔒 - Fermer le ticket \n✋ - Réclamer le ticket \n📝 - Sauvegarder la transcription \n🔔 - Envoyer une notification";
+                        var openTicket = "Merci d'avoir créé un ticket ! \nUn membre du support sera avec vous sous peu. \n\n- Fermer le ticket \n- Réclamer le ticket \n- Sauvegarder la transcription \n- Envoyer une notification";
                         let ticketMessageData = await ticketMessageConfig.findOne({ Guild: interaction.guild.id });
                         if (ticketMessageData) {
                             openTicket = ticketMessageData.openTicket;
@@ -44,17 +44,17 @@ module.exports = async (client, interaction, args) => {
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_closeticket')
                                     .setEmoji('🔒')
-                                    .setStyle(Discord.ButtonStyle.Primary),
+                                    .setStyle(Discord.ButtonStyle.Danger),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_claimTicket')
                                     .setEmoji('✋')
-                                    .setStyle(Discord.ButtonStyle.Primary),
+                                    .setStyle(Discord.ButtonStyle.Success),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_transcriptTicket')
                                     .setEmoji('📝')
-                                    .setStyle(Discord.ButtonStyle.Primary),
+                                    .setStyle(Discord.ButtonStyle.Secondary),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_noticeTicket')
@@ -64,7 +64,7 @@ module.exports = async (client, interaction, args) => {
 
                         client.embed({
                             title: `En cours`,
-                            desc: `Votre ticket est en cours de création...`,
+                            desc: `Votre ticket a été ouvert`,
                             type: 'ephemeral'
                         }, interaction).then((msg) => {
 
@@ -98,7 +98,7 @@ module.exports = async (client, interaction, args) => {
                                 var ticketid = String(TicketData.TicketCount).padStart(4, 0);;
 
                                 interaction.guild.channels.create({
-                                    name: `ticket-${ticketid}`,
+                                    name: `assistance-${ticketid}`,
                                     permissionOverwrites: [
                                         {
                                             deny: [Discord.PermissionsBitField.Flags.ViewChannel],
