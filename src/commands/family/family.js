@@ -18,11 +18,11 @@ module.exports = async (client, interaction, args) => {
             },
             {
                 name: `<:icons_generalinfo:1130936294244102254> Parent`,
-                value: `### ${data && data.Parent.length > 0 ? `${data.Parent.join(", ")}` : `Cet utilisateur n'a pas de parents`}`
+                value: `${data && data.Parent.length > 0 ? `**${data.Parent.join(", ")}**` : `Cet utilisateur n'a pas de parents`}`
             },
             {
                 name: `<:icons_Person:1130936290175615006> Enfants`,
-                value: `### ${data && data.Children.length > 0 ? `${data.Children.join(", ")}` : `Cet utilisateur n'a pas d'enfants`}`
+                value: `${data && data.Children.length > 0 ? `**${data.Children.join(", ")}**` : `Cet utilisateur n'a pas d'enfants`}`
             }
         ],
         type: 'editreply'
