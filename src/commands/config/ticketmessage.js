@@ -18,7 +18,7 @@ module.exports = async (client, interaction, args) => {
             const data = await Schema.findOne({ Guild: interaction.guild.id })
 
             if (data) {
-                data.openTicket = "Merci de créer un ticket ! \nUn membre du support sera avec vous bientôt \n\n🔒 - Fermer le ticket \n✋ - Réclamer le ticket \n📝 - Enregistrer la transcription \n🔔 - Envoyer une notification";
+                data.openTicket = "Merci d'avoir créer un ticket ! \nUn membre du support sera avec vous bientôt \n\n- Fermer le ticket \n- Réclamer le ticket \n- Enregistrer la transcription \n- Envoyer une notification";
                 data.save();
 
                 client.succNormal({
