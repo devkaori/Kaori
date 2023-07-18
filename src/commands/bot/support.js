@@ -4,15 +4,16 @@ module.exports = async (client, interaction, args) => {
     let row = new Discord.ActionRowBuilder()
         .addComponents(
             new Discord.ButtonBuilder()
-                .setLabel("Serveur de support")
-                .setURL(client.config.discord.serverInvite)
+                .setLabel("Kaori Café")
+                .setURL('https://discord.gg/7S28GvPsZQ')
                 .setStyle(Discord.ButtonStyle.Link),
         );
 
     client.embed({
-        title: `❓・Support`,
-        desc: `Améliorez votre serveur avec Bot !`,
-        url: client.config.discord.serverInvite,
+        title: `Serveur Communautaire`,
+        desc: `Rejoignez la communauté officielle de Kaori ! Vous pourrez y demander de l'aide et bien plus encore.`,
+        url: `https://discord.gg/7S28GvPsZQ`,
+        image: `https://i.imgur.com/sLfAMyf.jpg`,
         components: [row],
         type: 'editreply'
     }, interaction)
