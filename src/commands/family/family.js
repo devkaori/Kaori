@@ -13,16 +13,16 @@ module.exports = async (client, interaction, args) => {
         thumbnail: target.avatarURL({ size: 1024 }),
         fields: [
             {
-                name: `Partenaire`,
-                value: `${data && data.Partner ? `<@!${data.Partner}>` : `Cet utilisateur n'est pas marié(e)`}`
+                name: `<:icons_partner:1130936301290528898> Partenaire`,
+                value: `<:Icon_Arrow_Right:1130937114041790514> ${data && data.Partner ? `<@!${data.Partner}>` : `<:Icon_Arrow_Right:1130937114041790514> Cet utilisateur n'est pas marié(e)`}`
             },
             {
-                name: `Parent`,
-                value: `${data && data.Parent.length > 0 ? `${data.Parent.join(", ")}` : `Cet utilisateur n'a pas de parents`}`
+                name: `<:icons_generalinfo:1130936294244102254> Parent`,
+                value: `<:Icon_Arrow_Right:1130937114041790514> ${data && data.Parent.length > 0 ? `${data.Parent.join(", ")}` : `<:Icon_Arrow_Right:1130937114041790514> Cet utilisateur n'a pas de parents`}`
             },
             {
-                name: `Enfants`,
-                value: `${data && data.Children.length > 0 ? `${data.Children.join(", ")}` : `Cet utilisateur n'a pas d'enfants`}`
+                name: `<:icons_Person:1130936290175615006> Enfants`,
+                value: `<:Icon_Arrow_Right:1130937114041790514> ${data && data.Children.length > 0 ? `${data.Children.join(", ")}` : `<:Icon_Arrow_Right:1130937114041790514> Cet utilisateur n'a pas d'enfants`}`
             }
         ],
         type: 'editreply'
