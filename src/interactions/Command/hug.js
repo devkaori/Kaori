@@ -21,12 +21,13 @@ module.exports = {
         const author = interaction.user;
 
         try {
-            const response = await fetch('	http://api.nekos.fun:8080/api/hug');
+            const response = await fetch('http://api.nekos.fun:8080/api/hug');
             const data = await response.json();
 
             const embed = new EmbedBuilder()
-                .setDescription(`${author} fait un câlin à ${user} ❤️`)
-                .setImage(data.image);
+                .setDescription(`${author} fait un câlin à ${user} <:white_heart:1130912421213646908>`)
+                .setImage(data.image)
+                .setColor('#2b2d31');
 
             interaction.reply({ embeds: [embed] });
         } catch (error) {
