@@ -1,3 +1,4 @@
+
 FROM node:latest
 
 WORKDIR /usr/src/app
@@ -8,6 +9,8 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 80
+# Expose port 3000 instead of port 80
+EXPOSE 3000
 
-CMD ["npm", "start"]
+# Change the CMD command to fix the error
+CMD ["node", "index.js"]
