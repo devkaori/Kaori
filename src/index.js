@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   res.send('This bot is running CorwinDev\'s  <a href="https://github.com/CorwinDev/Discord-Bot">Discord-Bot</a>')
 })
 
-app.listen(3000)
+app.listen(8080)
 const axios = require('axios');
 // Vérifie si le bot est à jour
 const { version } = require('.././package.json');
