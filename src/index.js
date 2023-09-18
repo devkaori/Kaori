@@ -1,14 +1,17 @@
 const Discord = require('discord.js');
 const chalk = require('chalk');
 require('dotenv').config('./.env');
-const express = require('express')
-const app = express()
+const http = require('http'); // Importez le module HTTP
+const express = require('express');
+const app = express();
 
 app.get('/', (req, res) => {
-  res.send('This bot is running CorwinDev\'s  <a href="https://github.com/CorwinDev/Discord-Bot">Discord-Bot</a>')
-})
+  res.send('This bot is running CorwinDev\'s  <a href="https://github.com/CorwinDev/Discord-Bot">Discord-Bot</a>');
+});
 
-app.listen(8080, () => {
+const server = http.createServer(app); // Créez un serveur HTTP à partir de votre application Express
+
+server.listen(8080, () => {
   console.log('Server is running on port 8080');
 });
 
@@ -23,7 +26,6 @@ axios.get('https://api.github.com/repos/CorwinDev/Discord-Bot/releases/latest').
   console.log(chalk.red.bgYellow(`Échec de la vérification de la mise à jour du bot !`));
 });
 
-
 const webhook = require("./config/webhooks.json");
 const config = require("./config/bot.js");
 const webHooksArray = ['startLogs', 'shardLogs', 'errorLogs', 'dmLogs', 'voiceLogs', 'serverLogs', 'serverLogs2', 'commandLogs', 'consoleLogs', 'warnLogs', 'voiceErrorLogs', 'creditLogs', 'evalLogs', 'interactionLogs'];
@@ -34,7 +36,6 @@ if (process.env.WEBHOOK_ID && process.env.WEBHOOK_TOKEN) {
     webhook[webhookName].token = process.env.WEBHOOK_TOKEN;
   }
 }
-
 
 const startLogs = new Discord.WebhookClient({
   id: webhook.startLogs.id,
@@ -147,9 +148,7 @@ manager.on('shardCreate', shard => {
   });
 });
 
-
 manager.spawn();
-
 
 // Webhooks
 const consoleLogs = new Discord.WebhookClient({
