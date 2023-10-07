@@ -17,8 +17,8 @@ module.exports = async (client, interaction, args) => {
         return;
     }
 
-    var member = interaction.options.getUser('user');
-    var reason = interaction.options.getString('reason');
+    var member = interaction.options.getUser('utilisateur');
+    var reason = interaction.options.getString('raison');
     var caseNumber;
 
     await Case.findOne({ Guild: interaction.guild.id }).then(async data => {
@@ -40,7 +40,7 @@ module.exports = async (client, interaction, args) => {
         if (data) {
             data.Warnings.push({
                 Moderator: interaction.user.id,
-                Reason: reason,
+                Reason: raison,
                 Date: Date.now(),
                 Case: caseNumber
             });
@@ -52,7 +52,7 @@ module.exports = async (client, interaction, args) => {
                 User: member.id,
                 Warnings: [{
                     Moderator: interaction.user.id,
-                    Reason: reason,
+                    Reason: raison,
                     Date: Date.now(),
                     Case: caseNumber
                 }]
@@ -71,7 +71,7 @@ module.exports = async (client, interaction, args) => {
             },
             {
                 name: "Raison",
-                value: reason,
+                value: raison,
                 inline: true
             }
         ]
@@ -93,7 +93,7 @@ module.exports = async (client, interaction, args) => {
             },
             {
                 name: "Raison",
-                value: reason,
+                value: raison,
                 inline: false
             }
         ],
