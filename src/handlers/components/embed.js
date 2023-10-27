@@ -12,7 +12,6 @@ module.exports = (client) => {
     client.templateEmbed = function () {
         return new Discord.EmbedBuilder()
             .setColor(client.config.colors.normal)
-            .setTimestamp();
     }
 
     //----------------------------------------------------------------//
