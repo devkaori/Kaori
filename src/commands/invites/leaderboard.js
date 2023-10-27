@@ -10,7 +10,7 @@ module.exports = async (client, interaction, args) => {
         type: 'editreply'
     }, interaction);
 
-    const lb = rawLeaderboard.map(e => `<:s_8greycd:1163191927877939260> <@!${e.User}> - Invitations : \`${e.Invites}\``);
+    const lb = rawLeaderboard.map(e => `<:dash:1146416325892247684> \`${e.Invites}\` invitations pour <@!${e.User}>`);
 
-    await client.createLeaderboard(`Invitations - ${interaction.guild.name}`, lb, interaction);
+    await client.createLeaderboard(`Tableau de score`, lb, interaction);
 }
