@@ -37,11 +37,14 @@ module.exports = async (client) => {
                     statuttext = process.env.DISCORD_STATUS.split(', ');
                 } else {
                     statuttext = [
-                        `/help`,
-                        `${totalGuilds} serveurs`,
-                        `discord.gg/kaori`,
-                        `kaoricafe.fr`,
-                        `ko-fi.com/kaorifr`
+                        `Frost & Hina`,
+                        `Roblox`,
+                        `Chill entre potes`,
+                        `Kaori Café`,
+                        `Coline faire des gateaux`,
+                        `Les usagers Discord`,
+                        `1 jour 1 question`,
+                        `Kung Fu Panda`
                     ];
                 }
                 const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
