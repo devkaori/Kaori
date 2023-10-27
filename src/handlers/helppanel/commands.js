@@ -176,12 +176,12 @@ module.exports = async (client) => {
                     .addComponents(
                         new Discord.ButtonBuilder()
                             .setCustomId('helpPrev')
-                            .setEmoji('1114167680539316325')
+                            .setEmoji('1167580273442041949')
                             .setStyle(Discord.ButtonStyle.Secondary),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('helpNext')
-                            .setEmoji('1114167654777888798')
+                            .setEmoji('1167580095049896008')
                             .setStyle(Discord.ButtonStyle.Secondary),
 
                         new Discord.ButtonBuilder()
@@ -190,7 +190,7 @@ module.exports = async (client) => {
                             .setStyle(Discord.ButtonStyle.Link),
 
                         new Discord.ButtonBuilder()
-                            .setLabel("Serveur de support")
+                            .setLabel("Communauté")
                             .setURL(client.config.discord.serverInvite)
                             .setStyle(Discord.ButtonStyle.Link),
                     );
