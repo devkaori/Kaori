@@ -1,12 +1,6 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 
-const { Manager } = require("erela.js");
-const Spotify = require("erela.js-spotify");
-const Facebook = require("erela.js-facebook");
-const Deezer = require("erela.js-deezer");
-const AppleMusic = require("erela.js-apple");
-
 // Discord client
 const client = new Discord.Client({
     allowedMentions: {
