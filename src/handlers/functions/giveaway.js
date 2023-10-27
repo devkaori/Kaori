@@ -35,7 +35,7 @@ module.exports = (client) => {
             botsCanWin: false,
             embedColor: client.config.colors.normal,
             embedColorEnd: client.config.colors.error,
-            reaction: '<:icons_tada:1114165284127916072>'
+            reaction: '<a:mugi_peek:1163075325819899914>'
         }
     }, true);
 
