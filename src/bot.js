@@ -53,58 +53,6 @@ const client = new Discord.Client({
 const clientID = process.env.SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 if (clientID && clientSecret) {
-    // Lavalink client
-    client.player = new Manager({
-        plugins: [
-            new AppleMusic(),
-            new Deezer(),
-            new Facebook(),
-            new Spotify({
-                clientID,
-                clientSecret,
-            })
-        ],
-        nodes: [
-            {
-                host: process.env.LAVALINK_HOST || "lava.link",
-                port: parseInt(process.env.LAVALINK_PORT) || 80,
-                password: process.env.LAVALINK_PASSWORD || "CorwinDev"
-            },
-        ],
-        send(id, payload) {
-            const guild = client.guilds.cache.get(id);
-            if (guild) guild.shard.send(payload);
-        },
-    })
-
-} else {
-    // Lavalink client
-    client.player = new Manager({
-        plugins: [
-            new AppleMusic(),
-            new Deezer(),
-            new Facebook(),
-        ],
-        nodes: [
-            {
-                host: process.env.LAVALINK_HOST || "lava.link",
-                port: parseInt(process.env.LAVALINK_PORT) || 80,
-                password: process.env.LAVALINK_PASSWORD || "CorwinDev"
-            },
-        ],
-        send(id, payload) {
-            const guild = client.guilds.cache.get(id);
-            if (guild) guild.shard.send(payload);
-        }
-    })
-}
-const events = fs.readdirSync(`./src/events/music`).filter(files => files.endsWith('.js'));
-
-for (const file of events) {
-    const event = require(`./events/music/${file}`);
-    client.player.on(file.split(".")[0], event.bind(null, client)).setMaxListeners(0);
-};
-
 // Connect to database
 require("./database/connect")();
 
