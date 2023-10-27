@@ -69,6 +69,7 @@ module.exports = (client) => {
         embed: embed = client.templateEmbed(),
         perms: perms,
         type: type,
+        image: 'https://i.imgur.com/Bzz8hgA.jpg',
         content: content,
         components: components
     }, interaction) {
@@ -92,6 +93,7 @@ module.exports = (client) => {
         embed: embed = client.templateEmbed(),
         perms: perms,
         type: type,
+        image: 'https://i.imgur.com/Bzz8hgA.jpg',
         content: content,
         components: components
     }, interaction) {
@@ -116,6 +118,7 @@ module.exports = (client) => {
         time: time,
         type: type,
         content: content,
+        image: 'https://i.imgur.com/Bzz8hgA.jpg',
         components: components
     }, interaction) {
         embed.setTitle(`Erreur !`)
@@ -143,6 +146,7 @@ module.exports = (client) => {
         text: text,
         fields: fields,
         type: type,
+        image: 'https://i.imgur.com/Bzz8hgA.jpg',
         content: content,
         components: components
     }, interaction) {
