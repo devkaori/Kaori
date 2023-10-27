@@ -54,7 +54,7 @@ module.exports = {
                 },
                 {
                     name: `<<a:8a_exclamation:1163192046392189059> Vous avez trouvé un bug ?`,
-                    value: `Signalez-le [nous](https://discord.gg/7S28GvPsZQ)``
+                    value: `Signalez-le [nous](https://discord.gg/7S28GvPsZQ)`
                 },
             ],
             components: [row],
