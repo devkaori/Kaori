@@ -53,7 +53,7 @@ module.exports = {
                     value: `Essayez d'envoyer à nouveau la commande. Si vous n'obtenez aucune réaction, assurez-vous de signaler le bug !`
                 },
                 {
-                    name: `<<a:8a_exclamation:1163192046392189059> Vous avez trouvé un bug ?`,
+                    name: `<a:8a_exclamation:1163192046392189059> Vous avez trouvé un bug ?`,
                     value: `Signalez-le [nous](https://discord.gg/7S28GvPsZQ)`
                 },
             ],
