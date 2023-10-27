@@ -376,7 +376,7 @@ module.exports = async (client, message) => {
           fields: [
             {
               name: "Invite me",
-              value: `Invite Bot in your own server! [Click here](${client.config.discord.botInvite})`,
+              value: `Invite le bot sur ton propre serveur ! [Clique ici](${client.config.discord.botInvite})`,
             },
             {
               name: "Je vois aucune commandes slash",
@@ -389,7 +389,7 @@ module.exports = async (client, message) => {
             },
             {
               name: "Vous avez trouvé un bug ?",
-              value: `Signalez tous les bugs via : \`/report bug\` !`,
+              value: `Signale-le [nous](https://discord.gg/7S28GvPsZQ)`,
             },
           ],
           components: [row],
