@@ -12,7 +12,7 @@ module.exports = async (client, interaction, args) => {
         prize: `${prize}`,
         lastChance: {
             enabled: true,
-            content: `**DERNIÈRE CHANCE POUR PARTICIPER !**`,
+            content: `<a:yui_worry:1163075458674479275> **DERNIÈRE CHANCE POUR PARTICIPER !**`,
             threshold: 5000,
             embedColor: '#FF0000'
         },
@@ -27,15 +27,15 @@ module.exports = async (client, interaction, args) => {
         messages: {
             giveaway: `**GIVEAWAY**`,
             giveawayEnded: `**GIVEAWAY TERMINÉ**`,
-            drawing: `Se termine le : **{timestamp}** !`,
-            inviteToParticipate: "- <:icons_gift:1114165331213172796> Réagissez avec la réaction pour participer au giveaway ! \n",
-            winMessage: "Félicitations {winners} ! Vous venez de remporter **{this.prize}** !",
+            drawing: ` - Se termine le : **{timestamp}** !`,
+            inviteToParticipate: "- <a:mugi_flex:1163075337832366080> Réagissez avec la réaction pour participer au giveaway ! \n",
+            winMessage: "<a:mugi_flex:1163075337832366080> Félicitations {winners} ! Vous venez de remporter **{this.prize}** !",
             embedFooter: "Giveaway !",
             embedColor: client.config.colors.normal,
             noWinner: "- <:icons_tada:1114165284127916072> Giveaway annulé, pas assez de participants. \n",
-            hostedBy: `- <:icons_tada:1114165284127916072> Organisé par : {this.hostedBy}`,
-            winners: `<:icons_gift:1114165331213172796> Gagnant(s)`,
-            endedAt: "<:icons_announce:1114165367607152660> Se termine à :",
+            hostedBy: `- <:mugi_approved:1163106289249964103> Organisé par : {this.hostedBy}`,
+            winners: `Gagnant(s)`,
+            endedAt: "<:mugi:1163106294073401354> Se termine à :",
             units: {
                 seconds: "secondes",
                 minutes: "minutes",
@@ -47,7 +47,7 @@ module.exports = async (client, interaction, args) => {
 
     }).then((gData) => {
         client.succNormal({ 
-            text: `- <:icons_awardcup:1114165417238347866> Giveaway lancé dans ${gchannel}`,
+            text: `- <a:yui_peek:1163075456866734090> Giveaway lancé dans ${gchannel}`,
             type: 'ephemeraledit'
         }, interaction);
     });
