@@ -12,13 +12,13 @@ module.exports = async (client, interaction, args) => {
         prize: `${prize}`,
         lastChance: {
             enabled: true,
-            content: `**DERNIÈRE CHANCE DE PARTICIPER !** ${client.emotes.normal.error}`,
+            content: `<a:yui_worry:1163075458674479275> **DERNIÈRE CHANCE DE PARTICIPER !** ${client.emotes.normal.error}`,
             threshold: 5000,
             embedColor: '#FF0000'
         },
         pauseOptions: {
             isPaused: true,
-            content: '**CE GIVEAWAY EST EN PAUSE !**',
+            content: '<:mugi:1163106294073401354> **CE GIVEAWAY EST EN PAUSE !**',
             unPauseAfter: null,
             embedColor: '#FFFF00'
         },
@@ -30,7 +30,7 @@ module.exports = async (client, interaction, args) => {
             giveaway: `**GIVEAWAY**`,
             giveawayEnded: `**GIVEAWAY TERMINÉ**`,
             drawing: `Se termine le : **{timestamp}** !`,
-            dropMessage: `Soyez le premier à réagir avec 🥳`,
+            dropMessage: `Soyez le premier à réagir avec la réaction ci-dessous`,
             winMessage: "Félicitations {winners} ! Vous venez de gagner **{this.prize}** !",
             embedFooter: "Giveaway !",
             embedColor: client.config.colors.normal,
