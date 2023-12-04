@@ -23,7 +23,7 @@ module.exports = {
             const embed = {
                 color: client.config.colors.normal,
                 title: `Câlin ❤️`,
-                description: `<a:yuiazu_cuddle:1163075413598285954> ${interaction.user} fait un câlin à ${member}`,
+                desc: `<a:yuiazu_cuddle:1163075413598285954> ${interaction.user} fait un câlin à ${member}`,
                 image: {
                     url: data.image,
                 },
