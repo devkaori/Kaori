@@ -37,14 +37,8 @@ module.exports = async (client) => {
                     statuttext = process.env.DISCORD_STATUS.split(', ');
                 } else {
                     statuttext = [
-                        `Frost & Hina`,
-                        `Roblox`,
-                        `Chill entre potes`,
-                        `Kaori Café`,
-                        `Coline faire des gateaux`,
-                        `Les usagers Discord`,
-                        `1 jour 1 question`,
-                        `Kung Fu Panda`
+                        `Maintenance...`,
+                        `Veuillez patientez...`
                     ];
                 }
                 const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
