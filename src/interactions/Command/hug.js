@@ -20,13 +20,13 @@ module.exports = {
         const member = interaction.options.getMember('membre');
 
         if (member) {
-            client.embed({
+            client.embed{
                 color: client.config.colors.normal,
                 title: `Câlin ❤️`,
                 desc: `<a:yuiazu_cuddle:1163075413598285954> ${interaction.user} fait un câlin à ${member}`,
                 image: {
                     url: data.image,
-                }),
+                },
             };
 
             return interaction.editReply({ embeds: [embed] });
