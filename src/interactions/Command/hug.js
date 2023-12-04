@@ -21,7 +21,7 @@ module.exports = {
 
         if (member) {
             const embed = {
-                color: "#faffca",
+                color: `#faffca`,
                 title: `Câlin ❤️`,
                 description: `<a:yuiazu_cuddle:1163075413598285954> ${interaction.user} fait un câlin à ${member}`,
                 image: {
