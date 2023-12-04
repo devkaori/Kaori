@@ -21,10 +21,11 @@ module.exports = {
 
         if (member) {
             const embed = {
+                color: client.config.colors.normal,
                 title: `Câlin ❤️`,
-                desc: `<a:yuiazu_cuddle:1163075413598285954> ${interaction.user} fait un câlin à ${member}`,
+                description: `<a:yuiazu_cuddle:1163075413598285954> ${interaction.user} fait un câlin à ${member}`,
                 image: {
-                    url: data.url,
+                    url: data.image,
                 },
             };
 
