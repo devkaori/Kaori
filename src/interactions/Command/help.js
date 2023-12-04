@@ -46,15 +46,16 @@ module.exports = {
 
         return client.embed({
             title: `Panneau d'aide`,
-            desc: `Bienvenue dans le panneau d'aide du bot ! Nous avons préparé une petite présentation pour vous aider ! Faites un choix via le menu ci-dessous`,
+            image: 'https://i.imgur.com/1t1MXa3.jpg',
+            desc: `Bienvenue dans le panneau d'aide du bot ! On a préparé une petite présentation pour te guider ! Choisis ce qui te branche dans le menu ci-dessous, et on part en aventure !`,
             fields: [
                 {
-                    name: `<:white_heart:1130912421213646908> Le menu ne fonctionne pas ?`,
-                    value: `Essayez d'envoyer à nouveau la commande. Si vous n'obtenez aucune réaction, assurez-vous de signaler le bug !`
+                    name: `Hé, le menu fait des siennes ? <:mugi_ooo:1163106314726158426>`,
+                    value: `<:mugi_happy:1163106301925142641> Pas de panique, on va régler ça ! Donne-nous un petit signe et on se charge de remettre tout sur pieds !`
                 },
                 {
-                    name: `<a:8a_exclamation:1163192046392189059> Vous avez trouvé un bug ?`,
-                    value: `Signalez-le [nous](https://discord.gg/7S28GvPsZQ)`
+                    name: `Hé, vous avez dégoté un petit bug par ici ? <:mugi_ooo:1163106314726158426>`,
+                    value: `<a:mugi_pillow:1163075339405250571> Pas de souci, on va le chasser comme des pros ! [Signalez-le-nous](https://discord.gg/7S28GvPsZQ), et on s'occupe de le faire disparaître plus vite qu'un ninja dans l'ombre !`
                 },
             ],
             components: [row],
