@@ -21,7 +21,7 @@ module.exports = {
 
         if (member) {
             const embed = {
-                color: client.config.colors.normal,
+                color: parseInt(client.config.colors.normal.replace('#', ''), 16), // Convertit la couleur hexadécimale en nombre entier
                 title: `Câlin ❤️`,
                 desc: `<a:yuiazu_cuddle:1163075413598285954> ${interaction.user} fait un câlin à ${member}`,
                 image: {
