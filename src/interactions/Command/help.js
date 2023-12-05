@@ -36,7 +36,7 @@ module.exports = {
                             value: "invite-Bothelp",
                         },
                         {
-                            label: `Serveur de support`,
+                            label: `Communauté`,
                             description: `Rejoindre le serveur de support`,
                             emoji: "1163106279187820544",
                             value: "support-Bothelp",
@@ -46,7 +46,7 @@ module.exports = {
 
         return client.embed({
             title: `Panneau d'aide`,
-            image: 'https://i.imgur.com/qroUk6M.jpg',
+            image: 'https://i.imgur.com/AWDFpqV.jpg',
             desc: `Bienvenue dans le panneau d'aide du bot ! On a préparé une petite présentation pour te guider ! Choisis ce qui te branche dans le menu ci-dessous, et on part en aventure !`,
             fields: [
                 {
