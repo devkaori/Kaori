@@ -65,7 +65,7 @@ module.exports = async (client, interaction, args) => {
 
             client.embed({
                 title: `Profil de ${client.user.username}`,
-                desc: '_____',
+                image: 'https://i.imgur.com/HwTBSNe.jpg',
                 thumbnail: user.avatarURL({ dynamic: true }),
                 fields: [{
                     name: "Utilisateur",
