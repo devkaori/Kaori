@@ -43,7 +43,7 @@ module.exports = async (client) => {
                             .setStyle(Discord.ButtonStyle.Link),
 
                         new Discord.ButtonBuilder()
-                            .setLabel("Serveur de support")
+                            .setLabel("Communauté")
                             .setURL(client.config.discord.serverInvite)
                             .setStyle(Discord.ButtonStyle.Link),
                     );
