@@ -229,7 +229,7 @@ module.exports = async (client) => {
 
                 client.embed({
                     title: `Panneau d'aide`,
-                    image: 'https://i.imgur.com/qroUk6M.jpg',
+                    image: 'https://i.imgur.com/AWDFpqV.jpg',
                     fields: fields.slice(0, 24),
                     components: [row2, row],
                     type: 'edit'
