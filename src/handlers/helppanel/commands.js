@@ -108,8 +108,13 @@ module.exports = async (client) => {
             inline: true
         },
         {
-            name: `Radio`,
-            value: `\`/radio help\``,
+            name: `Hug`,
+            value: `\`/hug\``,
+            inline: true
+        },
+        {
+            name: `Kiss`,
+            value: `\`/kiss\``,
             inline: true
         },
         {
@@ -204,19 +209,19 @@ module.exports = async (client) => {
                                 {
                                     label: `Commandes`,
                                     description: `Afficher les commandes du bot !`,
-                                    emoji: "1114167872646819961",
+                                    emoji: "1163106294073401354",
                                     value: "commands-Bothelp",
                                 },
                                 {
                                     label: `Invitation`,
                                     description: `Inviter le bot sur votre serveur`,
-                                    emoji: "1114167747627208815",
+                                    emoji: "1163106292227915796",
                                     value: "invite-Bothelp",
                                 },
                                 {
-                                    label: `Serveur de support`,
+                                    label: `Communauté`,
                                     description: `Rejoindre le serveur de support`,
-                                    emoji: "1114167700999118878",
+                                    emoji: "1163106279187820544",
                                     value: "support-Bothelp",
                                 },
                             ]),
@@ -224,6 +229,7 @@ module.exports = async (client) => {
 
                 client.embed({
                     title: `Panneau d'aide`,
+                    image: 'https://i.imgur.com/UTLbVka.png',
                     fields: fields.slice(0, 24),
                     components: [row2, row],
                     type: 'edit'
