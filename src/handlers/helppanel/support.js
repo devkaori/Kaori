@@ -38,7 +38,7 @@ module.exports = async (client) => {
                 let row = new Discord.ActionRowBuilder()
                     .addComponents(
                         new Discord.ButtonBuilder()
-                            .setLabel("Serveur de support")
+                            .setLabel("Communauté")
                             .setURL(client.config.discord.serverInvite)
                             .setStyle(Discord.ButtonStyle.Link),
                     );
