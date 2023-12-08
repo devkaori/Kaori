@@ -9,20 +9,20 @@ module.exports = async (client, emoji) => {
         desc: `Un emoji a été créé`,
         fields: [
             {
-                name: `> Emoji`,
-                value: `- ${emoji}`
+                name: `Emoji`,
+                value: `${emoji}`
             },
             {
-                name: `> Nom`,
-                value: `- ${emoji.name}`
+                name: `Nom`,
+                value: `${emoji.name}`
             },
             {
-                name: `> ID`,
-                value: `- ${emoji.id}`
+                name: `ID`,
+                value: `${emoji.id}`
             },
             {
-                name: `> URL`,
-                value: `- ${emoji.url}`
+                name: `URL`,
+                value: `${emoji.url}`
             }
         ]
     }, logsChannel).catch(() => { })
