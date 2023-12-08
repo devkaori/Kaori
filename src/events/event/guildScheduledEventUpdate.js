@@ -9,32 +9,32 @@ module.exports = async (client, oldEvent, newEvent) => {
         desc: `Un événement a été mis à jour`,
         fields: [
             {
-                name: `> Ancien nom`,
-                value: `- ${oldEvent.name}`
+                name: `Ancien nom`,
+                value: `${oldEvent.name}`
             },
             {
-                name: `> Nouveau nom`,
-                value: `- ${newEvent.name}`
+                name: `Nouveau nom`,
+                value: `${newEvent.name}`
             },
             {
-                name: `> Ancienne description`,
-                value: `- ${oldEvent.description || 'Aucune'}`
+                name: `Ancienne description`,
+                value: `${oldEvent.description || 'Aucune'}`
             },
             {
-                name: `> Nouvelle description`,
-                value: `- ${newEvent.description || 'Aucune'}`
+                name: `Nouvelle description`,
+                value: `${newEvent.description || 'Aucune'}`
             },
             {
-                name: `> Ancienne heure`,
-                value: `- <t:${(oldEvent.scheduledStartTimestamp / 1000).toFixed(0)}>`
+                name: `Ancienne heure`,
+                value: `<t:${(oldEvent.scheduledStartTimestamp / 1000).toFixed(0)}>`
             },
             {
-                name: `> Nouvelle heure`,
-                value: `- <t:${(newEvent.scheduledStartTimestamp / 1000).toFixed(0)}>`
+                name: `Nouvelle heure`,
+                value: `<t:${(newEvent.scheduledStartTimestamp / 1000).toFixed(0)}>`
             },
             {
-                name: `> Créateur`,
-                value: `- <@!${newEvent.creatorId}> (${newEvent.creatorId})`
+                name: `Créateur`,
+                value: `<@!${newEvent.creatorId}> (${newEvent.creatorId})`
             },
             {
                 name: `> Horodatage`,
