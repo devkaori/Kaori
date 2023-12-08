@@ -9,24 +9,24 @@ module.exports = async (client, role, oldPerms, newPerms) => {
         desc: `Un rôle a été mis à jour`,
         fields: [
             {
-                name: `> Rôle`,
-                value: `- ${role}`
+                name: `Rôle`,
+                value: `${role}`
             },
             {
-                name: `> Avant`,
-                value: `- ${new Discord.Permissions(oldPerms).toArray().join(', ') || 'Aucune'}`
+                name: `Avant`,
+                value: `${new Discord.Permissions(oldPerms).toArray().join(', ') || 'Aucune'}`
             },
             {
-                name: `> Après`,
-                value: `- ${new Discord.Permissions(newPerms).toArray().join(', ') || 'Aucune'}`
+                name: `Après`,
+                value: `${new Discord.Permissions(newPerms).toArray().join(', ') || 'Aucune'}`
             },
             {
-                name: `> ID`,
+                name: `ID`,
                 value: `${role.id}`
             },
             {
-                name: `> Timestamp`,
-                value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
+                name: `Timestamp`,
+                value: `<t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => {});
