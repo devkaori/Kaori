@@ -21,32 +21,32 @@ module.exports = async (client, event) => {
         desc: `Un événement a été créé`,
         fields: [
             {
-                name: `> Nom`,
-                value: `- ${event.name}`
+                name: `Nom`,
+                value: `${event.name}`
             },
             {
-                name: `> Description`,
-                value: `- ${event.description || 'Aucune'}`
+                name: `Description`,
+                value: `${event.description || 'Aucune'}`
             },
             {
-                name: `> Début`,
-                value: `- <t:${(event.scheduledStartTimestamp / 1000).toFixed(0)}>`
+                name: `Début`,
+                value: `<t:${(event.scheduledStartTimestamp / 1000).toFixed(0)}>`
             },
             {
-                name: `> Confidentialité`,
-                value: `- ${types[event.privacyLevel]}`
+                name: `Confidentialité`,
+                value: `${types[event.privacyLevel]}`
             },
             {
-                name: `> Créateur`,
-                value: `- <@!${event.creatorId}> (${event.creatorId})`
+                name: `Créateur`,
+                value: `<@!${event.creatorId}> (${event.creatorId})`
             },
             {
-                name: `> Type de lieu`,
-                value: `- ${locations[event.entityType]}`
+                name: `Type de lieu`,
+                value: `${locations[event.entityType]}`
             },
             {
-                name: `> Horodatage`,
-                value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
+                name: `Horodatage`,
+                value: `<t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => { })
