@@ -9,20 +9,20 @@ module.exports = async (client, guild, afkChannel) => {
         desc: `Un salon AFK a été ajouté au serveur`,
         fields: [
             {
-                name: `> Salon`,
-                value: `- ${afkChannel}`
+                name: `Salon`,
+                value: `${afkChannel}`
             },
             {
-                name: `> Nom`,
-                value: `- ${afkChannel.name}`
+                name: `Nom`,
+                value: `${afkChannel.name}`
             },
             {
-                name: `> ID`,
-                value: `- ${afkChannel.id}`
+                name: `ID`,
+                value: `${afkChannel.id}`
             },
             {
-                name: `> Horodatage`,
-                value: `- <t:${Math.floor(afkChannel.createdTimestamp / 1000)}:R>`
+                name: `Horodatage`,
+                value: `<t:${Math.floor(afkChannel.createdTimestamp / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => { })
