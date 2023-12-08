@@ -9,16 +9,16 @@ module.exports = async (client, oldSticker, newSticker) => {
         desc: `Un sticker a été mis à jour`,
         fields: [
             {
-                name: `> Avant`,
-                value: `- ${oldSticker.name}`
+                name: `Avant`,
+                value: `${oldSticker.name}`
             },
             {
-                name: `> Après`,
-                value: `- ${newSticker.name}`
+                name: `Après`,
+                value: `${newSticker.name}`
             },
             {
-                name: `> ID`,
-                value: `- ${newSticker.id}`
+                name: `ID`,
+                value: `${newSticker.id}`
             }
         ]
     }, logsChannel).catch(() => {});
