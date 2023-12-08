@@ -27,12 +27,12 @@ module.exports = async (client, oldMember, newMember) => {
         desc: `Il y a des rôles modifiés`,
         fields: [
             {
-                name: `> Anciens rôles`,
-                value: `- ${ostring}`
+                name: `Anciens rôles`,
+                value: `${ostring}`
             },
             {
-                name: `> Nouveaux rôles`,
-                value: `- ${nstring}`
+                name: `Nouveaux rôles`,
+                value: `${nstring}`
             },
         ]
     }, logsChannel).catch(() => { });
