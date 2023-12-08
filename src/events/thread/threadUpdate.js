@@ -15,27 +15,27 @@ module.exports = async (client, oldChannel, newChannel) => {
         desc: `Un fil a été mis à jour`,
         fields: [
             {
-                name: `> Ancien nom`,
-                value: `- ${oldChannel.name}`
+                name: `Ancien nom`,
+                value: `${oldChannel.name}`
             },
             {
-                name: `> Nouveau nom`,
-                value: `- ${newChannel.name}`
+                name: `Nouveau nom`,
+                value: `${newChannel.name}`
             },
             {
-                name: `> ID`,
-                value: `- ${newChannel.id}`
+                name: `ID`,
+                value: `${newChannel.id}`
             },
             {
-                name: `> Catégorie`,
+                name: `Catégorie`,
                 value: `${newChannel.parent}`
             },
             {
-                name: `> Canal`,
+                name: `Canal`,
                 value: `<#${newChannel.id}>`
             },
             {
-                name: `> Type`,
+                name: `Type`,
                 value: `${types[newChannel.type]}`
             }
         ]
