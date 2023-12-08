@@ -243,6 +243,7 @@ module.exports = async (client) => {
                             if (page == 1) {
                                 client.embed({
                                     title: `Panneau d'aide`,
+                                    image: 'https://i.imgur.com/umYjAX0.png',
                                     fields: fields.slice(25, 49),
                                     components: [row2, row],
                                     type: 'update'
@@ -255,6 +256,7 @@ module.exports = async (client) => {
                             if (page == 2) {
                                 client.embed({
                                     title: `Panneau d'aide`,
+                                    image: 'https://i.imgur.com/umYjAX0.png',
                                     fields: fields.slice(0, 24),
                                     components: [row2, row],
                                     type: 'update'
