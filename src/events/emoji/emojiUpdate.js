@@ -9,16 +9,16 @@ module.exports = async (client, oldEmoji, newEmoji) => {
         desc: `Un emoji a été mis à jour`,
         fields: [
             {
-                name: `> Emoji`,
-                value: `- ${newEmoji}`
+                name: `Emoji`,
+                value: `${newEmoji}`
             },
             {
-                name: `> Avant`,
-                value: `- ${oldEmoji.name}`
+                name: `Avant`,
+                value: `${oldEmoji.name}`
             },
             {
-                name: `> Après`,
-                value: `- ${newEmoji.name}`
+                name: `Après`,
+                value: `${newEmoji.name}`
             },
             {
                 name: `> ID`,
