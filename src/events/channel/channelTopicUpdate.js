@@ -21,32 +21,32 @@ module.exports = async (client, channel, oldTopic, newTopic) => {
         desc: `Un sujet de salon a été modifié`,
         fields: [
             {
-                name: `> Ancien sujet`,
-                value: `- ${oldTopic}`
+                name: `Ancien sujet`,
+                value: `${oldTopic}`
             },
             {
-                name: `> Nouveau sujet`,
-                value: `- ${newTopic}`
+                name: `Nouveau sujet`,
+                value: `${newTopic}`
             },
             {
-                name: `> Nom`,
-                value: `- ${channel.name}`
+                name: `Nom`,
+                value: `${channel.name}`
             },
             {
-                name: `> ID`,
-                value: `- ${channel.id}`
+                name: `ID`,
+                value: `${channel.id}`
             },
             {
-                name: `> Catégorie`,
-                value: `- ${channel.parent}`
+                name: `Catégorie`,
+                value: `${channel.parent}`
             },
             {
-                name: `> Salon`,
-                value: `- <#${channel.id}>`
+                name: `Salon`,
+                value: `<#${channel.id}>`
             },
             {
-                name: `> Type`,
-                value: `- ${types[channel.type]}`
+                name: `Type`,
+                value: `${types[channel.type]}`
             }
         ]
     }, logsChannel).catch(() => { })
