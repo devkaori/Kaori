@@ -9,12 +9,12 @@ module.exports = async (client, guild, oldLevel, newLevel) => {
         desc: `Ce serveur est passé à un nouveau niveau de boost`,
         fields: [
             {
-                name: `> Ancien niveau`,
-                value: `- ${oldLevel}`
+                name: `Ancien niveau`,
+                value: `${oldLevel}`
             },
             {
-                name: `> Nouveau niveau`,
-                value: `- ${newLevel}`
+                name: `Nouveau niveau`,
+                value: `${newLevel}`
             },
             {
                 name: `> Horodatage`,
