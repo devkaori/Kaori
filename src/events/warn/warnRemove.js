@@ -9,19 +9,19 @@ module.exports = async (client, user, mod) => {
         desc: `Un avertissement a été annulé pour un utilisateur`,
         fields: [
             {
-                name: `> Utilisateur`,
-                value: `- ${user}`
+                name: `Utilisateur`,
+                value: `${user}`
             },
             {
-                name: `> Tag`,
-                value: `- ${user.user.username}#${user.user.discriminator}`
+                name: `Tag`,
+                value: `${user.user.username}#${user.user.discriminator}`
             },
             {
-                name: `> ID`,
+                name: `ID`,
                 value: `${user.id}`
             },
             {
-                name: `> Modérateur`,
+                name: `Modérateur`,
                 value: `${mod} (${mod.id})`
             }
         ]
