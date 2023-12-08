@@ -16,23 +16,23 @@ module.exports = async (client, user, mod, reason) => {
         desc: `Un utilisateur a été averti`,
         fields: [
             {
-                name: `> Utilisateur`,
-                value: `- ${user}`
+                name: `Utilisateur`,
+                value: `${user}`
             },
             {
-                name: `> Tag`,
+                name: `Tag`,
                 value: `- ${user.user.username}#${user.user.discriminator}`
             },
             {
-                name: `> ID`,
+                name: `ID`,
                 value: `${user.id}`
             },
             {
-                name: `> Modérateur`,
+                name: `Modérateur`,
                 value: `${mod} (${mod.id})`
             },
             {
-                name: `> Raison`,
+                name: `Raison`,
                 value: `${reason}`
             }
         ]
