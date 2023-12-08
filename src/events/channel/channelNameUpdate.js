@@ -21,28 +21,28 @@ module.exports = async (client, channel, oldName, newName) => {
         desc: `Le nom d'un salon a été modifié`,
         fields: [
             {
-                name: `> Ancien nom`,
-                value: `- ${oldName}`
+                name: `Ancien nom`,
+                value: `${oldName}`
             },
             {
-                name: `> Nouveau nom`,
-                value: `- ${newName}`
+                name: `Nouveau nom`,
+                value: `${newName}`
             },
             {
-                name: `> ID`,
-                value: `- ${channel.id}`
+                name: `ID`,
+                value: `${channel.id}`
             },
             {
-                name: `> Catégorie`,
-                value: `- ${channel.parent}`
+                name: `Catégorie`,
+                value: `${channel.parent}`
             },
             {
-                name: `> Salon`,
-                value: `- <#${channel.id}>`
+                name: `Salon`,
+                value: `<#${channel.id}>`
             },
             {
-                name: `> Type`,
-                value: `- ${types[channel.type]}`
+                name: `Type`,
+                value: `${types[channel.type]}`
             }
         ]
     }, logsChannel).catch(() => { })
