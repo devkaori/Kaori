@@ -9,28 +9,28 @@ module.exports = async (client, role) => {
         desc: `Un rôle a été supprimé`,
         fields: [
             {
-                name: `> Rôle`,
-                value: `- ${role}`
+                name: `Rôle`,
+                value: `${role}`
             },
             {
-                name: `> Nom`,
-                value: `- ${role.name}`
+                name: `Nom`,
+                value: `${role.name}`
             },
             {
-                name: `> ID`,
-                value: `- ${role.id}`
+                name: `ID`,
+                value: `${role.id}`
             },
             {
-                name: `> Couleur`,
+                name: `Couleur`,
                 value: `${role.hexColor}`
             },
             {
-                name: `> Position`,
+                name: `Position`,
                 value: `${role.position}`
             },
             {
-                name: `> Timestamp`,
-                value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
+                name: `Timestamp`,
+                value: `<t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => {});
