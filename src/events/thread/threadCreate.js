@@ -15,23 +15,23 @@ module.exports = async (client, channel) => {
         desc: `Un fil a été créé`,
         fields: [
             {
-                name: `> Nom`,
-                value: `- ${channel.name}`
+                name: `Nom`,
+                value: `${channel.name}`
             },
             {
-                name: `> ID`,
-                value: `- ${channel.id}`
+                name: `ID`,
+                value: `${channel.id}`
             },
             {
-                name: `> Catégorie`,
+                name: `Catégorie`,
                 value: `${channel.parent}`
             },
             {
-                name: `> Canal`,
+                name: `Canal`,
                 value: `<#${channel.id}>`
             },
             {
-                name: `> Type`,
+                name: `Type`,
                 value: `${types[channel.type]}`
             }
         ]
