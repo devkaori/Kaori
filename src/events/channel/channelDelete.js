@@ -23,20 +23,20 @@ client.embed({
     desc: `Un salon a été supprimé`,
     fields: [
         {
-            name: `> Nom`,
-            value: `- ${channel.name}`
+            name: `Nom`,
+            value: `${channel.name}`
         },
         {
-            name: `> ID`,
-            value: `- ${channel.id}`
+            name: `ID`,
+            value: `${channel.id}`
         },
         {
-            name: `> Catégorie`,
-            value: `- ${channel.parent}`
+            name: `Catégorie`,
+            value: `${channel.parent}`
         },
         {
-            name: `> Type`,
-            value: `- ${types[channel.type]}`
+            name: `Type`,
+            value: `${types[channel.type]}`
         }
     ]
 }, logsChannel).catch(() => { })
