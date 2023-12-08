@@ -44,7 +44,8 @@ module.exports = async (client, member) => {
 
                     client.embed({
                         title: `Nouveau boost`,
-                        desc: `${member} a boosté le serveur !`
+                        image: 'https://i.imgur.com/1XK1ga3.jpg',
+                        desc: `Merci ${member} pour avoir boosté notre communauté <:mugi_happy:1163106301925142641>`
                     }, channel)
                 } catch {}
             }
