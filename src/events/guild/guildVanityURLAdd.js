@@ -9,12 +9,12 @@ module.exports = async (client, guild, url) => {
         desc: `L'URL personnalisée du serveur a été mise à jour`,
         fields: [
             {
-                name: `> URL`,
-                value: `- ${url}`
+                name: `URL`,
+                value: `${url}`
             },
             {
-                name: `> Horodatage`,
-                value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
+                name: `Horodatage`,
+                value: `<t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => { });
