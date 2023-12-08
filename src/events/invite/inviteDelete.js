@@ -9,12 +9,12 @@ module.exports = async (client, invite) => {
         desc: `Une invitation a été supprimée`,
         fields: [
             {
-                name: `> Code`,
-                value: `- ${invite.code}`
+                name: `Code`,
+                value: `${invite.code}`
             },
             {
-                name: `> Horodatage`,
-                value: `- <t:${Math.floor(invite.createdTimestamp / 1000)}:R>`
+                name: `Horodatage`,
+                value: `<t:${Math.floor(invite.createdTimestamp / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => { });
