@@ -17,8 +17,8 @@ module.exports = async (client, guild, oldLevel, newLevel) => {
                 value: `${newLevel}`
             },
             {
-                name: `> Horodatage`,
-                value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
+                name: `Horodatage`,
+                value: `<t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => { })
