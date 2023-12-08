@@ -9,24 +9,24 @@ module.exports = async (client, role, oldColor, newColor) => {
         desc: `Un rôle a été mis à jour`,
         fields: [
             {
-                name: `> Rôle`,
-                value: `- ${role}`
+                name: `Rôle`,
+                value: `${role}`
             },
             {
-                name: `> Avant`,
-                value: `- #${oldColor.toString(16)}`
+                name: `Avant`,
+                value: `#${oldColor.toString(16)}`
             },
             {
-                name: `> Après`,
-                value: `- #${newColor.toString(16)}`
+                name: `Après`,
+                value: `#${newColor.toString(16)}`
             },
             {
-                name: `> ID`,
+                name: `ID`,
                 value: `${role.id}`
             },
             {
-                name: `> Timestamp`,
-                value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
+                name: `Timestamp`,
+                value: `<t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => {});
