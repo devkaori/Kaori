@@ -45,6 +45,4 @@ module.exports = async (client) => {
                 client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Watching }], status: 'online' });
             })
     }, 50000)
-
-    client.player.init(client.user.id);
 }
