@@ -22,24 +22,24 @@ module.exports = async (client, channel) => {
         desc: `Un salon a été créé`,
         fields: [
             {
-                name: `> Nom`,
-                value: `- ${channel.name}`
+                name: `Nom`,
+                value: `${channel.name}`
             },
             {
-                name: `> ID`,
-                value: `- ${channel.id}`
+                name: `ID`,
+                value: `${channel.id}`
             },
             {
-                name: `> Catégorie`,
-                value: `- ${channel.parent}`
+                name: `Catégorie`,
+                value: `${channel.parent}`
             },
             {
-                name: `> Salon`,
-                value: `- <#${channel.id}>`
+                name: `Salon`,
+                value: `<#${channel.id}>`
             },
             {
-                name: `> Type`,
-                value: `- ${types[channel.type]}`
+                name: `Type`,
+                value: `${types[channel.type]}`
             }
         ]
     }, logsChannel).catch(() => { })
