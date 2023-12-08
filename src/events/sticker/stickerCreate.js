@@ -9,15 +9,15 @@ module.exports = async (client, sticker) => {
         desc: `Un sticker a été créé`,
         fields: [
             {
-                name: `> Nom`,
-                value: `- ${sticker.name}`
+                name: `Nom`,
+                value: `${sticker.name}`
             },
             {
-                name: `> ID`,
-                value: `- ${sticker.id}`
+                name: `ID`,
+                value: `${sticker.id}`
             },
             {
-                name: `> URL`,
+                name: `URL`,
                 value: `${sticker.url}`
             }
         ]
