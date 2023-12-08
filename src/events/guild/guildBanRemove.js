@@ -10,20 +10,20 @@ module.exports = async (client, ban) => {
         thumbnail: ban.user.avatarURL({ size: 4096 }),
         fields: [
             {
-                name: `> Utilisateur`,
-                value: `- ${ban.user}`
+                name: `Utilisateur`,
+                value: `${ban.user}`
             },
             {
-                name: `> Tag`,
-                value: `- ${ban.user.tag}`
+                name: `Tag`,
+                value: `${ban.user.tag}`
             },
             {
-                name: `> ID`,
-                value: `- ${ban.user.id}`
+                name: `ID`,
+                value: `${ban.user.id}`
             },
             {
-                name: `> Horodatage`,
-                value: `- <t:${Math.floor(ban.createdTimestamp / 1000)}:R>`
+                name: `Horodatage`,
+                value: `<t:${Math.floor(ban.createdTimestamp / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => { })
