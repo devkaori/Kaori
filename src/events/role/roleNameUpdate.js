@@ -9,24 +9,24 @@ module.exports = async (client, role, oldName, newName) => {
         desc: `Un rôle a été mis à jour`,
         fields: [
             {
-                name: `> Rôle`,
-                value: `- ${role}`
+                name: `Rôle`,
+                value: `${role}`
             },
             {
-                name: `> Avant`,
-                value: `- ${oldName}`
+                name: `Avant`,
+                value: `${oldName}`
             },
             {
-                name: `> Après`,
-                value: `- ${newName}`
+                name: `Après`,
+                value: `${newName}`
             },
             {
-                name: `> ID`,
+                name: `ID`,
                 value: `${role.id}`
             },
             {
-                name: `> Timestamp`,
-                value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
+                name: `Timestamp`,
+                value: `<t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => {});
