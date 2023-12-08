@@ -18,24 +18,24 @@ module.exports = async (client, messageDeleted) => {
       desc: `Un message a été supprimé`,
       fields: [
         {
-          name: `> Auteur`,
-          value: `- ${messageDeleted.author} (${messageDeleted.author.tag})`
+          name: `Auteur`,
+          value: `${messageDeleted.author} (${messageDeleted.author.tag})`
         },
         {
-          name: `> Date`,
-          value: `- ${messageDeleted.createdAt}`
+          name: `Date`,
+          value: `${messageDeleted.createdAt}`
         },
         {
-          name: `> Canal`,
-          value: `- ${messageDeleted.channel} (${messageDeleted.channel.name})`
+          name: `Canal`,
+          value: `${messageDeleted.channel} (${messageDeleted.channel.name})`
         },
         {
-          name: `> Message`,
+          name: `Message`,
           value: `\`\`\`${content.replace(/`/g, "'")}\`\`\``
         },
         {
-          name: `> Horodatage`,
-          value: `- <t:${Math.floor(messageDeleted.createdTimestamp / 1000)}:R>`
+          name: `Horodatage`,
+          value: `<t:${Math.floor(messageDeleted.createdTimestamp / 1000)}:R>`
         }
       ]
     }, logsChannel).catch(() => {});
