@@ -15,19 +15,19 @@ module.exports = async (client, channel) => {
         desc: `Un fil a été supprimé`,
         fields: [
             {
-                name: `> Nom`,
-                value: `- ${channel.name}`
+                name: `Nom`,
+                value: `${channel.name}`
             },
             {
-                name: `> ID`,
-                value: `- ${channel.id}`
+                name: `ID`,
+                value: `${channel.id}`
             },
             {
-                name: `> Catégorie`,
+                name: `Catégorie`,
                 value: `${channel.parent}`
             },
             {
-                name: `> Type`,
+                name: `Type`,
                 value: `${types[channel.type]}`
             }
         ]
