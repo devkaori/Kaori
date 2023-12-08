@@ -9,7 +9,7 @@ module.exports = async (client, interaction, args) => {
         if (data) {
             client.embed({
                 title: "Invitations",
-                desc: `**${user.tag}** a \`${data.Invites}\` invitations`,
+                desc: `**${user.username}** a \`${data.Invites}\` invitations`,
                 fields: [
                     {
                         name: "Total",
@@ -28,7 +28,7 @@ module.exports = async (client, interaction, args) => {
         else {
             client.embed({
                 title: "Invitations",
-                desc: `**${user.tag}** n'a aucune invitation`,
+                desc: `**${user.username}** n'a aucune invitation`,
                 fields: [
                     {
                         name: "Total",
