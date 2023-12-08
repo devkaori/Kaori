@@ -9,12 +9,12 @@ module.exports = async (client, sticker) => {
         desc: `Un sticker a été supprimé`,
         fields: [
             {
-                name: `> Nom`,
-                value: `- ${sticker.name}`
+                name: `Nom`,
+                value: `${sticker.name}`
             },
             {
-                name: `> ID`,
-                value: `- ${sticker.id}`
+                name: `ID`,
+                value: `${sticker.id}`
             }
         ]
     }, logsChannel).catch(() => {});
