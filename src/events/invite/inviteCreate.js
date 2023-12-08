@@ -9,16 +9,16 @@ module.exports = async (client, invite) => {
         desc: `Une invitation a été créée`,
         fields: [
             {
-                name: `> Code`,
-                value: `- ${invite.code}`
+                name: `Code`,
+                value: `${invite.code}`
             },
             {
-                name: `> Invitant`,
-                value: `- ${invite.inviter} (${invite.inviter.tag})`
+                name: `Invitant`,
+                value: `${invite.inviter} (${invite.inviter.tag})`
             },
             {
-                name: `> Horodatage`,
-                value: `- <t:${Math.floor(invite.createdTimestamp / 1000)}:R>`
+                name: `Horodatage`,
+                value: `<t:${Math.floor(invite.createdTimestamp / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => { });
