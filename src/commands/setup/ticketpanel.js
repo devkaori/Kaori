@@ -15,7 +15,7 @@ module.exports = async (client, interaction, args) => {
             // Création du bouton
             const button = new Discord.ButtonBuilder()
                 .setCustomId('Bot_openticket')
-                .setLabel(name)
+                .setLabel(Ouvrir un ticket)
                 .setStyle(Discord.ButtonStyle.Primary)
                 .setEmoji('<:Tickets:1189624711974498325>')
 
