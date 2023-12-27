@@ -49,8 +49,9 @@ module.exports = async (client, member) => {
                     var channel = client.channels.cache.get(channelData.Channel)
 
                     await client.embed({
-                        title: `Nouveau déboost`,
-                        desc: `${member} a déboosté le serveur !`
+                        title: `Un boost en moins...`,
+                        image: `https://i.imgur.com/YcBqBaq.png`,
+                        desc: `${member} a décidé de prendre un petit repos du boost pour le serveur`
                     }, channel)
                 }
                 catch { }
