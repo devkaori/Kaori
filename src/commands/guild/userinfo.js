@@ -79,12 +79,12 @@ module.exports = async (client, interaction, args) => {
         inline: true,
       },
       {
-        name: "Indicateurs",
-        value: `${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'Aucun'}`,
+        name: "Badges Discord",
+        value: `${userFlags.length ? userFlags.map(flag => flags[flag]).join(' ') : 'Aucun'}`,
         inline: true,
       },
       {
-        name: "Badges",
+        name: "Badges Kaori",
         value: `${Badges.FLAGS ? Badges.FLAGS.map(flag => badgeFlags[flag]).join(' ') : 'Aucun'}`,
         inline: true,
       },
