@@ -229,7 +229,7 @@ module.exports = async (client) => {
 
                 client.embed({
                     title: `Panneau d'aide`,
-                    image: 'https://i.imgur.com/umYjAX0.png',
+                    image: 'https://i.imgur.com/cNHAdGT.png',
                     fields: fields.slice(0, 24),
                     components: [row2, row],
                     type: 'edit'
@@ -243,7 +243,7 @@ module.exports = async (client) => {
                             if (page == 1) {
                                 client.embed({
                                     title: `Panneau d'aide`,
-                                    image: 'https://i.imgur.com/umYjAX0.png',
+                                    image: 'https://i.imgur.com/cNHAdGT.png',
                                     fields: fields.slice(25, 49),
                                     components: [row2, row],
                                     type: 'update'
@@ -256,7 +256,7 @@ module.exports = async (client) => {
                             if (page == 2) {
                                 client.embed({
                                     title: `Panneau d'aide`,
-                                    image: 'https://i.imgur.com/umYjAX0.png',
+                                    image: 'https://i.imgur.com/cNHAdGT.png',
                                     fields: fields.slice(0, 24),
                                     components: [row2, row],
                                     type: 'update'
