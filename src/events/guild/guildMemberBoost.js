@@ -44,8 +44,8 @@ module.exports = async (client, member) => {
 
                     client.embed({
                         title: `Nouveau boost`,
-                        image: 'https://i.imgur.com/1XK1ga3.jpg',
-                        desc: `Merci ${member} pour avoir boosté notre communauté <:mugi_happy:1163106301925142641>`
+                        image: 'https://i.imgur.com/YcBqBaq.png',
+                        desc: `Arigatou gozaimasu, ${member}-senpai ! Ton incroyable boost a vraiment mis le feu à notre communauté <:boost:1189613736995078144>`
                     }, channel)
                 } catch {}
             }
