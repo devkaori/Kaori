@@ -26,22 +26,22 @@ module.exports = async (client, interaction, args) => {
   }
 
   const flags = {
-    ActiveDeveloper: "Développeur actif",
-    BugHunterLevel1: "Chasseur de bugs Discord",
-    BugHunterLevel2: "Chasseur de bugs Discord",
-    CertifiedModerator: "Modérateur certifié",
-    HypeSquadOnlineHouse1: "Membre de la Maison Bravoure",
-    HypeSquadOnlineHouse2: "Membre de la Maison Brilliance",
-    HypeSquadOnlineHouse3: "Membre de la Maison Équilibre",
-    HypeSquadEvents: "Événements HypeSquad",
-    PremiumEarlySupporter: "Premier partisan",
-    Partner: "Partenaire",
-    Quarantined: "En quarantaine", // Pas sûr que cela soit toujours d'actualité
-    Spammer: "Spammer", // Pas sûr que cela fonctionne
-    Staff: "Personnel Discord",
-    TeamPseudoUser: "Équipe Discord",
-    VerifiedBot: "Bot vérifié",
-    VerifiedDeveloper: "(early)Développeur de bot vérifié",
+    ActiveDeveloper: "<:badge_active_developer:1189618082608590911>",
+    BugHunterLevel1: "<:bug_hunter_standard:1189618218759884880>",
+    BugHunterLevel2: "<:bug_hunter:1189618242055045140>",
+    CertifiedModerator: "<:certified_moderator:1189619286994596021>",
+    HypeSquadOnlineHouse1: "<:hypesquad_bravery_badge:1189618466777469099>",
+    HypeSquadOnlineHouse2: "<:hypesquad_brilliance_badge:1189618442450514020>",
+    HypeSquadOnlineHouse3: "<:hypesquad_balance_badge:1189618461282930821>",
+    HypeSquadEvents: "<:Discord_HypeSquad_Event:1189619307907403826>",
+    PremiumEarlySupporter: "<:GMD_Early_Discord_Supporter:1189619303704694795>",
+    Partner: "<:blurple_partner:1189619314366619748>",
+    Quarantined: "<:quarantinered:1189619291415379968>", // Pas sûr que cela soit toujours d'actualité
+    Spammer: "<:spam:1189619281353248839>", // Pas sûr que cela fonctionne
+    Staff: "<:Discord_Staff:1189619298440859738>",
+    TeamPseudoUser: "<:Discord_Staff:1189619298440859738>",
+    VerifiedBot: "<:Verified_Bot:1189619275527356486>",
+    VerifiedDeveloper: "<:blurple_verified_bot_developer:1189619295848767518>",
   }
 
   let Badges = await model.findOne({ User: member.user.id });
