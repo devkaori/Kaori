@@ -35,7 +35,7 @@ module.exports = (client) => {
             botsCanWin: false,
             embedColor: client.config.colors.normal,
             embedColorEnd: client.config.colors.error,
-            reaction: '<a:mugi_peek:1163075325819899914>'
+            reaction: '<:giveaway:1189614274268639232>'
         }
     }, true);
 
