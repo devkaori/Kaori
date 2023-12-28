@@ -47,7 +47,7 @@ module.exports = {
         return client.embed({
             title: `Panneau d'aide`,
             image: 'https://i.imgur.com/cNHAdGT.png',
-            desc: `Bienvenue dans le panneau d'aide du bot ! On a préparé une petite présentation pour te guider ! Choisis ce qui te branche dans le menu ci-dessous, et on part en aventure !`,
+            desc: `Bienvenue dans le coin d'aide du bot ! J'ai concocté une p'tite présentation pour te guider. Choisis dans le menu, et on s'envole pour l'aventure !`,
             fields: [
                 {
                     name: `Hé, le menu fait des siennes ? <:mugi_ooo:1163106314726158426>`,
