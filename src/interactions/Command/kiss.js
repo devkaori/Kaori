@@ -24,7 +24,7 @@ module.exports = {
         if (member) {
             const embed = {
                 color: 0x2C2D31,
-                title: `Bisous ❤️`,
+                title: `Bisous`,
                 description: `<:s_heart_devill_red:1194671427132063866> ${interaction.user} fait un bisous à ${member}\n- Niveau d'affection de ${affectionPercentage}%`,
                 image: {
                     url: data.image,
