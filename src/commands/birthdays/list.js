@@ -14,7 +14,7 @@ module.exports = async (client, interaction, args) => {
         try {
             const user = await client.users.fetch(e.User);
             if (user) {
-                username = user.globalName;
+                username = user.username;
             }
         } catch (error) {
             console.error(`Error fetching user with ID ${e.User}: ${error.message}`);
