@@ -17,7 +17,7 @@ module.exports = async (client, interaction, args) => {
                         inline: true
                     },
                     {
-                        name: "Restantes",
+                        name: "Partis",
                         value: `${data.Left}`,
                         inline: true
                     }
@@ -36,7 +36,7 @@ module.exports = async (client, interaction, args) => {
                         inline: true
                     },
                     {
-                        name: "Restantes",
+                        name: "Parts",
                         value: `0`,
                         inline: true
                     }
