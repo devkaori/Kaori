@@ -9,14 +9,18 @@ module.exports = async (client, interaction, args) => {
         type: 'editreply' 
     }, interaction);
 
-    const lb = rawBirthdayboard.map(e => {
-        const user = client.users.cache.get(e.User);
-        if (user) {
-            return `- **${user.username}** - ${e.Birthday} `;
-        } else {
-            return `- *Absent du serveur* - ${e.Birthday} `;
+    const lb = await Promise.all(rawBirthdayboard.map(async e => {
+        let username = "Absent du serveur";
+        try {
+            const user = await client.users.fetch(e.User);
+            if (user) {
+                username = user.username;
+            }
+        } catch (error) {
+            console.error(`Error fetching user with ID ${e.User}: ${error.message}`);
         }
-    });
+        return `- **${username}** - ${e.Birthday} `;
+    }));
 
     await client.createLeaderboard(`Anniversaires - ${interaction.guild.name}`, lb, interaction);
 }
