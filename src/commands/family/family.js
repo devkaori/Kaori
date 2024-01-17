@@ -6,7 +6,7 @@ module.exports = async (client, interaction, args) => {
     const data = await Schema.findOne({ Guild: interaction.guild.id, User: target.id });
 
     client.embed({
-        title: `{target.username} - Famille`,
+        title: `${target.username} - Famille`,
         image: `https://i.imgur.com/U9Fih4D.png`,
         thumbnail: target.avatarURL({ size: 1024 }),
         fields: [
