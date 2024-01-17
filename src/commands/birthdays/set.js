@@ -18,8 +18,8 @@ module.exports = async (client, interaction, args) => {
         12: "décembre"
     };
 
-    const day = interaction.options.getNumber('day');
-    const month = interaction.options.getNumber('month');
+    const day = interaction.options.getNumber('jour');
+    const month = interaction.options.getNumber('mois');
 
     if (!day || day > 31) return client.errNormal({ 
         error: "Format du jour incorrect !",
@@ -53,7 +53,7 @@ module.exports = async (client, interaction, args) => {
         text: `Date d'anniversaire définie avec succès`,
         fields: [
             {
-                name: `${client.emotes.normal.birthday}┆Anniversaire`,
+                name: `Anniversaire`,
                 value: `${birthdayString}`
             }
         ],
