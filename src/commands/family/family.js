@@ -7,7 +7,7 @@ module.exports = async (client, interaction, args) => {
 
     client.embed({
         title: `{target.username} - Famille`,
-        image: `https://i.imgur.com/U9Fih4D.png`
+        image: `https://i.imgur.com/U9Fih4D.png`,
         thumbnail: target.avatarURL({ size: 1024 }),
         fields: [
             {
