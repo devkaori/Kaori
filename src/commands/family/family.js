@@ -19,7 +19,7 @@ module.exports = async (client, interaction, args) => {
             },
             {
                 name: 'Enfants',
-                value: data && data.Children.length > 0 ? `**${data.Children.join(' | ')}**` : 'Cet utilisateur n\'a pas d\'enfants'
+                value: data && data.Children.length > 0 ? data.Children.map(child => `- \`${child}\``).join('\n') : 'Cet utilisateur n\'a pas d\'enfants'
             }
         ],
         type: 'editreply'
