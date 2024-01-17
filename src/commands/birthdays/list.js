@@ -14,7 +14,7 @@ module.exports = async (client, interaction, args) => {
         if (user) {
             return `- **${user.username}** - ${e.Birthday} `;
         } else {
-            return `- *User not found* - ${e.Birthday} `;
+            return `- *Absent du serveur* - ${e.Birthday} `;
         }
     });
 
