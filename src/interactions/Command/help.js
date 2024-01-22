@@ -16,7 +16,7 @@ module.exports = {
      */
 
     run: async (client, interaction, args) => {
-        await interaction.deferReply({ ephemeral: true });
+        await interaction.deferReply({ ephemeral: true }); // Ajout de l'option ephemeral
 
         const row = new Discord.ActionRowBuilder()
             .addComponents(
@@ -45,11 +45,11 @@ module.exports = {
                     ]),
             );
 
-        const embed = new Discord.MessageEmbed()
-            .setTitle(`Panneau d'aide`)
-            .setImage('https://i.imgur.com/cNHAdGT.png')
-            .setDescription(`Bienvenue dans le coin d'aide du bot ! J'ai concocté une p'tite présentation pour te guider. Choisis dans le menu, et on s'envole pour l'aventure !`)
-            .addFields(
+        return client.embed({
+            title: `Panneau d'aide`,
+            image: 'https://i.imgur.com/cNHAdGT.png',
+            desc: `Bienvenue dans le coin d'aide du bot ! J'ai concocté une p'tite présentation pour te guider. Choisis dans le menu, et on s'envole pour l'aventure !`,
+            fields: [
                 {
                     name: `Hé, le menu fait des siennes ? <:mugi_ooo:1163106314726158426>`,
                     value: `<:mugi_happy:1163106301925142641> Pas de panique, on va régler ça ! Donne-nous un petit signe et on se charge de remettre tout sur pieds !`
@@ -57,14 +57,10 @@ module.exports = {
                 {
                     name: `Hé, vous avez dégoté un petit bug par ici ? <:mugi_ooo:1163106314726158426>`,
                     value: `<a:mugi_pillow:1163075339405250571> Pas de souci, on va le chasser comme des pros ! [Signalez-le-nous](https://discord.gg/7S28GvPsZQ), et on s'occupe de le faire disparaître plus vite qu'un ninja dans l'ombre !`
-                }
-            )
-            .setTimestamp();
-
-        await interaction.editReply({
-            embeds: [embed],
+                },
+            ],
             components: [row],
-            ephemeral: true // Rend la réponse éphémère
-        });
+            type: 'editreply'
+        }, interaction)
     },
 };
