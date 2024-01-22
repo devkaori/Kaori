@@ -47,15 +47,15 @@ module.exports = {
         return client.embed({
             title: `Panneau d'aide`,
             image: 'https://i.imgur.com/cNHAdGT.png',
-            desc: `Bienvenue dans le coin d'aide du bot ! J'ai concocté une p'tite présentation pour te guider. Choisis dans le menu, et on s'envole pour l'aventure !`,
+            desc: `Bonjour, je suis Kaori, votre nouvelle assistante pour la communauté. Ravi de faire votre connaissance. Ci-dessous, vous trouverez des boutons qui vous guideront pour la suite.`,
             fields: [
                 {
-                    name: `Hé, le menu fait des siennes ? <:mugi_ooo:1163106314726158426>`,
-                    value: `<:mugi_happy:1163106301925142641> Pas de panique, on va régler ça ! Donne-nous un petit signe et on se charge de remettre tout sur pieds !`
+                    name: '`💠` Fonctionnalités',
+                    value: '`Modération`, `Notifications`, `Automodération`, `Utilitaire`, `Giveaways`..'
                 },
                 {
-                    name: '` 🛑 ` Vous avez trouvé un bug ?',
-                    value: '` ✅ ` [Contactez-nous](https://discord.gg/amies), on s\'en occupe !'
+                    name: '`🛑` Vous avez trouvé un bug ?',
+                    value: '`✅` [Contactez-nous](https://discord.gg/amies), on s\'en occupe'
                 },
             ],
             components: [row],
