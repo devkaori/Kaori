@@ -32,7 +32,6 @@ module.exports = {
             ],
             components: [menu],
             type: 'editreply',
-            ephemeral: true
         }, interaction);
     },
 };
