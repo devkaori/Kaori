@@ -45,13 +45,12 @@ module.exports = {
             );
 
         return client.embed({
-            title: `Panneau d'aide`,
             image: 'https://i.imgur.com/cNHAdGT.png',
             desc: `Bonjour, je suis Kaori, votre nouvelle assistante pour la communauté. Ravi de faire votre connaissance. Ci-dessous, vous trouverez des boutons qui vous guideront pour la suite.`,
             fields: [
                 {
                     name: '`💠` Fonctionnalités',
-                    value: '`Modération`, `Notifications`, `Automodération`, `Utilitaire`, `Giveaways`..'
+                    value: '`Modération`, `Notifications`, `Auto-modération`, `Utilitaire`, `Giveaways` `Tickets`, `Anniversaire`, `Famille`, `Casino`, `Economies`, `Rôles`, '
                 },
                 {
                     name: '`🛑` Vous avez trouvé un bug ?',
