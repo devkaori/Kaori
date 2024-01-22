@@ -16,8 +16,7 @@ module.exports = {
      */
 
     run: async (client, interaction, args) => {
-        await interaction.deferReply({ ephemeral: true }); // Ajout de l'option ephemeral
-
+        await interaction.deferReply({ fetchReply: true });
         const row = new Discord.ActionRowBuilder()
             .addComponents(
                 new Discord.StringSelectMenuBuilder()
@@ -55,8 +54,8 @@ module.exports = {
                     value: `<:mugi_happy:1163106301925142641> Pas de panique, on va régler ça ! Donne-nous un petit signe et on se charge de remettre tout sur pieds !`
                 },
                 {
-                    name: `Hé, vous avez dégoté un petit bug par ici ? <:mugi_ooo:1163106314726158426>`,
-                    value: `<a:mugi_pillow:1163075339405250571> Pas de souci, on va le chasser comme des pros ! [Signalez-le-nous](https://discord.gg/7S28GvPsZQ), et on s'occupe de le faire disparaître plus vite qu'un ninja dans l'ombre !`
+                    name: '` 🛑 ` Vous avez trouvé un bug ?',
+                    value: '` ✅ ` [Contactez-nous](https://discord.gg/amies), on s\'en occupe !'
                 },
             ],
             components: [row],
