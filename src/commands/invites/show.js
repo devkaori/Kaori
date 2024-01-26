@@ -36,7 +36,7 @@ module.exports = async (client, interaction, args) => {
                         inline: true
                     },
                     {
-                        name: "Parts",
+                        name: "Partis",
                         value: `0`,
                         inline: true
                     }
