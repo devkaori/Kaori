@@ -1,7 +1,7 @@
-import Discord from 'discord.js';
-import generator from 'generate-password';
+const Discord = require('discord.js');
+const generator = require('generate-password');
 
-export default (client: any, err: any, command: any, interaction: any) => {
+module.exports = (client, err, command, interaction) => {
     console.log(err);
     const password = generator.generate({
         length: 10,
@@ -16,24 +16,24 @@ export default (client: any, err: any, command: any, interaction: any) => {
     let embed = new Discord.EmbedBuilder()
         .setTitle(`${password}`)
         .addFields(
-            { name: "Serveur", value: `${interaction.guild.name} (${interaction.guild.id})` },
-            { name: `Commande`, value: `${command}` },
-            { name: `Erreur`, value: `\`\`\`${err}\`\`\`` },
-            { name: `Trace d'erreur`, value: `\`\`\`${err.stack?.substr(0, 1018)}\`\`\`` },
+            { name: "Serveur", value: `${interaction.guild.name} (${interaction.guild.id})`},
+            { name: `Commande`, value: `${command}`},
+            { name: `Erreur`, value: `\`\`\`${err}\`\`\``},
+            { name: `Trace d'erreur`, value: `\`\`\`${err.stack.substr(0, 1018)}\`\`\``},
         )
-        .setColor(client.config.colors.normal);
-
+        .setColor(client.config.colors.normal)
     errorlog.send({
         username: `Erreurs du Bot`,
         embeds: [embed],
-    }).catch((error: any) => { console.log(error) });
 
-    let row = new Discord.MessageActionRow()
+    }).catch(error => { console.log(error) })
+
+    let row = new Discord.ActionRowBuilder()
         .addComponents(
-            new Discord.MessageButton()
+            new Discord.ButtonBuilder()
                 .setLabel("Serveur de support")
                 .setURL(client.config.discord.serverInvite)
-                .setStyle("LINK"),
+                .setStyle(Discord.ButtonStyle.Link),
         );
 
     client.embed({
@@ -74,5 +74,5 @@ export default (client: any, err: any, command: any, interaction: any) => {
             components: [row],
             type: 'editreply'
         }, interaction)
-    });
+    })
 };
