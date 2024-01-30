@@ -1,8 +1,8 @@
-const Discord = require('discord.js');
-const fs = require('fs');
+import Discord, { Client, ShardEvents } from 'discord.js';
+import fs from 'fs';
 
 // Discord client
-const client = new Discord.Client({
+const client: Client = new Discord.Client({
     allowedMentions: {
         parse: [
             'users',
@@ -15,30 +15,30 @@ const client = new Discord.Client({
         "TYPING_START"
     ],
     partials: [
-        Discord.Partials.Channel,
-        Discord.Partials.GuildMember,
-        Discord.Partials.Message,
-        Discord.Partials.Reaction,
-        Discord.Partials.User,
-        Discord.Partials.GuildScheduledEvent
+        Discord.Constants.PartialTypes.CHANNEL,
+        Discord.Constants.PartialTypes.GUILD_MEMBER,
+        Discord.Constants.PartialTypes.MESSAGE,
+        Discord.Constants.PartialTypes.REACTION,
+        Discord.Constants.PartialTypes.USER,
+        Discord.Constants.PartialTypes.GUILD_SCHEDULED_EVENT
     ],
     intents: [
-        Discord.GatewayIntentBits.Guilds,
-        Discord.GatewayIntentBits.GuildMembers,
-        Discord.GatewayIntentBits.GuildBans,
-        Discord.GatewayIntentBits.GuildEmojisAndStickers,
-        Discord.GatewayIntentBits.GuildIntegrations,
-        Discord.GatewayIntentBits.GuildWebhooks,
-        Discord.GatewayIntentBits.GuildInvites,
-        Discord.GatewayIntentBits.GuildVoiceStates,
-        Discord.GatewayIntentBits.GuildMessages,
-        Discord.GatewayIntentBits.GuildMessageReactions,
-        Discord.GatewayIntentBits.GuildMessageTyping,
-        Discord.GatewayIntentBits.DirectMessages,
-        Discord.GatewayIntentBits.DirectMessageReactions,
-        Discord.GatewayIntentBits.DirectMessageTyping,
-        Discord.GatewayIntentBits.GuildScheduledEvents,
-        Discord.GatewayIntentBits.MessageContent
+        Discord.Intents.FLAGS.Guilds,
+        Discord.Intents.FLAGS.GuildMembers,
+        Discord.Intents.FLAGS.GuildBans,
+        Discord.Intents.FLAGS.GuildEmojisAndStickers,
+        Discord.Intents.FLAGS.GuildIntegrations,
+        Discord.Intents.FLAGS.GuildWebhooks,
+        Discord.Intents.FLAGS.GuildInvites,
+        Discord.Intents.FLAGS.GuildVoiceStates,
+        Discord.Intents.FLAGS.GuildMessages,
+        Discord.Intents.FLAGS.GuildMessageReactions,
+        Discord.Intents.FLAGS.GuildMessageTyping,
+        Discord.Intents.FLAGS.DirectMessages,
+        Discord.Intents.FLAGS.DirectMessageReactions,
+        Discord.Intents.FLAGS.DirectMessageTyping,
+        Discord.Intents.FLAGS.GuildScheduledEvents,
+        Discord.Intents.FLAGS.MessageContent
     ],
     restTimeOffset: 0
 });
@@ -89,17 +89,17 @@ process.on('unhandledRejection', error => {
     console.error('Unhandled promise rejection:', error);
     if (error) if (error.length > 950) error = error.slice(0, 950) + '... view console for details';
     if (error.stack) if (error.stack.length > 950) error.stack = error.stack.slice(0, 950) + '... view console for details';
-    if(!error.stack) return
-    const embed = new Discord.EmbedBuilder()
+    if (!error.stack) return
+    const embed = new Discord.MessageEmbed()
         .setTitle(`Unhandled promise rejection`)
         .addFields([
             {
                 name: "Error",
-                value: error ? Discord.codeBlock(error) : "No error",
+                value: error ? Discord.Util.codeBlock(error) : "No error",
             },
             {
                 name: "Stack error",
-                value: error.stack ? Discord.codeBlock(error.stack) : "No stack error",
+                value: error.stack ? Discord.Util.codeBlock(error.stack) : "No stack error",
             }
         ])
         .setColor(client.config.colors.normal)
@@ -114,7 +114,7 @@ process.on('unhandledRejection', error => {
 
 process.on('warning', warn => {
     console.warn("Warning:", warn);
-    const embed = new Discord.EmbedBuilder()
+    const embed = new Discord.MessageEmbed()
         .setTitle(`New warning found`)
         .addFields([
             {
@@ -132,12 +132,12 @@ process.on('warning', warn => {
     })
 });
 
-client.on(Discord.ShardEvents.Error, error => {
+client.on(ShardEvents.Error, error => {
     console.log(error)
     if (error) if (error.length > 950) error = error.slice(0, 950) + '... view console for details';
     if (error.stack) if (error.stack.length > 950) error.stack = error.stack.slice(0, 950) + '... view console for details';
     if (!error.stack) return
-    const embed = new Discord.EmbedBuilder()
+    const embed = new Discord.MessageEmbed()
         .setTitle(`A websocket connection encountered an error`)
         .addFields([
             {

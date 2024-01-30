@@ -1,8 +1,8 @@
-const Discord = require('discord.js');
-const chalk = require('chalk');
-const { random } = require('mathjs');
+import Discord, { ActivityType } from 'discord.js';
+import chalk from 'chalk';
+import { random } from 'mathjs';
 
-module.exports = async (client) => {
+export default async (client: Discord.Client) => {
     const startLogs = new Discord.WebhookClient({
         id: client.webhooks.startLogs.id,
         token: client.webhooks.startLogs.token,
@@ -37,7 +37,7 @@ module.exports = async (client) => {
                     statuttext = process.env.DISCORD_STATUS.split(', ');
                 } else {
                     statuttext = [
-                        `Réfléchir à ma raison d\'être`,
+                        `Réfléchir à ma raison d'être`,
                         `Écouter les histoires des utilisateurs`,
                         `Chercher le sens de la vie digitale`,
                         `Protéger le serveur avec détermination`,
@@ -46,7 +46,7 @@ module.exports = async (client) => {
                     ];
                 }
                 const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
-                client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Watching }], status: 'online' });
+                client.user.setPresence({ activities: [{ name: randomText, type: ActivityType.Watching }], status: 'online' });
             })
     }, 50000)
 }

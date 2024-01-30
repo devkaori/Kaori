@@ -1,23 +1,27 @@
-const Discord = require('discord.js');
-const chalk = require('chalk');
-require('dotenv').config('./.env');
-const http = require('http'); // Importez le module HTTP
-const express = require('express');
+import * as Discord from 'discord.js';
+import * as chalk from 'chalk';
+import * as dotenv from 'dotenv';
+import * as http from 'http';
+import * as express from 'express';
+
+dotenv.config();
+
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('This bot is running CorwinDev\'s  <a href="https://github.com/CorwinDev/Discord-Bot">Discord-Bot</a>');
+  res.send('This bot is running CorwinDev\'s <a href="https://github.com/CorwinDev/Discord-Bot">Discord-Bot</a>');
 });
 
-const server = http.createServer(app); // Créez un serveur HTTP à partir de votre application Express
+const server = http.createServer(app);
 
 server.listen(8080, () => {
   console.log('Server is running on port 8080');
 });
 
-const axios = require('axios');
-// Vérifie si le bot est à jour
+import axios from 'axios';
+
 const { version } = require('.././package.json');
+
 axios.get('https://api.github.com/repos/CorwinDev/Discord-Bot/releases/latest').then(res => {
   if (res.data.tag_name !== version) {
     console.log(chalk.red.bgYellow(`Votre bot n'est pas à jour ! Veuillez mettre à jour vers la dernière version !`, version + ' -> ' + res.data.tag_name));
@@ -27,9 +31,9 @@ axios.get('https://api.github.com/repos/CorwinDev/Discord-Bot/releases/latest').
 });
 
 const webhook = require("./config/webhooks.json");
-const config = require("./config/bot.js");
-const webHooksArray = ['startLogs', 'shardLogs', 'errorLogs', 'dmLogs', 'voiceLogs', 'serverLogs', 'serverLogs2', 'commandLogs', 'consoleLogs', 'warnLogs', 'voiceErrorLogs', 'creditLogs', 'evalLogs', 'interactionLogs'];
-// Vérifie si les identifiants et jetons des webhooks sont définis dans le fichier .env
+const config = require("./config/bot.ts");
+const webHooksArray: string[] = ['startLogs', 'shardLogs', 'errorLogs', 'dmLogs', 'voiceLogs', 'serverLogs', 'serverLogs2', 'commandLogs', 'consoleLogs', 'warnLogs', 'voiceErrorLogs', 'creditLogs', 'evalLogs', 'interactionLogs'];
+
 if (process.env.WEBHOOK_ID && process.env.WEBHOOK_TOKEN) {
   for (const webhookName of webHooksArray) {
     webhook[webhookName].id = process.env.WEBHOOK_ID;
@@ -47,15 +51,17 @@ const shardLogs = new Discord.WebhookClient({
   token: webhook.shardLogs.token,
 });
 
-const manager = new Discord.ShardingManager('./src/bot.js', {
+const manager = new Discord.ShardingManager('./src/bot.ts', {
   totalShards: 'auto',
   token: process.env.DISCORD_TOKEN,
   respawn: true
 });
+
 if (process.env.TOPGG_TOKEN) {
   const { AutoPoster } = require('topgg-autoposter');
   AutoPoster(process.env.TOPGG_TOKEN, manager);
 }
+
 console.clear();
 console.log(chalk.blue(chalk.bold(`Système`)), (chalk.white(`>>`)), (chalk.green(`Démarrage`)), (chalk.white(`...`)))
 console.log(`\u001b[0m`)
@@ -65,11 +71,11 @@ console.log(`\u001b[0m`)
 console.log(chalk.blue(chalk.bold(`Système`)), (chalk.white(`>>`)), chalk.red(`Version ${require(`${process.cwd()}/package.json`).version}`), (chalk.green(`chargée`)))
 console.log(`\u001b[0m`);
 
-manager.on('shardCreate', shard => {
+manager.on('shardCreate', (shard: Discord.Shard) => {
   let embed = new Discord.EmbedBuilder()
     .setTitle(`Lancement de la shard`)
     .setDescription(`Une shard vient d'être lancée`)
-    .setFields([
+    .addFields([
       {
         name: "ID",
         value: `${shard.id + 1}/${manager.totalShards}`,
@@ -81,7 +87,8 @@ manager.on('shardCreate', shard => {
         inline: true
       }
     ])
-    .setColor(config.colors.normal)
+    .setColor(config.colors.normal);
+
   startLogs.send({
     username: 'Logs du bot',
     embeds: [embed],
@@ -90,16 +97,17 @@ manager.on('shardCreate', shard => {
   console.log(chalk.blue(chalk.bold(`Système`)), (chalk.white(`>>`)), (chalk.green(`Démarrage`)), chalk.red(`Shard n°${shard.id + 1}`), (chalk.white(`...`)))
   console.log(`\u001b[0m`);
 
-  shard.on("death", (process) => {
+  shard.on("death", (process: any) => {
     const embed = new Discord.EmbedBuilder()
       .setTitle(`Fermeture inattendue de la shard ${shard.id + 1}/${manager.totalShards}`)
-      .setFields([
+      .addFields([
         {
           name: "ID",
           value: `${shard.id + 1}/${manager.totalShards}`,
         },
       ])
-      .setColor(config.colors.normal)
+      .setColor(config.colors.normal);
+
     shardLogs.send({
       username: 'Logs du bot',
       embeds: [embed]
@@ -108,7 +116,7 @@ manager.on('shardCreate', shard => {
     if (process.exitCode === null) {
       const embed = new Discord.EmbedBuilder()
         .setTitle(`La shard ${shard.id + 1}/${manager.totalShards} s'est terminée avec un code d'erreur NULL !`)
-        .setFields([
+        .addFields([
           {
             name: "PID",
             value: `\`${process.pid}\``,
@@ -118,7 +126,8 @@ manager.on('shardCreate', shard => {
             value: `\`${process.exitCode}\``,
           }
         ])
-        .setColor(config.colors.normal)
+        .setColor(config.colors.normal);
+
       shardLogs.send({
         username: 'Logs du bot',
         embeds: [embed]
@@ -126,11 +135,12 @@ manager.on('shardCreate', shard => {
     }
   });
 
-  shard.on("shardDisconnect", (event) => {
+  shard.on("shardDisconnect", (event: any) => {
     const embed = new Discord.EmbedBuilder()
       .setTitle(`La shard ${shard.id + 1}/${manager.totalShards} s'est déconnectée`)
       .setDescription("Dump de l'événement de fermeture de socket...")
-      .setColor(config.colors.normal)
+      .setColor(config.colors.normal);
+
     shardLogs.send({
       username: 'Logs du bot',
       embeds: [embed],
@@ -140,7 +150,8 @@ manager.on('shardCreate', shard => {
   shard.on("shardReconnecting", () => {
     const embed = new Discord.EmbedBuilder()
       .setTitle(`Reconnexion de la shard ${shard.id + 1}/${manager.totalShards}`)
-      .setColor(config.colors.normal)
+      .setColor(config.colors.normal);
+
     shardLogs.send({
       username: 'Logs du bot',
       embeds: [embed],
@@ -161,34 +172,44 @@ const warnLogs = new Discord.WebhookClient({
   token: webhook.warnLogs.token,
 });
 
-process.on('unhandledRejection', error => {
+process.on('unhandledRejection', (error: Error) => {
   console.error('Rejet de promesse non gérée :', error);
-  if (error) if (error.length > 950) error = error.slice(0, 950) + '... voir la console pour plus de détails';
-  if (error.stack) if (error.stack.length > 950) error.stack = error.stack.slice(0, 950) + '... voir la console pour plus de détails';
-  if (!error.stack) return
+
+  if (error.message && error.message.length > 950) {
+    error.message = error.message.slice(0, 950) + '... voir la console pour plus de détails';
+  }
+
+  if (error.stack && error.stack.length > 950) {
+    error.stack = error.stack.slice(0, 950) + '... voir la console pour plus de détails';
+  }
+
+  if (!error.stack) return;
+
   const embed = new Discord.EmbedBuilder()
     .setTitle(`Rejet de promesse non gérée`)
     .addFields([
       {
         name: "Erreur",
-        value: error ? Discord.codeBlock(error) : "Aucune erreur",
+        value: error.message ? Discord.codeBlock(error.message) : "Aucune erreur",
       },
       {
         name: "Erreur de la pile",
         value: error.stack ? Discord.codeBlock(error.stack) : "Aucune erreur de pile",
       }
-    ])
+    ]);
+
   consoleLogs.send({
     username: 'Logs du bot',
     embeds: [embed],
   }).catch(() => {
-    console.log("Erreur lors de l'envoi du rejet de promesse non gérée au webhook")
-    console.log(error)
-  })
+    console.log("Erreur lors de l'envoi du rejet de promesse non gérée au webhook");
+    console.log(error);
+  });
 });
 
-process.on('warning', warn => {
+process.on('warning', (warn: string) => {
   console.warn("Avertissement :", warn);
+
   const embed = new Discord.EmbedBuilder()
     .setTitle(`Nouvel avertissement détecté`)
     .addFields([
@@ -196,12 +217,13 @@ process.on('warning', warn => {
         name: `Avertissement`,
         value: `\`\`\`${warn}\`\`\``,
       },
-    ])
+    ]);
+
   warnLogs.send({
     username: 'Logs du bot',
     embeds: [embed],
   }).catch(() => {
-    console.log("Erreur lors de l'envoi de l'avertissement au webhook")
-    console.log(warn)
-  })
+    console.log("Erreur lors de l'envoi de l'avertissement au webhook");
+    console.log(warn);
+  });
 });
