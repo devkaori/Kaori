@@ -1,8 +1,8 @@
-import * as Discord from 'discord.js';
-import * as chalk from 'chalk';
-import * as dotenv from 'dotenv';
-import * as http from 'http';
-import * as express from 'express';
+const Discord = require('discord.js');
+const chalk = require('chalk');
+const dotenv = require('dotenv');
+const http = require('http');
+const express = require('express');
 
 dotenv.config();
 
