@@ -1,43 +1,41 @@
-const discord = require('discord.js');
-const fs = require('fs');
+import Discord from 'discord.js';
+import Schema from '../../database/models/afk';
+import Schema3 from '../../database/models/customCommandAdvanced';
+import Schema4 from '../../database/models/birthday';
+import Schema5 from '../../database/models/blacklist';
+import Schema6 from '../../database/models/channelList';
+import Schema7 from '../../database/models/chatbot-channel';
+import Schema8 from '../../database/models/count';
+import Schema9 from '../../database/models/countChannel';
+import Schema10 from '../../database/models/customCommand';
+import Schema11 from '../../database/models/economy';
+import Schema12 from '../../database/models/economyTimeout';
+import Schema13 from '../../database/models/family';
+import Schema14 from '../../database/models/functions';
+import Schema15 from '../../database/models/guessNumber';
+import Schema16 from '../../database/models/guessWord';
+import Schema17 from '../../database/models/levelChannels';
+import Schema18 from '../../database/models/levelRewards';
+import Schema19 from '../../database/models/logChannels';
+import Schema20 from '../../database/models/messages';
+import Schema23 from '../../database/models/notes';
+import Schema25 from '../../database/models/privatechannels';
+import Schema27 from '../../database/models/reactionRoles';
+import Schema28 from '../../database/models/reviewChannels';
+import Schema29 from '../../database/models/stats';
+import Schema30 from '../../database/models/suggestionChannels';
+import Schema31 from '../../database/models/ticketChannels';
+import Schema32 from '../../database/models/ticketMessage';
+import Schema34 from '../../database/models/tickets';
+import Schema35 from '../../database/models/verify';
+import Schema36 from '../../database/models/voice';
+import Schema37 from '../../database/models/voiceChannels';
+import Schema38 from '../../database/models/warnings';
+import Schema39 from '../../database/models/wordsnake';
+import Schema40 from '../../database/models/messageRewards';
 
-const Schema = require("../../database/models/afk");
-const Schema3 = require("../../database/models/customCommandAdvanced");
-const Schema4 = require("../../database/models/birthday");
-const Schema5 = require("../../database/models/blacklist");
-const Schema6 = require("../../database/models/channelList");
-const Schema7 = require("../../database/models/chatbot-channel");
-const Schema8 = require("../../database/models/count");
-const Schema9 = require("../../database/models/countChannel");
-const Schema10 = require("../../database/models/customCommand");
-const Schema11 = require("../../database/models/economy");
-const Schema12 = require("../../database/models/economyTimeout");
-const Schema13 = require("../../database/models/family");
-const Schema14 = require("../../database/models/functions");
-const Schema15 = require("../../database/models/guessNumber");
-const Schema16 = require("../../database/models/guessWord");
-const Schema17 = require("../../database/models/levelChannels");
-const Schema18 = require("../../database/models/levelRewards");
-const Schema19 = require("../../database/models/logChannels");
-const Schema20 = require("../../database/models/messages");
-const Schema23 = require("../../database/models/notes");
-const Schema25 = require("../../database/models/privatechannels");
-const Schema27 = require("../../database/models/reactionRoles");
-const Schema28 = require("../../database/models/reviewChannels");
-const Schema29 = require("../../database/models/stats");
-const Schema30 = require("../../database/models/suggestionChannels");
-const Schema31 = require("../../database/models/ticketChannels");
-const Schema32 = require("../../database/models/ticketMessage");
-const Schema34 = require("../../database/models/tickets");
-const Schema35 = require("../../database/models/verify");
-const Schema36 = require("../../database/models/voice");
-const Schema37 = require("../../database/models/voiceChannels");
-const Schema38 = require("../../database/models/warnings");
-const Schema39 = require("../../database/models/wordsnake");
-const Schema40 = require("../../database/models/messageRewards");
-
-module.exports = async (client, guild) => {
-    const kickLogs = new discord.WebhookClient({
+export default async (client: any, guild: any) => {
+    const kickLogs = new Discord.WebhookClient({
         id: client.webhooks.serverLogs2.id,
         token: client.webhooks.serverLogs2.token,
     });
@@ -45,14 +43,15 @@ module.exports = async (client, guild) => {
     if (guild.name == undefined) return;
 
     const promises = [
-        client.shard.broadcastEval(client => client.guilds.cache.size),
-        client.shard.broadcastEval(client => client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)),
+        client.shard.broadcastEval((client: any) => client.guilds.cache.size),
+        client.shard.broadcastEval((client: any) => client.guilds.cache.reduce((acc: any, guild: any) => acc + guild.memberCount, 0)),
     ];
+    
     Promise.all(promises)
         .then(async (results) => {
-            const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
+            const totalGuilds = results[0].reduce((acc: any, guildCount: any) => acc + guildCount, 0);
 
-            const embed = new discord.EmbedBuilder()
+            const embed = new Discord.ButtonBuilder()
                 .setTitle("Retiré d'un serveur !")
                 .addFields(
                     { name: "Nombre total de serveurs :", value: `${totalGuilds}`, inline: true },
@@ -62,6 +61,7 @@ module.exports = async (client, guild) => {
                     { name: "Propriétaire du serveur", value: `<@!${guild.ownerId}> (${guild.ownerId})`, inline: true },
                 )
                 .setColor(client.config.colors.normal);
+
             kickLogs.send({
                 username: 'Bot Logs',
                 avatarURL: client.user.avatarURL(),

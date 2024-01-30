@@ -1,15 +1,16 @@
-const Discord = require('discord.js');
-const Captcha = require("@haileybot/captcha-generator");
+import Discord from 'discord.js';
+import Captcha from "@haileybot/captcha-generator";
 
 const reactionSchema = require("../../database/models/reactionRoles");
 const banSchema = require("../../database/models/userBans");
 const verify = require("../../database/models/verify");
 const Commands = require("../../database/models/customCommand");
 const CommandsSchema = require("../../database/models/customCommandAdvanced");
-module.exports = async (client, interaction) => {
+
+export default async (client: any, interaction: any) => {
     // Gestion des commandes
     if (interaction.isCommand() || interaction.isUserContextMenuCommand()) {
-        banSchema.findOne({ User: interaction.user.id }, async (err, data) => {
+        banSchema.findOne({ User: interaction.user.id }, async (err: any, data: any) => {
             if (data) {
                 return client.errNormal({
                     error: "Vous avez été banni par les développeurs de ce bot",
@@ -18,7 +19,7 @@ module.exports = async (client, interaction) => {
             }
             else {
                 const cmd = client.commands.get(interaction.commandName);
-                if (!cmd){
+                if (!cmd) {
                     const cmdd = await Commands.findOne({
                         Guild: interaction.guild.id,
                         Name: interaction.commandName,
@@ -46,7 +47,7 @@ module.exports = async (client, interaction) => {
                         } else if (cmdx.Action == "DM") {
                             await interaction.deferReply({ ephemeral: true });
                             interaction.editReply({ content: "Je vous ai envoyé quelque chose en message privé" });
-                            return interaction.user.send({ content: cmdx.Responce }).catch((e) => {
+                            return interaction.user.send({ content: cmdx.Responce }).catch((e: any) => {
                                 client.errNormal(
                                     {
                                         error: "Je ne peux pas vous envoyer de message privé, peut-être avez-vous désactivé les DM !",
@@ -68,7 +69,7 @@ module.exports = async (client, interaction) => {
                     }, interaction)
                 }
 
-                if(cmd) cmd.run(client, interaction, interaction.options._hoistedOptions).catch(err => {
+                if(cmd) cmd.run(client, interaction, interaction.options._hoistedOptions).catch((err: any) => {
                     client.emit("errorCreate", err, interaction.commandName, interaction)
                 })
             }
@@ -84,8 +85,8 @@ module.exports = async (client, interaction) => {
             try {
                 var image = new Discord.AttachmentBuilder(captcha.JPEGStream, {name:"captcha.jpeg"});
 
-                interaction.reply({ files: [image], fetchReply: true }).then(function (msg) {
-                    const filter = s => s.author.id == interaction.user.id;
+                interaction.reply({ files: [image], fetchReply: true }).then(function (msg: any) {
+                    const filter = (s: any) => s.author.id == interaction.user.id;
 
                     interaction.channel.awaitMessages({ filter, max: 1 }).then(response => {
                         if (response.first().content === captcha.value) {
@@ -94,7 +95,7 @@ module.exports = async (client, interaction) => {
 
                             client.succNormal({
                                 text: "Vous avez été vérifié avec succès !"
-                            }, interaction.user).catch(error => { })
+                            }, interaction.user).catch((error: any) => { })
 
                             var verifyUser = interaction.guild.members.cache.get(interaction.user.id);
                             verifyUser.roles.add(data.Role);
@@ -106,7 +107,7 @@ module.exports = async (client, interaction) => {
                             client.errNormal({
                                 error: "Vous avez répondu incorrectement au captcha !",
                                 type: 'editreply'
-                            }, interaction).then(msgError => {
+                            }, interaction).then((msgError: any) => {
                                 setTimeout(() => {
                                     msgError.delete();
                                 }, 2000)
@@ -132,18 +133,18 @@ module.exports = async (client, interaction) => {
         var buttonID = interaction.customId.split("-");
 
         if (buttonID[0] == "reaction_button") {
-            reactionSchema.findOne({ Message: interaction.message.id }, async (err, data) => {
+            reactionSchema.findOne({ Message: interaction.message.id }, async (err: any, data: any) => {
                 if (!data) return;
 
                 const [roleid] = data.Roles[buttonID[1]];
 
                 if (interaction.member.roles.cache.get(roleid)) {
-                    interaction.guild.members.cache.get(interaction.user.id).roles.remove(roleid).catch(error => { })
+                    interaction.guild.members.cache.get(interaction.user.id).roles.remove(roleid).catch((error: any) => { })
 
                     interaction.reply({ content: `<@&${roleid}> a été retiré !`, ephemeral: true });
                 }
                 else {
-                    interaction.guild.members.cache.get(interaction.user.id).roles.add(roleid).catch(error => { })
+                    interaction.guild.members.cache.get(interaction.user.id).roles.add(roleid).catch((error: any) => { })
 
                     interaction.reply({ content: `<@&${roleid}> a été ajouté !`, ephemeral: true });
                 }
@@ -156,7 +157,7 @@ module.exports = async (client, interaction) => {
         if (interaction.customId == "reaction_select") {
             reactionSchema.findOne(
                 { Message: interaction.message.id },
-                async (err, data) => {
+                async (err: any, data: any) => {
                     if (!data) return;
 
                     let roles = "";
@@ -170,12 +171,12 @@ module.exports = async (client, interaction) => {
                             interaction.guild.members.cache
                                 .get(interaction.user.id)
                                 .roles.remove(roleid)
-                                .catch((error) => { });
+                                .catch((error: any) => { });
                         } else {
                             interaction.guild.members.cache
                                 .get(interaction.user.id)
                                 .roles.add(roleid)
-                                .catch((error) => { });
+                                .catch((error: any) => { });
                         }
 
                         if ((i + 1) === interaction.values.length) {
