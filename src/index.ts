@@ -32,7 +32,7 @@ axios.get('https://api.github.com/repos/CorwinDev/Discord-Bot/releases/latest').
 
 const webhook = require("./config/webhooks.json");
 const config = require("./config/bot.ts");
-const webHooksArray: string[] = ['startLogs', 'shardLogs', 'errorLogs', 'dmLogs', 'voiceLogs', 'serverLogs', 'serverLogs2', 'commandLogs', 'consoleLogs', 'warnLogs', 'voiceErrorLogs', 'creditLogs', 'evalLogs', 'interactionLogs'];
+const webHooksArray = ['startLogs', 'shardLogs', 'errorLogs', 'dmLogs', 'voiceLogs', 'serverLogs', 'serverLogs2', 'commandLogs', 'consoleLogs', 'warnLogs', 'voiceErrorLogs', 'creditLogs', 'evalLogs', 'interactionLogs'] as const;
 
 if (process.env.WEBHOOK_ID && process.env.WEBHOOK_TOKEN) {
   for (const webhookName of webHooksArray) {
