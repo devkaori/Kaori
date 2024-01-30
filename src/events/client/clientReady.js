@@ -32,6 +32,6 @@ module.exports = async (client) => {
 
         const statusText = `Sur ${totalGuilds.reduce((acc, guildCount) => acc + guildCount, 0)} serveurs`;
 
-        client.user.setPresence({ activities: [{ name: statusText, type: 'Participating' }], status: 'online' });
+        client.user.setPresence({ activities: [{ name: statusText, type: 'Competing' }], status: 'online' });
     }, 50000)
 }
