@@ -16,7 +16,7 @@ module.exports = {
      */
 
     run: async (client, interaction, args) => {
-        await interaction.deferReply({ fetchReply: true });
+        await interaction.deferReply({ ephemeral: true });
         const row = new Discord.ActionRowBuilder()
             .addComponents(
                 new Discord.StringSelectMenuBuilder()
@@ -58,8 +58,7 @@ module.exports = {
                 },
             ],
             components: [row],
-            type: 'editreply',
-            ephemeral: true
+            type: 'editreply'
         }, interaction)
     },
 };
