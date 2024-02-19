@@ -31,7 +31,6 @@ module.exports = async (client) => {
         ];
         return Promise.all(promises)
             .then(results => {
-                const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
                 let statuttext;
                 if (process.env.DISCORD_STATUS) {
                     statuttext = process.env.DISCORD_STATUS.split(', ');
