@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const chalk = require('chalk');
+const { random } = require('mathjs');
 
 module.exports = async (client) => {
     const startLogs = new Discord.WebhookClient({
@@ -18,20 +19,34 @@ module.exports = async (client) => {
             { name: "ID", value: `${client.shard.ids[0] + 1}/${client.options.shardCount}`, inline: true },
             { name: "État", value: `Prêt`, inline: true },
         )
-        .setColor(client.config.colors.normal);
-
+        .setColor(client.config.colors.normal)
     startLogs.send({
         username: 'Logs du Bot',
         embeds: [embed],
     });
 
     setInterval(async function () {
-        const totalGuilds = await client.shard.fetchClientValues('guilds.cache.size');
-        const totalMembers = await client.shard.fetchClientValues('guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)');
-        const totalEmotes = await client.shard.fetchClientValues('guilds.cache.reduce((acc, guild) => acc + guild.emojis.cache.size, 0)');
-
-        const statusText = `Sur ${totalGuilds.reduce((acc, guildCount) => acc + guildCount, 0)} serveurs`;
-
-        client.user.setPresence({ activities: [{ name: statusText, type: 'Competing' }], status: 'online' });
+        const promises = [
+            client.shard.fetchClientValues('guilds.cache.size'),
+        ];
+        return Promise.all(promises)
+            .then(results => {
+                const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
+                let statuttext;
+                if (process.env.DISCORD_STATUS) {
+                    statuttext = process.env.DISCORD_STATUS.split(', ');
+                } else {
+                    statuttext = [
+                        `Réfléchir à ma raison d\'être`,
+                        `Écouter les histoires des utilisateurs`,
+                        `Chercher le sens de la vie digitale`,
+                        `Protéger le serveur avec détermination`,
+                        `Trouver le One Piece`,
+                        `Explorer de nouveaux horizons`
+                    ];
+                }
+                const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
+                client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Competing }], status: 'online' });
+            })
     }, 50000)
 }
