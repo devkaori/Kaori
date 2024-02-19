@@ -58,7 +58,8 @@ module.exports = {
                 },
             ],
             components: [row],
-            type: 'editreply'
+            type: 'editreply',
+            ephemeral: true
         }, interaction)
     },
 };
