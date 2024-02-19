@@ -17,19 +17,19 @@ module.exports = async (client) => {
                                 {
                                     label: `Commandes`,
                                     description: `Afficher les commandes de ${client.user.username} !`,
-                                    emoji: "1163106294073401354",
+                                    emoji: "1209141526593142874",
                                     value: "commands-Bothelp",
                                 },
                                 {
-                                    label: `Invitation`,
+                                    label: `Inviter Kaori`,
                                     description: `Inviter ${client.user.username} sur votre serveur`,
-                                    emoji: "1163106292227915796",
+                                    emoji: "1209143065655115786",
                                     value: "invite-Bothelp",
                                 },
                                 {
                                     label: `Communauté`,
                                     description: `Rejoindre le serveur de support`,
-                                    emoji: "1163106279187820544",
+                                    emoji: "1209141523887955999",
                                     value: "support-Bothelp",
                                 },
                             ]),
@@ -45,7 +45,7 @@ module.exports = async (client) => {
 
                 client.embed({
                     title: `Support`,
-                    image: 'https://i.imgur.com/RKBRWpy.png',
+                    image: 'https://i.imgur.com/TldhLd6.png',
                     desc: `Améliorez votre serveur avec ${client.user.username} !`,
                     url: client.config.discord.serverInvite,
                     components: [row2, row],

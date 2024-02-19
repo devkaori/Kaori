@@ -15,27 +15,27 @@ module.exports = async (client) => {
                             .setPlaceholder('Aucune sélection')
                             .addOptions([
                                 {
-                                    label: `Serveur de support`,
-                                    description: `Rejoindre le serveur de support`,
-                                    emoji: "1114167700999118878",
+                                    label: `Assistance`,
+                                    description: `Rejoindre le serveur d'assistance`,
+                                    emoji: "1209141518279905300",
                                     value: "support-linkspanel",
                                 },
                                 {
-                                    label: `Inviter le Bot`,
+                                    label: `Inviter Kaori`,
                                     description: `Inviter le Bot sur votre serveur`,
-                                    emoji: "1114167747627208815",
+                                    emoji: "1209143065655115786",
                                     value: "invite-linkspanel",
                                 },
                                 {
                                     label: `Serveur communautaire`,
                                     description: `Rejoindre le serveur communautaire !`,
-                                    emoji: "1114175614929342494",
+                                    emoji: "1209141523887955999",
                                     value: "community-linkspanel",
                                 },
                                 {
                                     label: `Top.gg`,
                                     description: `Afficher le lien top.gg`,
-                                    emoji: "1114175777446051902",
+                                    emoji: "1209141515952062464",
                                     value: "top.gg-linkspanel",
                                 },
                             ]),

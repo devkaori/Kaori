@@ -7,7 +7,7 @@ require("moment-duration-format");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('help')
-        .setDescription(`Obtenir de l'aide avec le bot`),
+        .setDescription(`Voir la page d'aide`),
 
     /** 
      * @param {Client} client
@@ -16,12 +16,12 @@ module.exports = {
      */
 
     run: async (client, interaction, args) => {
-        await interaction.deferReply({ ephemeral: true });
+        await interaction.deferReply({ fetchReply: true });
         const row = new Discord.ActionRowBuilder()
             .addComponents(
                 new Discord.StringSelectMenuBuilder()
                     .setCustomId('Bot-helppanel')
-                    .setPlaceholder('Rien de sélectionné')
+                    .setPlaceholder('Aucune sélection')
                     .addOptions([
                         {
                             label: `Commandes`,
@@ -49,12 +49,12 @@ module.exports = {
             desc: `Bonjour, je suis Kaori, votre nouvelle assistante pour la communauté. Ravi de faire votre connaissance. Ci-dessous, vous trouverez des boutons qui vous guideront pour la suite.`,
             fields: [
                 {
-                    name: '`💠` Fonctionnalités',
+                    name: 'ıllı Fonctionnalités',
                     value: '`Modération`, `Notifications`, `Auto-modération`, `Utilitaire`, `Giveaways` `Tickets`, `Anniversaire`, `Famille`, `Casino`, `Economies`, `Rôles`, '
                 },
                 {
-                    name: '`🛑` Vous avez trouvé un bug ?',
-                    value: '`✅` [Contactez-nous](https://discord.gg/amies), on s\'en occupe'
+                    name: '⩇ Vous avez trouvé un bug ?',
+                    value: '⇆ [Contactez-nous](https://discord.gg/amies), on s\'en occupe'
                 },
             ],
             components: [row],

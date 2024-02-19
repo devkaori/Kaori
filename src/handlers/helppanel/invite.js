@@ -17,19 +17,19 @@ module.exports = async (client) => {
                                 {
                                     label: `Commandes`,
                                     description: `Afficher les commandes de ${client.user.username} !`,
-                                    emoji: "1163106294073401354",
+                                    emoji: "1209141526593142874",
                                     value: "commands-Bothelp",
                                 },
                                 {
                                     label: `Invitation`,
                                     description: `Inviter ${client.user.username} sur votre serveur`,
-                                    emoji: "1163106292227915796",
+                                    emoji: "1209143065655115786",
                                     value: "invite-Bothelp",
                                 },
                                 {
                                     label: `Communauté`,
                                     description: `Rejoindre le serveur de support`,
-                                    emoji: "1163106279187820544",
+                                    emoji: "1209141523887955999",
                                     value: "support-Bothelp",
                                 },
                             ]),

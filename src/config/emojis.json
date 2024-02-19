@@ -44,22 +44,22 @@
     },
 
     "badges": {
-        "bot": "🤖",
+        "bot": "<:commands:1209141526593142874>",
         "management": "👑",
-        "bug": "🐛",
-        "developer": "👨‍💻",	
-        "supporter": "👨‍🔧",
-        "team": "👨‍👩‍👧‍👦",
-        "booster": "🚀",
-        "partner": "🤝",
-        "voter": "🗳️",
-        "support": "🔧",
-        "moderator": "👮",
-        "designer": "🎨",
-        "active": "🔥",
-        "event": "🎉",
-        "vip": "👑",
-        "marketing": "📈"
+        "bug": "<:bug:1209146910255095829>",
+        "developer": "<:developer:1209147890446897165>",	
+        "supporter": "<:supporter:1209148200687239188>",
+        "team": "<:members:1209141523887955999>",
+        "booster": "<:booster:1209148504342134794>",
+        "partner": "<:reviewer:1209141515952062464>",
+        "voter": "<:vote:1209146891259088926>",
+        "support": "<:assistant:1209141518279905300>",
+        "moderator": "<:moderator:1209147379379601418>",
+        "designer": "<:designer:1209148809741860916>",
+        "active": "<:active:1209146907805487195>",
+        "event": "<:event:1209146897709924372>",
+        "vip": "<:vip:1209146894673252362>",
+        "marketing": "<:marketing:1209149148113150032>"
     },
 
     "animated": {
