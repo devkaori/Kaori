@@ -36,12 +36,8 @@ module.exports = async (client) => {
                     statuttext = process.env.DISCORD_STATUS.split(', ');
                 } else {
                     statuttext = [
-                        `Réfléchir à ma raison d\'être`,
-                        `Écouter les histoires des utilisateurs`,
-                        `Chercher le sens de la vie digitale`,
-                        `Protéger le serveur avec détermination`,
-                        `Trouver le One Piece`,
-                        `Explorer de nouveaux horizons`
+                        `Kaori Café`,
+                        `kaoricafe.fr`
                     ];
                 }
                 const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
