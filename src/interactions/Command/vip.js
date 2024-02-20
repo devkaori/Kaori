@@ -25,6 +25,11 @@ module.exports = {
             .setName('slap')
             .setDescription('Donne une gifle à quelqu\'un')
             .addUserOption(option => option.setName('cible').setDescription('Sélectionnez la personne à gifler').setRequired(true))
+    ).addSubcommand(subcommand =>
+        subcommand
+            .setName('pout')
+            .setDescription('Boude à quelqu\'un')
+            .addUserOption(option => option.setName('cible').setDescription('Sélectionnez la personne à bouder').setRequired(true))
     )
     ,
 
