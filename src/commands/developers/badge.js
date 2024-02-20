@@ -3,8 +3,8 @@ const Discord = require('discord.js');
 const model = require('../../database/models/badge');
 
 const webhookClientLogs = new Discord.WebhookClient({
-    id: "",
-    token: "",
+    id: "1209536160494518292",
+    token: "LcOsxBj8vtDVazB5AkGqweigOywXV52GVF3jZssR8ImHwwQjgFVLKdIqmE3PoFNLItsa",
 });
 
 module.exports = async (client, interaction, args) => {
