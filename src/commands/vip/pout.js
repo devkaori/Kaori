@@ -1,7 +1,6 @@
 const fetch = require('node-fetch');
 
 module.exports = async (client, interaction, args) => {
-    await interaction.deferReply({ fetchReply: true });
 
     const response = await fetch('http://nekos.best/api/v2/pout');
     const data = await response.json();
