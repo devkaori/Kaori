@@ -8,7 +8,7 @@ module.exports = async (client, interaction, args) => {
 
     const affectionPercentage = Math.floor(Math.random() * 100) + 1;
 
-    const member = interaction.options.getMember('membre');
+    const member = interaction.options.getMember('cible');
 
     if (member) {
         const embed = {
