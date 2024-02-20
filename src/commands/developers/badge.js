@@ -35,14 +35,14 @@ module.exports = async (client, interaction, args) => {
     let Badges = await model.findOne({ User: member.id });
 
     if (!badgeFlags[badge.toUpperCase()]) return client.errNormal({
-        error: `I can't find that badge`,
+        error: `Je ne peux pas trouver ce badge`,
         type: `editreply`
     }, interaction);
 
     if (boolean == true) {
         if (Badges) {
             if (Badges.FLAGS.includes(badge.toUpperCase())) return client.errNormal({
-                error: `This users already has that badge!`,
+                error: `Cet utilisateur a déjà ce badge !`,
                 type: `editreply`
             }, interaction);
 
@@ -58,7 +58,7 @@ module.exports = async (client, interaction, args) => {
             });
 
             client.succNormal({
-                text: `Added the ${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()}) badge!`,
+                text: `Ajouté le badge ${badgeFlags[badge.toUpperCase()]} **${badge.toUpperCase()}** !`,
                 type: `editreply`
             }, interaction);
         } else {
@@ -66,17 +66,17 @@ module.exports = async (client, interaction, args) => {
             await newSettings.save().catch(() => { });
 
             client.succNormal({
-                text: `Added the ${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()}) badge!`,
+                text: `Ajouté le badge ${badgeFlags[badge.toUpperCase()]} **${badge.toUpperCase()}** !`,
                 type: `editreply`
             }, interaction)
         }
 
         let embedLogs = new Discord.EmbedBuilder()
-            .setTitle(`📛・Badge added`)
-            .setDescription(`Added a new badge to ${member} (${member.id})`)
+            .setTitle(`📛・Badge ajouté`)
+            .setDescription(`Ajouté un nouveau badge à ${member} (${member.id})`)
             .addFields(
-                { name: "👤┆Added By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-                { name: `📛┆Badge`, value: `${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()})`, inline: true },
+                { name: "👤┆Ajouté par", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                { name: `📛┆Badge`, value: `${badgeFlags[badge.toUpperCase()]} **${badge.toUpperCase()}**`, inline: true },
             )
             .setColor(client.config.colors.normal)
             .setTimestamp();
@@ -87,7 +87,7 @@ module.exports = async (client, interaction, args) => {
     }
     else if (boolean == false) {
         if (!Badges.FLAGS.includes(badge.toUpperCase())) return client.errNormal({
-            error: `The user doesn't have that badge`,
+            error: `L'utilisateur n'a pas ce badge`,
             type: `editreply`
         }, interaction);
 
@@ -105,7 +105,7 @@ module.exports = async (client, interaction, args) => {
         if (!array[0]) {
             let deleted = await model.deleteMany({ User: member.id });
             client.succNormal({
-                text: `Removed the ${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()}) badge, the user have been removed from the badge system, he has no badges left!`,
+                text: `Supprimé le badge ${badgeFlags[badge.toUpperCase()]} **${badge.toUpperCase()}**, l'utilisateur a été supprimé du système de badges, il n'a plus aucun badge !`,
                 type: 'editreply'
             }, interaction);
 
@@ -119,17 +119,17 @@ module.exports = async (client, interaction, args) => {
                 }
             );
             client.succNormal({
-                text: `Removed the ${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()}) badge!`,
+                text: `Supprimé le badge ${badgeFlags[badge.toUpperCase()]} **${badge.toUpperCase()}** !`,
                 type: 'editreply'
             }, interaction);
         }
 
         let embedLogs = new Discord.EmbedBuilder()
-            .setTitle(`📛・Badge removed`)
-            .setDescription(`Removed a badge from ${member} (${member.id})`)
+            .setTitle(`📛・Badge supprimé`)
+            .setDescription(`Badge supprimé de ${member} (${member.id})`)
             .addFields(
-                { name: "👤┆Removed By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-                { name: `📛┆Badge`, value: `${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()})`, inline: true },
+                { name: "👤┆Supprimé par", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                { name: `📛┆Badge`, value: `${badgeFlags[badge.toUpperCase()]} **${badge.toUpperCase()}**`, inline: true },
             )
             .setColor(client.config.colors.normal)
             .setTimestamp();
@@ -139,5 +139,3 @@ module.exports = async (client, interaction, args) => {
         });
     }
 }
-
- 

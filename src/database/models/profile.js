@@ -4,7 +4,7 @@ const Schema = new mongoose.Schema({
     User: String,
     Gender: { type: String, default: "" },
     Age: { type: String, default: "" },
-    Orgin: { type: String, default: "" },
+    Origin: { type: String, default: "" },
     Pets: Array,
     Songs: Array,
     Movies: Array,

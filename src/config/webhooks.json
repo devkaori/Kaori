@@ -1,62 +1,62 @@
 {
     "startLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "shardLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "errorLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "dmLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "voiceLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "serverLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "serverLogs2": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "commandLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "consoleLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "warnLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "voiceErrorLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "creditLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "evalLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "interactionLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     },
     "bugReportLogs": {
-        "id": "1169766844526252072",
-        "token": "twPdZt73raG_atswR-SaRcA4z_0Gdo6Z53aJQNgTBYr-ZxAnH9tpbw5J5gfQZCbWgdOi"
+        "id": "1209513423147106365",
+        "token": "bLP7Ps4CB8TcH7g06iU9vVv8bOOdxpOchRYVjJiVAdIem3cBtH7SLblyrkvoN7eO_0WA"
     }
 }

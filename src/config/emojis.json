@@ -30,22 +30,14 @@
     },
 
     "economy": {
-        "pocket": "👛",
-        "bank": "🏦",
-        "coins": "💰"
-    },
-
-    "music": {
-        "next": "⏭️",
-        "pause": "⏸️",
-        "previous": "⏮️",
-        "stop": "⏹️",
-        "play": "▶️"
+        "pocket": "<:pocket:1209514860770230343>",
+        "bank": "<:bank:1209514863643328563>",
+        "coins": "<:coin:1209146916508799036>"
     },
 
     "badges": {
         "bot": "<:commands:1209141526593142874>",
-        "management": "👑",
+        "management": "<:vip:1209146894673252362>",
         "bug": "<:bug:1209146910255095829>",
         "developer": "<:developer:1209147890446897165>",	
         "supporter": "<:supporter:1209148200687239188>",

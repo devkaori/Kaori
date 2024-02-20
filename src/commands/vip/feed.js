@@ -4,17 +4,17 @@ const fetch = require('node-fetch');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('hug')
-        .setDescription(`Faire un câlin à un autre membre`)
+        .setName('feed')
+        .setDescription(`Faire manger un autre membre`)
         .addUserOption(option =>
             option.setName('membre')
-                .setDescription('Le membre à qui faire un câlin')
+                .setDescription('Le membre à qui faire manger')
                 .setRequired(true)),
 
     run: async (client, interaction, args) => {
         await interaction.deferReply({ fetchReply: true });
 
-        const response = await fetch('https://nekos.best/api/v2/hug');
+        const response = await fetch('https://nekos.best/api/v2/feed');
         const data = await response.json();
 
         const affectionPercentage = Math.floor(Math.random() * 100) + 1;
@@ -24,8 +24,8 @@ module.exports = {
         if (member) {
             const embed = {
                 color: 0x2C2D31,
-                title: `Calin`,
-                description: `<:s_heart_devill_red:1194671427132063866> ${interaction.user} fait un câlin à ${member}\n- Niveau d'affection de ${affectionPercentage}%`,
+                title: `Feed`,
+                description: `<:s_heart_devill_red:1194671427132063866> ${interaction.user} fait manger ${member}\n- Niveau d'affection de ${affectionPercentage}%`,
                 image: {
                     url: data.url,
                 },
@@ -33,7 +33,7 @@ module.exports = {
 
             return interaction.editReply({ embeds: [embed] });
         } else {
-            interaction.reply({ content: '<:non:1161484000272060548> Veuillez mentionner un membre à qui faire un câlin.', ephemeral: true });
+            interaction.reply({ content: '<:non:1161484000272060548> Veuillez mentionner un membre à qui faire manger.', ephemeral: true });
         }
     },
 };

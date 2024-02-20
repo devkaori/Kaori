@@ -14,7 +14,7 @@ module.exports = {
     run: async (client, interaction, args) => {
         await interaction.deferReply({ fetchReply: true });
 
-        const response = await fetch('http://api.nekos.fun:8080/api/kiss');
+        const response = await fetch('https://nekos.best/api/v2/kiss');
         const data = await response.json();
 
         const affectionPercentage = Math.floor(Math.random() * 100) + 1;
@@ -24,10 +24,10 @@ module.exports = {
         if (member) {
             const embed = {
                 color: 0x2C2D31,
-                title: `Bisous`,
+                title: `Calin`,
                 description: `<:s_heart_devill_red:1194671427132063866> ${interaction.user} fait un bisous à ${member}\n- Niveau d'affection de ${affectionPercentage}%`,
                 image: {
-                    url: data.image,
+                    url: data.url,
                 },
             };
 
