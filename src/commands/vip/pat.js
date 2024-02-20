@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-const Discord = require('discord.js');
 
 module.exports = async (client, interaction, args) => {
     await interaction.deferReply({ fetchReply: true });
@@ -14,7 +13,7 @@ module.exports = async (client, interaction, args) => {
     if (member) {
         const embed = {
             color: 0x2C2D31,
-            title: `Caresse`,
+            title: `Pat`,
             description: `<:s_heart_devill_red:1194671427132063866> ${interaction.user} caresse ${member}\n- Niveau d'affection de ${affectionPercentage}%`,
             image: {
                 url: data.image,

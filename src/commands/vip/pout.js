@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-const Discord = require('discord.js');
 
 module.exports = async (client, interaction, args) => {
     await interaction.deferReply({ fetchReply: true });
@@ -14,8 +13,8 @@ module.exports = async (client, interaction, args) => {
     if (member) {
         const embed = {
             color: 0x2C2D31,
-            title: `Calin`,
-            description: `<:s_heart_devill_red:1194671427132063866> ${interaction.user} boude ${member}`,
+            title: `Pout`,
+            description: `<:s_heart_devill_red:1194671427132063866> ${interaction.user} boude ${member}\n- Niveau d'affection de ${affectionPercentage}%`,
             image: {
                 url: data.url,
             },
@@ -23,6 +22,6 @@ module.exports = async (client, interaction, args) => {
 
         return interaction.editReply({ embeds: [embed] });
     } else {
-        interaction.reply({ content: '<:non:1161484000272060548> Veuillez mentionner un membre à qui bouder.', ephemeral: true });
+        interaction.reply({ content: '<:non:1161484000272060548> Veuillez mentionner un membre à qui faire une moue.', ephemeral: true });
     }
 };
