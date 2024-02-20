@@ -11,7 +11,7 @@ module.exports = async (client, interaction, args) => {
 
     if (member) {
         const embed = {
-            color: 0x2C2D31,
+            color: 0xFFA1A1,
             title: `Gifle`,
             description: `<:s_heart_devill_red:1194671427132063866> ${interaction.user} a mis une gifle à ${member}\n- Niveau de furiosité de ${affectionPercentage}%`,
             image: {

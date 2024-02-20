@@ -16,8 +16,8 @@ module.exports = {
     )
     .addSubcommand(subcommand =>
         subcommand
-            .setName('poke')
-            .setDescription('Donne un petit coup à quelqu\'un')
+            .setName('feed')
+            .setDescription('Nourrit quelqu\'un')
             .addUserOption(option => option.setName('cible').setDescription('Sélectionnez la personne à toucher').setRequired(true))
     )
     .addSubcommand(subcommand =>
