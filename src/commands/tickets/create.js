@@ -43,22 +43,22 @@ module.exports = async (client, interaction, args) => {
                             .addComponents(
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_closeticket')
-                                    .setEmoji('🔒')
+                                    .setEmoji('1209953195535900765')
                                     .setStyle(Discord.ButtonStyle.Danger),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_claimTicket')
-                                    .setEmoji('✋')
+                                    .setEmoji('take:1209953185725415474')
                                     .setStyle(Discord.ButtonStyle.Success),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_transcriptTicket')
-                                    .setEmoji('📝')
+                                    .setEmoji('1209953183540191262')
                                     .setStyle(Discord.ButtonStyle.Secondary),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_noticeTicket')
-                                    .setEmoji('🔔')
+                                    .setEmoji('1209953181103165481')
                                     .setStyle(Discord.ButtonStyle.Primary),
                             );
 

@@ -114,17 +114,17 @@ module.exports = async (client, interaction, args) => {
                     .addComponents(
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_transcriptTicket')
-                            .setEmoji('📝')
+                            .setEmoji('1209953183540191262')
                             .setStyle(Discord.ButtonStyle.Secondary),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_openTicket')
-                            .setEmoji('🔓')
+                            .setEmoji('1209953789197680723')
                             .setStyle(Discord.ButtonStyle.Success),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_deleteTicket')
-                            .setEmoji('⛔')
+                            .setEmoji('1209943997301137448')
                             .setStyle(Discord.ButtonStyle.Danger),
                     );
 
