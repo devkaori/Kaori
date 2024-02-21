@@ -16,7 +16,7 @@ module.exports = async (client, interaction, args) => {
             const button = new Discord.ButtonBuilder()
                 .setCustomId('Bot_openticket')
                 .setLabel(name)
-                .setStyle(Discord.ButtonStyle.Primary)
+                .setStyle(Discord.ButtonStyle.Secondary)
                 .setEmoji('<:ticket:1209943994973429841>')
 
             // Création de la rangée d'actions

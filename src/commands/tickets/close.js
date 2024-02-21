@@ -120,12 +120,12 @@ module.exports = async (client, interaction, args) => {
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_openTicket')
                             .setEmoji('1209953789197680723')
-                            .setStyle(Discord.ButtonStyle.Success),
+                            .setStyle(Discord.ButtonStyle.Secondary),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_deleteTicket')
                             .setEmoji('1209943997301137448')
-                            .setStyle(Discord.ButtonStyle.Danger),
+                            .setStyle(Discord.ButtonStyle.Secondary),
                     );
 
                 client.embed({
