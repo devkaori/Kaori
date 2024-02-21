@@ -35,7 +35,7 @@ module.exports = (client) => {
             botsCanWin: false,
             embedColor: client.config.colors.normal,
             embedColorEnd: client.config.colors.error,
-            reaction: '<:giveaway:1189614274268639232>'
+            reaction: '<:dossier:1209946863784960001>'
         }
     }, true);
 

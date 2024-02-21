@@ -130,13 +130,13 @@ module.exports = async (client) => {
 
             let button1 = new Discord.ButtonBuilder()
                 .setCustomId('back_button')
-                .setEmoji('⬅️')
+                .setEmoji('1209945967382495242')
                 .setStyle(Discord.ButtonStyle.Primary)
                 .setDisabled(true);
 
             let button2 = new Discord.ButtonBuilder()
                 .setCustomId('forward_button')
-                .setEmoji('➡️')
+                ')
                 .setStyle(Discord.ButtonStyle.Primary);
 
             let row = new Discord.ActionRowBuilder()
@@ -153,13 +153,13 @@ module.exports = async (client) => {
 
                     let btn1 = new Discord.ButtonBuilder()
                         .setCustomId('back_button')
-                        .setEmoji('⬅️')
+                        .setEmoji('1209945967382495242')
                         .setStyle(Discord.ButtonStyle.Primary)
                         .setDisabled(true);
 
                     let btn2 = new Discord.ButtonBuilder()
                         .setCustomId('forward_button')
-                        .setEmoji('➡️')
+                        .setEmoji('1209945964962648177')
                         .setStyle(Discord.ButtonStyle.Primary)
                         .setDisabled(true);
 
@@ -177,13 +177,13 @@ module.exports = async (client) => {
             collector.on('end', async (btn) => {
                 let btn1Disable = new Discord.ButtonBuilder()
                     .setCustomId('back_button')
-                    .setEmoji('⬅️')
+                    .setEmoji('1209945967382495242')
                     .setStyle(Discord.ButtonStyle.Primary)
                     .setDisabled(true);
 
                 let btn2Disable = new Discord.ButtonBuilder()
                     .setCustomId('forward_button')
-                    .setEmoji('➡️')
+                    ')
                     .setStyle(Discord.ButtonStyle.Primary)
                     .setDisabled(true);
 
