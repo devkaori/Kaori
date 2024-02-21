@@ -23,7 +23,7 @@ module.exports = async (client, interaction, args) => {
             .setLevel(user.level)
             .setProgressBar(client.config.colors.normal, "COLOR")
             .setUsername(target.username)
-            .setStatus("dnd")
+            .setStatus("online")
             .setRank(user.position);
 
         rankCard.build()
