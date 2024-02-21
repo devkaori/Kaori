@@ -15,8 +15,8 @@ module.exports = async (client, interaction, args) => {
             // Création du bouton
             const button = new Discord.ButtonBuilder()
                 .setCustomId('Bot_openticket')
-                .setLabel('Créé un ticket')
-                .setStyle(Discord.ButtonStyle.Danger)
+                .setLabel(name)
+                .setStyle(Discord.ButtonStyle.Primary)
                 .setEmoji('<:ticket:1209943994973429841>')
 
             // Création de la rangée d'actions
@@ -27,7 +27,6 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 title: name,
                 desc: description,
-                image: `https://i.imgur.com/PkNmeFx.png`,
                 components: [row]
             }, channel)
 
@@ -45,3 +44,4 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
     })
+}
