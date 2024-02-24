@@ -1,8 +1,8 @@
 module.exports = {
     colors: {
-        succes: '#ffa1a1',
+        succes: '#2C2D31',
         error: "#2C2D31",
-        normal: "#ffa1a1"
+        normal: "#2C2D31"
     },
 
     discord: {
