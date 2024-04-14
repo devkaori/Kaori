@@ -43,8 +43,8 @@ module.exports = async (client, member) => {
                     var channel = client.channels.cache.get(channelData.Channel)
 
                     client.embed({
-                        title: `Nouveau boost`,
-                        image: 'https://i.imgur.com/YcBqBaq.png',
+                        title: `Nouveau supporter`,
+                        image: 'https://i.imgur.com/U9Fih4D.png',
                         desc: `Arigatou gozaimasu, ${member}-senpai ! Ton incroyable boost a vraiment mis le feu à notre communauté <:boost:1189613736995078144>`
                     }, channel)
                 } catch {}
