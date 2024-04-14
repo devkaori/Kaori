@@ -57,7 +57,7 @@ module.exports = {
                     value: '⇆ [Contactez-nous](https://discord.gg/amies), on s\'en occupe'
                 },
             ],
-            content: `[Contactez-nous](https://discord.gg/7S28GvPsZQ ) si vous avez besoin`,
+            content: `Rejoignez la communauté https://discord.gg/7S28GvPsZQ`,
             components: [row],
             type: 'editreply'
         }, interaction)
