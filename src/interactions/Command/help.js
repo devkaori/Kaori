@@ -7,7 +7,7 @@ require("moment-duration-format");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('help')
-        .setDescription(`Voir la page d'aide`),
+        .setDescription(`Accéder à la page d'aide`),
 
     /** 
      * @param {Client} client
@@ -21,31 +21,31 @@ module.exports = {
             .addComponents(
                 new Discord.StringSelectMenuBuilder()
                     .setCustomId('Bot-helppanel')
-                    .setPlaceholder('Aucune sélection')
+                    .setPlaceholder('Faites une sélection')
                     .addOptions([
                         {
                             label: `Commandes`,
-                            description: `Afficher les commandes du bot !`,
-                            emoji: "1163106294073401354",
+                            description: `Afficher les commandes`,
+                            emoji: "1229052811204100196",
                             value: "commands-Bothelp",
                         },
                         {
                             label: `Invitation`,
-                            description: `Inviter le bot sur votre serveur`,
-                            emoji: "1163106292227915796",
+                            description: `Invite moi`,
+                            emoji: "1229052863460937829",
                             value: "invite-Bothelp",
                         },
                         {
                             label: `Communauté`,
-                            description: `Rejoindre le serveur de support`,
-                            emoji: "1163106279187820544",
+                            description: `Rajoin la communauté`,
+                            emoji: "1229052874944811098",
                             value: "support-Bothelp",
                         },
                     ]),
             );
 
         return client.embed({
-            image: 'https://i.imgur.com/cNHAdGT.png',
+            image: `https://i.imgur.com/U9Fih4D.png`,
             desc: `Bonjour, je suis Kaori, votre nouvelle assistante pour la communauté. Ravi de faire votre connaissance. Ci-dessous, vous trouverez des boutons qui vous guideront pour la suite.`,
             fields: [
                 {
@@ -57,6 +57,7 @@ module.exports = {
                     value: '⇆ [Contactez-nous](https://discord.gg/amies), on s\'en occupe'
                 },
             ],
+            content: `[Contactez-nous](https://discord.gg/7S28GvPsZQ ) si vous avez besoin`,
             components: [row],
             type: 'editreply'
         }, interaction)
