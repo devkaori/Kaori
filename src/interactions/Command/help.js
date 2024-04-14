@@ -58,7 +58,7 @@ module.exports = {
                 },
             ],
             components: [row],
-            content: `[Notre Communauté](https://discord.gg/7S28GvPsZQ )`,
+            content: `<:icons_colorserververified:1229052842141286410> [Notre Communauté](https://discord.gg/7S28GvPsZQ ) si tu souhaite de l'aide`,
             type: 'editreply'
         }, interaction)
     },

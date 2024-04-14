@@ -6,7 +6,7 @@ const Discord = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("embed")
-    .setDescription("Génère un embed")
+    .setDescription("Créé un embed")
     .addChannelOption((option) =>
       option
         .setName("channel")
@@ -38,55 +38,55 @@ module.exports = {
         .setPlaceholder("Rien sélectionné")
         .addOptions([
           {
-            emoji: "✏️",
+            emoji: "1229052854166093845",
             label: "Titre",
             description: "Crée un titre d'embed",
             value: "title_embed",
           },
           {
-            emoji: "💬",
+            emoji: "1229052858658455592",
             label: "Description",
             description: "Crée une description d'embed",
             value: "description_embed",
           },
           {
-            emoji: "🕵️",
+            emoji: "1229052874944811098",
             label: "Auteur",
             description: "Crée un auteur d'embed",
             value: "author_embed",
           },
           {
-            emoji: "🔻",
+            emoji: "1229052806154162266",
             label: "Footer",
             description: "Crée un footer d'embed",
             value: "footer_embed",
           },
           {
-            emoji: "🔳",
+            emoji: "1229133001405759560",
             label: "Vignette",
             description: "Crée une vignette d'embed",
             value: "thumbnail_embed",
           },
           {
-            emoji: "🕙",
+            emoji: "1229052788932350086",
             label: "Horodatage",
             description: "Crée un horodatage d'embed",
             value: "timestamp_embed",
           },
           {
-            emoji: "🖼️",
+            emoji: "1229133001405759560",
             label: "Image",
             description: "Crée une image d'embed",
             value: "image_embed",
           },
           {
-            emoji: "🌐",
+            emoji: "1229052827431735367",
             label: "URL",
             description: "Crée une URL d'embed",
             value: "url_embed",
           },
           {
-            emoji: "🔵",
+            emoji: "1229052846574665819",
             label: "Couleur",
             description: "Crée une couleur d'embed",
             value: "color_embed",
@@ -97,7 +97,7 @@ module.exports = {
     let row2 = new Discord.ActionRowBuilder().addComponents(
       new Discord.ButtonBuilder()
         .setCustomId("send_embed")
-        .setEmoji("✅")
+        .setEmoji("1229052806154162266")
         .setLabel("Envoyer l'embed")
         .setStyle(Discord.ButtonStyle.Success)
     );

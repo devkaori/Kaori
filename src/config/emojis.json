@@ -15,7 +15,7 @@
         "gift": "🎁",
         "medal": "🏅",
         "party": "🎉",
-        "info": "ℹ️",
+        "info": "<:icons_info:1229136263937003570>",
         "arrowDown": "⬇️",
         "arrowUp": "⬆️",
         "dcredits": "💳",
@@ -24,33 +24,27 @@
     },
 
     "Bot": {
-        "add": "📥",
-        "info": "ℹ️",
+        "add": "<:icons_invite:1229052863460937829>",
+        "info": "<:icons_info:1229136263937003570>",
         "min": "🔻"
     },
 
-    "economy": {
-        "pocket": "<:pocket:1209514860770230343>",
-        "bank": "<:bank:1209514863643328563>",
-        "coins": "<:coin:1209146916508799036>"
-    },
-
     "badges": {
-        "bot": "<:commands:1209141526593142874>",
-        "management": "<:vip:1209146894673252362>",
-        "bug": "<:bug:1209146910255095829>",
-        "developer": "<:developer:1209147890446897165>",	
-        "supporter": "<:supporter:1209148200687239188>",
-        "team": "<:members:1209141523887955999>",
-        "booster": "<:booster:1209148504342134794>",
-        "partner": "<:reviewer:1209141515952062464>",
-        "voter": "<:vote:1209146891259088926>",
-        "support": "<:assistant:1209141518279905300>",
-        "moderator": "<:moderator:1209147379379601418>",
-        "designer": "<:designer:1209148809741860916>",
-        "active": "<:active:1209146907805487195>",
-        "event": "<:event:1209146897709924372>",
-        "vip": "<:vip:1209146894673252362>",
+        "bot": "<:icons_id:1229052803113029724>",
+        "management": "<:icons_discordstaff:1229052838026416188>",
+        "bug": "<:icons_Bugs:1229135621038145597>",
+        "developer": "<:icon_dev:1229052811204100196>",	
+        "supporter": "<:icons_heart:1229052808968409088>",
+        "team": "<:icons_member:1229135283853987880>",
+        "booster": "<:icons_colorboostnitro:1229052849305030656>",
+        "partner": "<:icons_partner1:1229134601830666322>",
+        "voter": "<:j_icons_like:1229134604259168378>",
+        "support": "<:icons_eventcolour:1229052822243250277>",
+        "moderator": "<:Icons_Guardian:1229052833731579915>",
+        "designer": "<:icons_edit:1229052854166093845>",
+        "active": "<:icons_online:1229134608931487914>",
+        "event": "<:icons_event:1229134611142152363>",
+        "vip": "<:VIP_Icon:1229134613868183594>",
         "marketing": "<:marketing:1209149148113150032>"
     },
 

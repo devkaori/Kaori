@@ -18,20 +18,20 @@ module.exports = {
         let row = new Discord.ActionRowBuilder()
             .addComponents(
                 new Discord.ButtonBuilder()
-                    .setLabel("Inviter")
+                    .setLabel("Ajouter")
                     .setURL(client.config.discord.botInvite)
                     .setStyle(Discord.ButtonStyle.Link),
 
                 new Discord.ButtonBuilder()
-                    .setLabel("Serveur de support")
+                    .setLabel("Communauté")
                     .setURL(client.config.discord.serverInvite)
                     .setStyle(Discord.ButtonStyle.Link),
             );
 
         client.embed({
             title: `Invitation`,
-            desc: `Améliorez votre serveur avec le Bot !`,
-            image: "https://cdn.discordapp.com/attachments/843487478881976381/874694194474668052/Bot_banner_invite.jpg",
+            desc: `Ajoûter Kaori sur votre serveur, pour la modération, les événements, les jeux entre amies etc.`,
+            image: "https://i.imgur.com/U9Fih4D.png",
             url: client.config.discord.botInvite,
             components: [row],
             type: 'editreply'
