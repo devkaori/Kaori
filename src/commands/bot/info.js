@@ -127,7 +127,7 @@ module.exports = async (client, interaction, args) => {
                 },
                 {
                     name: "Liens",
-                    value: "Ajoutez-moi : [Cliquez ici](Lien_d'invitation_du_bot) \nServeur de support : [[ICI]](Lien_d'invitation_du_serveur)",
+                    value: "Ajoutez-moi : [Cliquez ici](https://discord.com/oauth2/authorize?client_id=855107430693077033&permissions=633318697598967&scope=bot+applications.commands) \nServeur de support : [[ICI]](https://discord.gg/7S28GvPsZQ)",
                     inline: false,
                 }],
                 type: 'editreply'
