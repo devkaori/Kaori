@@ -14,6 +14,7 @@ module.exports = async (client, interaction, args) => {
 
                 client.succNormal({
                     text: `La commande a été supprimée avec succès`,
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     fields: [{
                         name: "Commande",
                         value: `\`\`\`${cmdname}\`\`\``,

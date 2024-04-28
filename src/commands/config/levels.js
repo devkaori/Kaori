@@ -26,6 +26,7 @@ module.exports = async (client, interaction, args) => {
 
     client.succNormal({
         text: `Les niveaux sont maintenant **${boolean ? 'activés' : 'désactivés'}** dans ce serveur`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         type: 'editreply'
     }, interaction);
 }

@@ -23,11 +23,13 @@ module.exports = async (client, interaction, args) => {
 
     if (!day || day > 31) return client.errNormal({ 
         error: "Format du jour incorrect !",
+        image: `https://i.imgur.com/IFqedKi.png`,
         type: 'editreply'
     }, interaction);
 
     if (!month || month > 12) return client.errNormal({
         error: "Format du mois incorrect !",
+        image: `https://i.imgur.com/IFqedKi.png`,
         type: 'editreply'
     }, interaction);
 
@@ -51,6 +53,7 @@ module.exports = async (client, interaction, args) => {
 
     client.succNormal({ 
         text: `Date d'anniversaire définie avec succès`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         fields: [
             {
                 name: `Anniversaire`,

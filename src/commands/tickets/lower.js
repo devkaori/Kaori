@@ -36,12 +36,14 @@ module.exports = async (client, interaction, args) => {
 
                     return client.simpleEmbed({
                         desc: `Ticket abaissé par <@!${interaction.user.id}>`,
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         type: 'editreply'
                     }, interaction)
                 }
                 catch {
                     client.errNormal({
                         error: "Quelque chose s'est mal passé !",
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         type: 'editreply'
                     }, interaction);
                 }
@@ -50,6 +52,7 @@ module.exports = async (client, interaction, args) => {
             else {
                 client.errNormal({ 
                     error: "Ce n'est pas un ticket !", 
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: 'editreply'
                 }, interaction);
 
@@ -58,6 +61,7 @@ module.exports = async (client, interaction, args) => {
         else {
             return client.errNormal({ 
                 error: "Effectuez la configuration du ticket !", 
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply'
             }, interaction);
         }

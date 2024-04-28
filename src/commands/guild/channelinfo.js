@@ -6,6 +6,7 @@ module.exports = async (client, interaction, args) => {
   client.embed({
       title: `Informations sur le canal`,
       desc: `Informations sur le canal : <#${channel.id}>`,
+      image: `https://i.imgur.com/IFqedKi.png`,
       fields: [
           {
               name: "Type",

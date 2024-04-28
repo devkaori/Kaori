@@ -13,12 +13,14 @@ module.exports = async (client, interaction, args) => {
     const channel = interaction.member.voice.channel;
     if (!channel) return client.errNormal({
         error: `Vous n'êtes pas dans un salon vocal !`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         type: 'editreply'
     }, interaction);
     var checkVoice = await client.checkVoice(interaction.guild, channel);
     if (!checkVoice) {
         return client.errNormal({
             error: `Vous ne pouvez pas modifier ce salon !`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'editreply'
         }, interaction);
     } else {
@@ -27,6 +29,7 @@ module.exports = async (client, interaction, args) => {
 
         client.succNormal({
             text: `Le salon a été renommé en \`${name}\``,
+            image: `https://i.imgur.com/IFqedKi.png`,
             fields: [
                 {
                     name: `Salon`,

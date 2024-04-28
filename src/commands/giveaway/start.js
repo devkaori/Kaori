@@ -48,6 +48,7 @@ module.exports = async (client, interaction, args) => {
     }).then((gData) => {
         client.succNormal({ 
             text: `- <a:yui_peek:1163075456866734090> Giveaway lancé dans ${gchannel}`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'ephemeraledit'
         }, interaction);
     });

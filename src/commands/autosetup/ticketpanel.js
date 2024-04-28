@@ -17,18 +17,21 @@ module.exports = async (client, interaction, args) => {
 
             client.embed({
                 title: "Tickets",
+                image: `https://i.imgur.com/IFqedKi.png`,
                 desc: "Contacter les responsables du serveur en cliquant sur l'un des boutons ci-dessus",
                 components: [row]
             }, channel)
 
             client.succNormal({
                 text: `Le panneau des tickets a été configuré avec succès !`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply'
             }, interaction);
         }
         else {
             client.errNormal({
                 error: `Exécutez d'abord la configuration des tickets !`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply'
             }, interaction);
         }

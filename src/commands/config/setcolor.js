@@ -40,6 +40,7 @@ module.exports = async (client, interaction, args) => {
 
     client.succNormal({
         text: `La couleur de l'embed a été ajustée avec succès`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         fields: [
             {
                 name: `Nouvelle couleur`,

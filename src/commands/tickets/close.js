@@ -14,6 +14,7 @@ module.exports = async (client, interaction, args) => {
     if (ticketData) {
         if (ticketData.resolved == true) return client.errNormal({
             error: "Le ticket est déjà fermé !",
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'ephemeraledit'
         }, interaction);
 
@@ -24,6 +25,7 @@ module.exports = async (client, interaction, args) => {
             if (ticketCategory == undefined) {
                 return client.errNormal({
                     error: "Effectuez la configuration !",
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: type
                 }, interaction);
             }
@@ -47,6 +49,7 @@ module.exports = async (client, interaction, args) => {
 
                         client.embed({
                             desc: closeMessageTicket,
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             fields: [
                                 {
                                     name: "Fermeur",
@@ -74,6 +77,7 @@ module.exports = async (client, interaction, args) => {
                     client.embed({
                         title: `Ticket fermé`,
                         desc: `Le ticket est fermé`,
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         color: client.config.colors.error,
                         fields: [
                             {
@@ -107,6 +111,7 @@ module.exports = async (client, interaction, args) => {
                 interaction.channel.edit({ name: `ticket-fermer` });
                 client.simpleEmbed({
                     desc: `Ticket fermé par <@!${interaction.user.id}>`,
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: type
                 }, interaction);
 
@@ -131,12 +136,14 @@ module.exports = async (client, interaction, args) => {
                 client.embed({
                     title: "Fermé",
                     desc: `- Sauvegarder la transcription \n- Réouvrir le ticket \n- Supprimer le ticket`,
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     components: [row],
                 }, interaction.channel);
             }
             else {
                 return client.errNormal({
                     error: "Effectuez la configuration du ticket !",
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: type
                 }, interaction);
 
@@ -145,6 +152,7 @@ module.exports = async (client, interaction, args) => {
         else {
             return client.errNormal({
                 error: "Effectuez la configuration du ticket !",
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: type
             }, interaction);
         }

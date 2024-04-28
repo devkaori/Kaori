@@ -28,6 +28,7 @@ module.exports = async (client, interaction, args) => {
   client.embed({
     title: `Emojis !`,
     desc: `${OverallEmojis} Emojis - ${interaction.guild.name}`,
+    image: `https://i.imgur.com/IFqedKi.png`,
     fields: [
       {
         name: `Animés [${Animated}]`,

@@ -20,6 +20,7 @@ module.exports = async (client, interaction, args) => {
       interaction.guild.emojis.create({ attachment: url, name: parsedEmoji.name, roles: [role.id] }).then(emoji => {
         client.succNormal({
           text: `Emoji ajouté avec succès sur le serveur`,
+          image: `https://i.imgur.com/IFqedKi.png`,
           fields: [
             {
               name: "Emoji",
@@ -69,6 +70,7 @@ module.exports = async (client, interaction, args) => {
   else {
     client.errNormal({
       error: "Emoji introuvable !",
+      image: `https://i.imgur.com/IFqedKi.png`,
       type: 'editreply'
     }, interaction)
   }

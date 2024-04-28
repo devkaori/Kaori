@@ -12,6 +12,7 @@ module.exports = async (client, interaction, args) => {
                 if (data.Channels.includes(channel.id)) {
                     return client.errNormal({
                         error: `Le canal ${channel} est déjà dans la base de données !`,
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         type: 'editreply'
                     }, interaction);
                 }
@@ -29,6 +30,7 @@ module.exports = async (client, interaction, args) => {
 
         client.succNormal({
             text: `Le canal a été ajouté à la liste blanche !`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             fields: [
                 {
                     name: `Canal`,
@@ -44,6 +46,7 @@ module.exports = async (client, interaction, args) => {
                 if (!data.Channels.includes(channel.id)) {
                     return client.errNormal({
                         error: `Le canal ${channel} n'existe pas dans la base de données !`,
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         type: 'editreply'
                     }, interaction);
                 }
@@ -58,6 +61,7 @@ module.exports = async (client, interaction, args) => {
 
                 client.succNormal({
                     text: `Le canal a été supprimé de la liste blanche !`,
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     fields: [
                         {
                             name: `Canal`,
@@ -70,6 +74,7 @@ module.exports = async (client, interaction, args) => {
             else {
                 return client.errNormal({
                     error: `Ce serveur n'a pas de données !`,
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: 'editreply'
                 }, interaction);
             }

@@ -19,6 +19,7 @@ module.exports = async (client, interaction, args) => {
         if (ticketCategory == undefined) {
             return client.errNormal({
                 error: "Effectuez la configuration du ticket !",
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply'
             }, interaction)
         }
@@ -28,6 +29,7 @@ module.exports = async (client, interaction, args) => {
             if (ticketData && user.id == ticketData.creator) {
                 return client.errNormal({ 
                     error: "Vous ne pouvez pas supprimer le créateur du ticket de ce ticket", 
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: 'ephemeraledit' 
                 }, interaction)
             }
@@ -36,12 +38,14 @@ module.exports = async (client, interaction, args) => {
 
             return client.simpleEmbed({
                 desc: `Utilisateur ${user} supprimé`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply'
             }, interaction)
         }
         else {
             client.errNormal({ 
                 error: "Ce n'est pas un ticket !", 
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply' 
             }, interaction)
         }

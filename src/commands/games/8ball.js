@@ -26,6 +26,7 @@ module.exports = async (client, interaction, args) => {
     client.embed({
         title: `8ball`,
         desc: `Voici la réponse à ta question !`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         fields: [
             {
                 name: `Ta question`,

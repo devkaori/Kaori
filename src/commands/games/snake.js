@@ -234,6 +234,7 @@ module.exports = async (client, interaction, args) => {
         client.embed({
             title: `Serpent`,
             desc: `GG, you scored **${score}** points!`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             components: [
                 {
                     type: 1,

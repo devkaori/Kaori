@@ -14,6 +14,7 @@ module.exports = async (client, interaction, args) => {
 
     client.succNormal({
         text: `L'annonce a été modifiée avec succès !`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         type: 'ephemeraledit'
     }, interaction);
 };

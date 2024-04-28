@@ -17,6 +17,7 @@ module.exports = async (client, interaction, args) => {
         if (ticketCategory == undefined) {
             return client.errNormal({
                 error: "Effectuez la configuration du ticket !",
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply'
             }, interaction)
         }
@@ -27,12 +28,14 @@ module.exports = async (client, interaction, args) => {
 
             return client.simpleEmbed({
                 desc: `Ajouté ${user}`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply'
             }, interaction)
         }
         else {
             client.errNormal({
                 error: "Ce n'est pas un ticket !",
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply'
             }, interaction)
         }

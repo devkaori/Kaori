@@ -8,6 +8,7 @@ module.exports = async (client, interaction, args) => {
     title: `Informations sur le rôle`,
     thumbnail: interaction.guild.iconURL({ dynamic: true, size: 1024 }),
     desc: `Informations sur le rôle ${role}`,
+    image: `https://i.imgur.com/IFqedKi.png`,
     fields: [
       {
         name: 'ID du rôle:',

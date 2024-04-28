@@ -31,6 +31,7 @@ module.exports = async (client, interaction, args) => {
 
         client.succNormal({
             text: `Le panneau de vérification a été créé avec succès`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             fields: [
                 {
                     name: `Salon`,

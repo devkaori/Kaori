@@ -29,6 +29,7 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 title: "Invitations",
                 desc: `**${user.username}** n'a aucune invitation`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 fields: [
                     {
                         name: "Total",
@@ -36,7 +37,7 @@ module.exports = async (client, interaction, args) => {
                         inline: true
                     },
                     {
-                        name: "Partis",
+                        name: "Membres Parti",
                         value: `0`,
                         inline: true
                     }

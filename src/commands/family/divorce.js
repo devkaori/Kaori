@@ -31,6 +31,7 @@ module.exports = async (client, interaction, args) => {
         client.embed({ 
             title: `Divorcé`, 
             desc: `${author} et ${target} ont divorcé`, 
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'editreply' 
         }, interaction);
 

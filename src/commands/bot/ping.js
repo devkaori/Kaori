@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 module.exports = async (client, interaction, args) => {
     client.simpleEmbed({
         desc: `Calcul de la latence...`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         type: 'editreply'
     }, interaction).then((resultMessage) => {
         const ping = Math.floor(resultMessage.createdTimestamp - interaction.createdTimestamp);

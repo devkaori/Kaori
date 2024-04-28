@@ -69,6 +69,7 @@ module.exports = async (client, interaction, args) => {
         client.embed({
             title: `Demande en mariage`,
             desc: `${author} a demandé à ${target} de se marier ! \n${target}, cliquez sur l'un des boutons`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             components: [row],
             content: `${target}`,
             type: 'editreply'
@@ -110,6 +111,7 @@ module.exports = async (client, interaction, args) => {
                 client.embed({
                     title: `Demande en mariage - Approuvée`,
                     desc: `${author} et ${target} sont maintenant mariés ! 👰🎉`,
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     components: [],
                     content: `${target}`,
                     type: 'editreply'
@@ -120,6 +122,7 @@ module.exports = async (client, interaction, args) => {
                 client.embed({
                     title: `Demande en mariage - Refusée`,
                     desc: `${target} aime quelqu'un d'autre et a choisi de ne pas épouser ${author}`,
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     components: [],
                     content: `${target}`,
                     type: 'editreply'
@@ -129,6 +132,7 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 title: `Demande en mariage - Refusée`,
                 desc: `${target} n'a rien répondu ! Le mariage est annulé`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 components: [],
                 content: `${target}`,
                 type: 'editreply'

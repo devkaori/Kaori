@@ -12,6 +12,7 @@ module.exports = async (client, interaction, args) => {
         Schema.findOneAndDelete({ Guild: interaction.guild.id, User: interaction.user.id }).then(() => {
             client.succNormal({ 
                 text: "Votre date d'anniversaire a été supprimée", 
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply' 
             }, interaction)
         })

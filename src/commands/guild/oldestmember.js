@@ -10,6 +10,7 @@ module.exports = async (client, interaction, args) => {
   client.embed({
     title: `Membre le plus ancien`,
     desc: `Découvrez qui est le membre le plus ancien dans **${interaction.guild.name}**`,
+    image: `https://i.imgur.com/IFqedKi.png`,
     fields: [
       {
         name: `Utilisateur`,

@@ -32,6 +32,7 @@ module.exports = async (client, interaction, args) => {
     if (checkAdopt) {
         return client.errNormal({
             error: `Cet utilisateur a déjà été adopté`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'editreply'
         }, interaction);
     }
@@ -52,6 +53,7 @@ module.exports = async (client, interaction, args) => {
     client.embed({
         title: `Adoption`,
         desc: `${author} a demandé à adopter ${target} ! \n${target}, cliquez sur l'un des boutons`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         components: [row],
         content: `${target}`,
         type: 'editreply',
@@ -93,6 +95,7 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 title: `Adoption - Approuvée`,
                 desc: `${author} est maintenant le fier parent de ${target} ! 🎉`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 components: [],
                 type: 'editreply'
             }, interaction);
@@ -102,6 +105,7 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 title: `Adoption - Refusée`,
                 desc: `${target} ne souhaite pas être adopté(e) par ${author}`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 components: [],
                 type: 'editreply'
             }, interaction);
@@ -110,6 +114,7 @@ module.exports = async (client, interaction, args) => {
         client.embed({
             title: `Adoption - Refusée`,
             desc: `${target} n'a pas répondu ! L'adoption est annulée`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             components: [],
             type: 'editreply'
         }, interaction);

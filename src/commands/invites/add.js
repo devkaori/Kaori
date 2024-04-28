@@ -31,6 +31,7 @@ module.exports = async (client, interaction, args) => {
 
     client.succNormal({
         text: `Ajouté **${amount}** invitations à ${user}`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         fields: [
             {
                 name: "Invitations totales",

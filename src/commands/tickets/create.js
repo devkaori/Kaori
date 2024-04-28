@@ -16,11 +16,13 @@ module.exports = async (client, interaction, args) => {
             if (interaction.isCommand()) {
                 return client.errNormal({
                     error: "Limite de tickets atteinte. 1/1",
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: 'ephemeraledit'
                 }, interaction);
             }
             else return client.errNormal({
                 error: "Limite de tickets atteinte. 1/1",
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'ephemeral'
             }, interaction);
         }
@@ -65,6 +67,7 @@ module.exports = async (client, interaction, args) => {
                         client.embed({
                             title: `En cours`,
                             desc: `Votre ticket a été ouvert`,
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: 'ephemeral'
                         }, interaction).then((msg) => {
 
@@ -118,6 +121,7 @@ module.exports = async (client, interaction, args) => {
                                     client.embed({
                                         title: `Système`,
                                         desc: `Le ticket a été créé`,
+                                        image: `https://i.imgur.com/IFqedKi.png`,
                                         fields: [
                                             {
                                                 name: "Créateur",
@@ -150,6 +154,7 @@ module.exports = async (client, interaction, args) => {
                                         client.embed({
                                             title: `Ticket ouvert`,
                                             desc: `Un nouveau ticket a été créé`,
+                                            image: `https://i.imgur.com/IFqedKi.png`,
                                             fields: [
                                                 {
                                                     name: "Créateur",
@@ -172,6 +177,7 @@ module.exports = async (client, interaction, args) => {
 
                                     await client.embed({
                                         desc: openTicket,
+                                        image: `https://i.imgur.com/IFqedKi.png`,
                                         fields: [
                                             {
                                                 name: "Créateur",
@@ -201,6 +207,7 @@ module.exports = async (client, interaction, args) => {
                     catch (err) {
                         client.errNormal({
                             error: "Effectuez la configuration !",
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: type
                         }, interaction);
                         console.log(err);
@@ -209,6 +216,7 @@ module.exports = async (client, interaction, args) => {
                 else {
                     return client.errNormal({
                         error: "Effectuez la configuration !",
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         type: type
                     }, interaction);
                 }

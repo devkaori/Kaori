@@ -11,6 +11,7 @@ module.exports = async (client, interaction, args) => {
     const channel = interaction.member.voice.channel;
     if (!channel) return client.errNormal({
         error: `Vous n'êtes pas dans un salon vocal !`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         type: 'editreply'
     }, interaction);
 
@@ -18,11 +19,13 @@ module.exports = async (client, interaction, args) => {
     if (!checkVoice) {
         return client.errNormal({
             error: `Vous ne pouvez pas modifier ce salon !`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'editreply'
         }, interaction);
     } else {
         client.succNormal({
             text: `Le salon a été verrouillé avec succès !`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             fields: [
                 {
                     name: `Salon`,

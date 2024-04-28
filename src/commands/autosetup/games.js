@@ -15,6 +15,7 @@ module.exports = async (client, interaction, args) => {
         }).then((ch) => {
             client.embed({
                 title: `Comptage`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 desc: `Ceci est le début du comptage ! Le premier nombre est **1**`
             }, ch);
 
@@ -29,6 +30,7 @@ module.exports = async (client, interaction, args) => {
         }).then((ch) => {
             client.embed({
                 title: `Devine le nombre`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 desc: `Devine le nombre entre **1** et **10 000** !`
             }, ch);
 
@@ -46,6 +48,7 @@ module.exports = async (client, interaction, args) => {
 
             client.embed({
                 title: `Devine le mot`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 desc: `Place les lettres dans la bonne position !`,
                 fields: [
                     {

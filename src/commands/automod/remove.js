@@ -10,6 +10,7 @@ module.exports = async (client, interaction, args) => {
             if (!data.Words.includes(word)) {
                 return client.errNormal({
                     error: `Ce mot n'existe pas dans la base de données !`,
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: 'editreply'
                 }, interaction);
             }
@@ -23,6 +24,7 @@ module.exports = async (client, interaction, args) => {
 
             client.succNormal({
                 text: `Le mot a été supprimé de la liste noire !`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 fields: [
                     {
                         name: `Mot`,
@@ -35,6 +37,7 @@ module.exports = async (client, interaction, args) => {
         else {
             client.errNormal({
                 error: `Ce serveur n'a pas de données !`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply'
             }, interaction);
         }

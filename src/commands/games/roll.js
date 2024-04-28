@@ -6,6 +6,7 @@ module.exports = async (client, interaction, args) => {
     client.embed({
         title: `Lancer de dés`,
         desc: `Vous avez obtenu ${result}`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         type: 'editreply'
     }, interaction);
 }

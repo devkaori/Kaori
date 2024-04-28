@@ -23,6 +23,7 @@ module.exports = async (client, interaction, args) => {
                     if (ticketCategory == undefined) {
                         return client.errNormal({
                             error: "Effectuez la configuration !",
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: type
                         }, interaction);
                     }
@@ -30,6 +31,7 @@ module.exports = async (client, interaction, args) => {
                     if (interaction.channel.parentId == ticketCategory.id) {
                         return client.simpleEmbed({
                             desc: `${client.emotes.animated.loading}・Sauvegarde de la transcription en cours...`,
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: type
                         }, interaction).then(async (editMsg) => {
                             client.transcript(interaction, interaction.channel).then(() => {
@@ -45,6 +47,7 @@ module.exports = async (client, interaction, args) => {
                     else {
                         client.errNormal({
                             error: "Ce n'est pas un ticket !",
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: type
                         }, interaction);
 
@@ -53,6 +56,7 @@ module.exports = async (client, interaction, args) => {
                 else {
                     return client.errNormal({
                         error: "Effectuez la configuration !",
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         type: type
                     }, interaction);
                 }

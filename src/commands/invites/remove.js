@@ -22,12 +22,14 @@ module.exports = async (client, interaction, args) => {
     else {
         return client.errNormal({
             error: `Aucune donnée d'invitation trouvée pour ${user}`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'editreply'
         }, interaction);
     }
 
     client.succNormal({
         text: `Supprimé **${amount}** invitations de ${user}`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         fields: [
             {
                 name: "Invitations totales",

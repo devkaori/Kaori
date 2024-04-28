@@ -18,15 +18,6 @@ module.exports = async (client, interaction, args) => {
         });
     }
 
-    if (choice == "chatbot") {
-        interaction.guild.channels.create({
-            name: "chatbot",
-            type: Discord.ChannelType.GuildText
-        }).then((ch) => {
-            client.createChannelSetup(Chatbot, ch, interaction);
-        });
-    }
-
     if (choice == "reviews") {
         interaction.guild.channels.create({
             name: "reviews",

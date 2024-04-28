@@ -18,6 +18,7 @@ module.exports = async (client, interaction, args) => {
             desc: `Voici les options de nom de salon : \n
             \`{emoji}\` - Émoji du salon
             \`{name}\` - Nom du salon`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'editreply'
         }, interaction)
     }
@@ -36,6 +37,7 @@ module.exports = async (client, interaction, args) => {
 
         client.succNormal({
             text: `Le nom du salon a été configuré avec succès`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             fields: [
                 {
                     name: `Nom`,

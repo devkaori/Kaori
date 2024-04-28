@@ -36,6 +36,7 @@ module.exports = async (client, interaction, args) => {
 
     client.embed({
         title: `Liens`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         desc: `Accédez à tous les liens du bot ! Choisissez le lien dont vous avez besoin dans le menu ci-dessous`,
         components: [row],
         type: 'editreply'

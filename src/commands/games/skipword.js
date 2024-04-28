@@ -21,8 +21,9 @@ module.exports = async (client, interaction, args) => {
                 }, interaction);
 
                 return client.embed({ 
-                    title: `Devine le mot`, 
+                    title: `Devine le mot`,
                     desc: `Placez les lettres dans la bonne position ! \n\n🔀 ${shuffled.toLowerCase()}`,
+                    image: `https://i.imgur.com/IFqedKi.png`,
                 }, interaction.channel)
             }
             catch { }

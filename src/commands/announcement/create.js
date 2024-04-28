@@ -11,6 +11,7 @@ module.exports = async (client, interaction, args) => {
 
     client.succNormal({
         text: `L'annonce a été envoyée avec succès !`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         fields: [
             {
                 name: `Canal`,

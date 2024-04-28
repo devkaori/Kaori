@@ -19,6 +19,7 @@ module.exports = async (client, interaction, args) => {
 
     client.succNormal({
         text: `L'anti-spam est maintenant **${boolean ? 'activé' : 'désactivé'}** sur ce serveur`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         type: 'editreply'
     }, interaction);
 }

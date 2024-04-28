@@ -39,6 +39,7 @@ module.exports = async (client, interaction, args) => {
   client.embed({
     title: `Informations sur le serveur`,
     desc: `Informations sur le serveur ${interaction.guild.name}`,
+    image: `https://i.imgur.com/IFqedKi.png`,
     thumbnail: interaction.guild.iconURL({ dynamic: true, size: 1024 }),
     image: interaction.guild.bannerURL({ size: 1024 }),
     fields: [

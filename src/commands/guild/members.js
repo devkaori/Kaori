@@ -6,6 +6,7 @@ module.exports = async (client, interaction, args) => {
   client.embed({
     title: `Nombre de membres`,
     desc: `Afficher le nombre total de membres dans le serveur`,
+    image: `https://i.imgur.com/IFqedKi.png`,
     fields: [
       {
         name: `Membres`,

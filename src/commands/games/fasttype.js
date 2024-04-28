@@ -77,6 +77,7 @@ module.exports = async (client, interaction, args) => {
             await client.embed({
                 title: `FastType`,
                 desc: `Écris ceci en ${ms(timeLength, { long: true })} ! \n${sentence}`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'editreply'
             }, interaction)
 

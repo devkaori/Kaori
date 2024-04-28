@@ -20,6 +20,7 @@ module.exports = async (client, interaction, args) => {
     client.embed({
         title: `Réinitialisation de la famille`,
         desc: `Êtes-vous sûr de vouloir réinitialiser votre famille ?`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         components: [row],
         type: 'editreply'
     }, interaction);

@@ -18,6 +18,7 @@ module.exports = async (client, interaction, args) => {
 
     client.succNormal({
         text: `L'anti-liens est maintenant **${boolean ? 'activé' : 'désactivé'}** sur ce serveur`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         type: 'editreply'
     }, interaction);
 };

@@ -19,6 +19,7 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 title: `Vote`,
                 desc: `Vous avez voté !`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 color: client.config.colors.succes,
                 components: [row],
                 type: 'editreply'
@@ -28,6 +29,7 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 title: `Vote`,
                 desc: `Vous n'avez pas voté !`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 color: client.config.colors.error,
                 components: [row],
                 type: 'editreply'

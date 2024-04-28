@@ -6,12 +6,14 @@ module.exports = async (client, interaction, args) => {
 
     client.giveawaysManager.reroll(messageID).then(() => {
         client.succNormal({ 
-            text: `Nouveau tirage du giveaway effectué`, 
+            text: `Nouveau tirage du giveaway effectué`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'editreply' 
         }, interaction);
     }).catch((err) => {
         client.errNormal({ 
-            error: `Je ne peux pas trouver le giveaway pour ${messageID} !`, 
+            error: `Je ne peux pas trouver le giveaway pour ${messageID} !`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'editreply' 
         }, interaction);
     });

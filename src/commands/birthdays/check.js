@@ -12,6 +12,7 @@ module.exports = async (client, interaction, args) => {
         client.embed({ 
             title: `Vérification de l'anniversaire`, 
             desc: `L'anniversaire de ${interaction.user.username} est le ${data.Birthday}`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'editreply'
         }, interaction)
     })

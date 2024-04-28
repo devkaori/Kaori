@@ -24,6 +24,7 @@ module.exports = async (client, interaction, args) => {
                         if (ticketCategory == undefined) {
                             return client.errNormal({
                                 error: "Effectuez la configuration du ticket !",
+                                image: `https://i.imgur.com/IFqedKi.png`,
                                 type: type
                             }, interaction);
                         }
@@ -31,6 +32,7 @@ module.exports = async (client, interaction, args) => {
                         if (interaction.channel.parentId == ticketCategory.id) {
                             client.simpleEmbed({
                                 desc: `Bonjour <@!${ticketData.creator}>, \n\nPouvons-nous encore vous aider ? \nSi nous n'obtenons pas de réponse dans les **24 heures**, nous fermerons ce ticket. \n\n- Équipe ${interaction.guild.name}`,
+                                image: `https://i.imgur.com/IFqedKi.png`,
                                 content: `<@!${ticketData.creator}>`,
                                 type: type
                             }, interaction)
@@ -46,6 +48,7 @@ module.exports = async (client, interaction, args) => {
                     else {
                         return client.errNormal({
                             error: "Effectuez la configuration du ticket !",
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: type
                         }, interaction);
                     }
@@ -54,6 +57,7 @@ module.exports = async (client, interaction, args) => {
             else {
                 return client.errNormal({
                     error: "Vous n'êtes pas autorisé à répondre à votre propre ticket !",
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: 'ephemeral'
                 }, interaction)
             }

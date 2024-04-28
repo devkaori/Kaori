@@ -37,6 +37,7 @@ module.exports = async (client, interaction, args) => {
 
             client.succNormal({
                 text: "Le salon vocal personnalisé a été configuré avec succès !",
+                image: `https://i.imgur.com/IFqedKi.png`,
                 fields: [
                     {
                         name: "Salon",

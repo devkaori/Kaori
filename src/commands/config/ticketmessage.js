@@ -23,6 +23,7 @@ module.exports = async (client, interaction, args) => {
 
                 client.succNormal({
                     text: `Le message de ticket a été configuré avec succès`,
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     fields: [
                         {
                             name: `Type de message`,

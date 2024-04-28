@@ -21,6 +21,7 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 title: `Informations sur le bot`,
                 desc: `Informations concernant le bot`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 thumbnail: client.user.avatarURL({ size: 1024 }),
                 fields: [
                {

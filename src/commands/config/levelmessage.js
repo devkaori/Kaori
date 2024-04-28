@@ -23,6 +23,7 @@ module.exports = async (client, interaction, args) => {
 
             \`{user:level}\` - Niveau de l'utilisateur
             \`{user:xp}\` - XP de l'utilisateur`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'editreply'
         }, interaction)
     }
@@ -54,6 +55,7 @@ module.exports = async (client, interaction, args) => {
 
             client.succNormal({
                 text: `Le message de niveau a été défini avec succès`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 fields: [
                     {
                         name: `Message`,

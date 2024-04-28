@@ -20,6 +20,7 @@ module.exports = async (client, interaction, args) => {
                 if (ticketData.claimed == "" || ticketData.claimed == undefined || ticketData.claimed == "None") {
                     client.errNormal({
                         text: "Ticket non réclamé !",
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         type: 'ephemeral'
                     }, interaction)
                 }
@@ -30,6 +31,7 @@ module.exports = async (client, interaction, args) => {
                         if (ticketCategory == undefined) {
                             return client.errNormal({
                                 error: "Effectuez la configuration !",
+                                image: `https://i.imgur.com/IFqedKi.png`,
                                 type: 'editreply'
                             }, interaction);
                         }
@@ -41,6 +43,7 @@ module.exports = async (client, interaction, args) => {
 
                             return client.simpleEmbed({
                                 desc: `Ce ticket peut maintenant être réclamé à nouveau !`,
+                                image: `https://i.imgur.com/IFqedKi.png`,
                                 type: 'editreply'
                             }, interaction)
 
@@ -48,6 +51,7 @@ module.exports = async (client, interaction, args) => {
                         else {
                             client.errNormal({
                                 error: "Ce n'est pas un ticket !",
+                                image: `https://i.imgur.com/IFqedKi.png`,
                                 type: 'editreply'
                             }, interaction)
                         }
@@ -55,6 +59,7 @@ module.exports = async (client, interaction, args) => {
                     else {
                         client.errNormal({
                             error: "Vous n'avez pas réclamé ce ticket !",
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: 'editreply'
                         }, interaction)
                     }
@@ -63,6 +68,7 @@ module.exports = async (client, interaction, args) => {
             else {
                 return client.errNormal({
                     error: "Effectuez la configuration du ticket !",
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: 'editreply'
                 }, interaction)
             }

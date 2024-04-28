@@ -13,6 +13,7 @@ module.exports = async (client, interaction, args) => {
                     if (ticketCategory == undefined) {
                         return client.errNormal({
                             error: "Effectuez la configuration du ticket !",
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: 'editreply'
                         }, interaction);
                     }
@@ -21,6 +22,7 @@ module.exports = async (client, interaction, args) => {
 
                         client.embed({
                             desc: `Chargement des informations...`,
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: 'editreply'
                         }, interaction).then((msg) => {
 
@@ -28,6 +30,7 @@ module.exports = async (client, interaction, args) => {
 
                             return client.embed({
                                 title: `Informations`,
+                                image: `https://i.imgur.com/IFqedKi.png`,
                                 fields: [
                                     {
                                         name: "Nom du ticket",
@@ -63,6 +66,7 @@ module.exports = async (client, interaction, args) => {
                     else {
                         client.errNormal({ 
                             error: "Ce n'est pas un ticket !", 
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: 'editreply'
                         }, interaction);
                     }
@@ -70,6 +74,7 @@ module.exports = async (client, interaction, args) => {
                 else {
                     return client.errNormal({ 
                         error: "Effectuez la configuration du ticket !", 
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         type: 'editreply'
                     }, interaction);
                 }

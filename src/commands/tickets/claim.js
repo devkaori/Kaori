@@ -26,6 +26,7 @@ module.exports = async (client, interaction, args) => {
                     if (ticketCategory == undefined) {
                         return client.errNormal({
                             error: "Effectuez la configuration du ticket !",
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: type
                         }, interaction);
                     }
@@ -37,6 +38,7 @@ module.exports = async (client, interaction, args) => {
 
                         return client.simpleEmbed({
                             desc: `Vous serez maintenant assisté par <@!${interaction.user.id}>`,
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: type
                         }, interaction);
 
@@ -44,6 +46,7 @@ module.exports = async (client, interaction, args) => {
                     else {
                         client.errNormal({
                             error: "Ce n'est pas un ticket !",
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: type
                         }, interaction);
                     }
@@ -51,6 +54,7 @@ module.exports = async (client, interaction, args) => {
                 else {
                     client.errNormal({
                         error: "Le ticket a déjà été réclamé !",
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         type: 'ephemeral'
                     }, interaction);
                 }
@@ -58,6 +62,7 @@ module.exports = async (client, interaction, args) => {
             else {
                 return client.errNormal({
                     error: "Effectuez la configuration du ticket !",
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: type
                 }, interaction);
             }
@@ -65,6 +70,7 @@ module.exports = async (client, interaction, args) => {
         else {
             return client.errNormal({
                 error: "Vous n'êtes pas autorisé à réclamer votre propre ticket !",
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'ephemeral'
             }, interaction);
         }

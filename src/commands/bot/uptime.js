@@ -9,6 +9,7 @@ module.exports = async (client, interaction, args) => {
     client.embed({
         title: `Temps d'activité`,
         desc: `Consultez le temps d'activité de Bot`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         fields: [
             {
                 name: "Temps d'activité",

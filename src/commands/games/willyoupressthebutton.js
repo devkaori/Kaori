@@ -102,6 +102,7 @@ module.exports = async (client, interaction, args) => {
                     client.embed({
                         title: `Appuieras-tu sur le bouton ?`,
                         desc: `\`\`\`${decode(res.questions[0].charAt(0).toUpperCase() + res.questions[0].slice(1))} \`\`\`\n**Mais** \`\`\`\n\n${decode(res.questions[1].charAt(0).toUpperCase() + res.questions[1].slice(1))}\`\`\``,
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         components: [{ type: 1, components: [btn, btn2] }],
                         type: 'editreply'
                     }, interaction)

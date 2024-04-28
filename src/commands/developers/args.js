@@ -15,7 +15,7 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 title: `ℹ️・Information`,
                 thumbnail: client.user.avatarURL({ size: 1024 }),
-                desc: `_____`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 fields: [
                     {
                         name: `👋┆Welcome to ${interaction.guild.name}!`,

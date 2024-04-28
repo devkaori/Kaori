@@ -18,6 +18,7 @@ module.exports = async (client, interaction, args) => {
         if (ticketData) {
             if (ticketData.resolved == false) return client.errNormal({
                 error: "Le ticket est déjà ouvert !",
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'ephemeraledit'
             }, interaction);
 
@@ -28,6 +29,7 @@ module.exports = async (client, interaction, args) => {
                     if (ticketCategory == undefined) {
                         return client.errNormal({
                             error: "Effectuez la configuration du ticket !",
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: type
                         }, interaction);
                     }
@@ -51,12 +53,14 @@ module.exports = async (client, interaction, args) => {
 
                         return client.simpleEmbed({
                             desc: `Ticket ouvert par <@!${interaction.user.id}>`,
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: type
                         }, interaction)
                     }
                     else {
                         client.errNormal({
                             error: "Ce n'est pas un ticket !",
+                            image: `https://i.imgur.com/IFqedKi.png`,
                             type: type
                         }, interaction);
 
@@ -65,6 +69,7 @@ module.exports = async (client, interaction, args) => {
                 else {
                     return client.errNormal({
                         error: "Effectuez la configuration du ticket !",
+                        image: `https://i.imgur.com/IFqedKi.png`,
                         type: type
                     }, interaction);
                 }

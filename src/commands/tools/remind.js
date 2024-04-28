@@ -16,6 +16,7 @@ module.exports = async (client, interaction, args) => {
         else {
             return client.succNormal({
                 text: `Votre rappel est défini !`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 fields: [{
                     name: `${client.emotes.normal.clock}┇Heure de fin`,
                     value: `${new Date(endtime).toLocaleTimeString()}`,
@@ -37,6 +38,7 @@ module.exports = async (client, interaction, args) => {
         client.embed({
             title: `Rappel`,
             desc: `Votre rappel vient de se terminer !`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             fields: [
                 {
                     name: `Rappel`,

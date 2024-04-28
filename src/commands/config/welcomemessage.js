@@ -30,6 +30,7 @@ module.exports = async (client, interaction, args) => {
                     
             \`{guild:name}\` - Nom du serveur
             \`{guild:members}\` - Nombre de membres du serveur`,
+            image: `https://i.imgur.com/IFqedKi.png`,
             type: 'editreply'
         }, interaction)
     }

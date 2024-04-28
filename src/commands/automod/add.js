@@ -25,6 +25,7 @@ module.exports = async (client, interaction, args) => {
 
     client.succNormal({
         text: `Le mot est maintenant sur la liste noire !`,
+        image: `https://i.imgur.com/IFqedKi.png`,
         fields: [
             {
                 name: `Mot`,
