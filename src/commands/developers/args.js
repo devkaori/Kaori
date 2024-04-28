@@ -10,10 +10,13 @@ module.exports = async (client, interaction, args) => {
 
     if (message == "information") {
         client.simpleEmbed({
-            image: `https://i.imgur.com/aMqGr67.jpeg`
+            image: `https://i.imgur.com/aMqGr67.jpeg`,
+            color: `#2C2D31`
         }, interaction.channel).then(() => {
             client.embed({
-                title: `ℹ️・Information`,
+                title: `Information`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 thumbnail: client.user.avatarURL({ size: 1024 }),
                 fields: [
                     {
@@ -39,61 +42,84 @@ module.exports = async (client, interaction, args) => {
 
     if (message == "rules") {
         client.simpleEmbed({
-            image: `https://i.imgur.com/JNWmh8P.jpeg`
+            image: `https://i.imgur.com/JNWmh8P.jpeg`,
+            color: `#2C2D31`,
         }, interaction.channel).then(async () => {
             await client.embed({
                 title: `Règles`,
                 thumbnail: client.user.avatarURL({ size: 1024 }),
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 desc: `Voici nos règles de serveur. Veuillez vous y conformer pour que tout le monde s'amuse. Les administrateurs et les modérateurs prendront des mesures de modération selon leur discrétion.`,
             }, interaction.channel)
 
             await client.embed({
                 title: `1. Soyez respectueux`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 desc: `Vous devez respecter tous les utilisateurs, quel que soit votre avis sur eux. Traitez les autres comme vous aimeriez être traité.`,
             }, interaction.channel)
 
             await client.embed({
                 title: `2. Pas de langage inapproprié`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 desc: `L'utilisation de gros mots doit être limitée. Cependant, tout langage péjoratif envers un utilisateur est interdit.`,
             }, interaction.channel)
 
             await client.embed({
                 title: `3. Pas de spam`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 desc: `Ne pas envoyer beaucoup de petits messages les uns après les autres. Ne perturbez pas la discussion en envoyant du spam.`,
             }, interaction.channel)
 
             await client.embed({
                 title: `4. Pas de contenu pornographique/adulte/NSFW`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 desc: `Ceci est un serveur communautaire et n'est pas destiné à partager ce type de contenu.`,
             }, interaction.channel)
 
             await client.embed({
                 title: `5. Pas de publicité`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 desc: `Nous ne tolérons aucune forme de publicité, que ce soit pour d'autres communautés ou des streams. Vous pouvez publier votre contenu dans le canal média s'il est pertinent et apporte une réelle valeur (vidéo/art)`,
             }, interaction.channel)
 
             await client.embed({
                 title: `6. Pas de noms et de photos de profil offensants`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 desc: `Vous serez invité à changer votre nom ou votre photo si le personnel les juge inappropriés.`,
             }, interaction.channel)
 
             await client.embed({
                 title: `7. Raid de serveur`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 desc: `Le raid de serveur ou les mentions de raid de serveur ne sont pas autorisés.`,
             }, interaction.channel)
 
             await client.embed({
                 title: `8. Menaces directes et indirectes`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 desc: `Les menaces envers d'autres utilisateurs de DDoS, de mort, de DoX, d'abus et autres menaces malveillantes sont absolument interdites et proscrites.`,
             }, interaction.channel)
 
             await client.embed({
                 title: `9. Suivez les directives de la communauté Discord`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 desc: `Vous pouvez les trouver ici : https://discordapp.com/guidelines`,
             }, interaction.channel)
 
             await client.embed({
                 title: `10. Ne rejoignez pas les canaux vocaux sans la permission des personnes déjà présentes`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
+                color: `#2C2D31`,
                 desc: `Si vous voyez qu'ils ont une place libre, il est acceptable de rejoindre et de demander s'ils ont une place libre, mais partez si votre présence n'est pas souhaitée par ceux qui étaient là en premier.`,
             }, interaction.channel)
         })
@@ -101,7 +127,7 @@ module.exports = async (client, interaction, args) => {
 
     if (message == "applications") {
         client.simpleEmbed({
-            image: `https://i.imgur.com/IFqedKi.png`
+            image: `https://i.imgur.com/U9Fih4D.png`
         }, interaction.channel).then(() => {
             client.embed({
                 title: `Candidatures`,
