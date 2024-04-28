@@ -29,7 +29,7 @@ module.exports = async (client, interaction, args) => {
                     },
                     {
                         name: `Comment puis-je obtenir de l'aide en cas de besoin ?`,
-                        value: `Vous pouvez créer un ticket dans <#820308164322656327> ! Nous sommes heureux de vous aider avec vos questions ici et d'offrir un soutien dans votre serveur !`,
+                        value: `Vous pouvez créer un ticket dans <#945908859552292934> ! Nous sommes heureux de vous aider avec vos questions ici et d'offrir un soutien dans votre serveur !`,
                     },
                     {
                         name: `Je veux aider Kaori Café à s'améliorer !`,
@@ -165,11 +165,14 @@ module.exports = async (client, interaction, args) => {
 
     if (message == "boosterperks") {
         client.simpleEmbed({
-            image: `https://i.imgur.com/pSxxPWW.jpeg`
+            image: `https://i.imgur.com/pSxxPWW.jpeg`,
+            color: `#2C2D31`
         }, interaction.channel).then(() => {
             client.embed({
                 title: `Avantages du Booster`,
                 thumbnail: client.user.avatarURL({ size: 1024 }),
+                color: `#2C2D31`,
+                image: `https://i.imgur.com/U9Fih4D.png`,
                 desc: `Plus d'options dans le serveur ? Devenez un véritable Booster de Bot et obtenez de beaux avantages pour une expérience agréable. Mais qu'obtenez-vous réellement ?`,
                 fields: [
                     {
