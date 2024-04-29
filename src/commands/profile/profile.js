@@ -134,7 +134,7 @@ module.exports = async (client, interaction, args) => {
                 },
                 {
                     name: "Origine",
-                    value: `${data.Orgin || 'Non défini'}`,
+                    value: `${data.Origin || 'Non défini'}`,
                     inline: true
                 },
                 {
