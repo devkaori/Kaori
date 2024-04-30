@@ -6,6 +6,7 @@ module.exports = async (client, interaction, args) => {
 
     if (rawboard.length < 1) return client.errNormal({ 
         error: "Aucune donnée trouvée !",
+        image: `https://i.imgur.com/IFqedKi.png`,
         type: 'editreply'
     }, interaction);
 

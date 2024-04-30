@@ -54,10 +54,8 @@ module.exports = {
                         .setRequired(true)
                         .addChoices(
                             { name: 'Anniversaires', value: 'birthdays' },
-                            { name: 'Chatbot', value: 'chatbot' },
                             { name: 'Critiques', value: 'reviews' },
                             { name: 'Suggestions', value: 'suggestions' },
-                            { name: 'Starboard', value: 'starboard' }
                         )
                 )
                 .addChannelOption(option => option.setName('channel').setDescription('Le canal pour le divertissement').setRequired(true).addChannelTypes(ChannelType.GuildText))

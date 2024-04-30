@@ -310,7 +310,7 @@ module.exports = async (client, message) => {
           desc: `Utilisez les commandes à l'aide des commandes slash Discord.`,
           fields: [
             {
-              name: "Invite me",
+              name: "Invite moi",
               value: `Invite le bot sur ton propre serveur ! [Clique ici](${client.config.discord.botInvite})`,
             },
             {

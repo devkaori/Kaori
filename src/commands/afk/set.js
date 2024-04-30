@@ -23,11 +23,13 @@ module.exports = async (client, interaction, args) => {
 
             client.succNormal({ 
                 text: `Votre statut AFK a été configuré avec succès`,
+                image: `https://i.imgur.com/IFqedKi.png`,
                 type: 'ephemeraledit'
             }, interaction);
 
             client.embed({ 
-                desc: `${interaction.user} est maintenant AFK ! **Raison:** ${reason}` 
+                desc: `${interaction.user} est maintenant AFK ! **Raison:** ${reason}`,
+                image: `https://i.imgur.com/IFqedKi.png`
             }, interaction.channel);
         }
     });

@@ -9,6 +9,7 @@ module.exports = async (client, interaction, args) => {
             if (data.Words.includes(word)) {
                 return client.errNormal({ 
                     error: `Ce mot existe déjà dans la base de données !`,
+                    image: `https://i.imgur.com/IFqedKi.png`,
                     type: 'editreply' 
                 }, interaction);
             }
