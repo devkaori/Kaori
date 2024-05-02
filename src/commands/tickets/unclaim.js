@@ -17,7 +17,7 @@ module.exports = async (client, interaction, args) => {
             if (perms == false) return;
 
             if (data) {
-                if (ticketData.claimed == "" || ticketData.claimed == undefined || ticketData.claimed == "None") {
+                if (ticketData.claimed == "" || ticketData.claimed == undefined || ticketData.claimed == "Aucun") {
                     client.errNormal({
                         text: "Ticket non réclamé !",
                         image: `https://i.imgur.com/IFqedKi.png`,
@@ -38,7 +38,7 @@ module.exports = async (client, interaction, args) => {
 
                         if (interaction.channel.parentId == ticketCategory.id) {
 
-                            ticketData.claimed = "None";
+                            ticketData.claimed = "Aucun";
                             ticketData.save();
 
                             return client.simpleEmbed({

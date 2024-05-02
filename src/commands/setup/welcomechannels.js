@@ -5,13 +5,13 @@ const leaveChannel = require("../../database/models/leaveChannels");
 
 module.exports = async (client, interaction, args) => {
     const choice = interaction.options.getString('setup');
-    const channel = interaction.options.getChannel('channel');
+    const channel = interaction.options.getChannel('salon');
 
-    if (choice == "welcomechannel") {
+    if (choice == "salonbienvenue") {
         client.createChannelSetup(welcomeChannel, channel, interaction)
     }
 
-    if (choice == "leavechannel") {
+    if (choice == "salondepart") {
         client.createChannelSetup(leaveChannel, channel, interaction)
     }
 }

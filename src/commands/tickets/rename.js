@@ -23,7 +23,7 @@ module.exports = async (client, interaction, args) => {
         }
 
         if (interaction.channel.parentId == ticketCategory.id) {
-            let name = interaction.options.getString('name');
+            let name = interaction.options.getString('nom');
             interaction.channel.edit({ name: name });
 
             return client.simpleEmbed({

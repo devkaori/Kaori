@@ -6,7 +6,7 @@ const levelLogs = require("../../database/models/levelChannels");
 
 module.exports = async (client, interaction, args) => {
     const choice = interaction.options.getString('setup');
-    const channel = interaction.options.getChannel('channel');
+    const channel = interaction.options.getChannel('salon');
 
     if (choice == "serverLogs") {
         client.createChannelSetup(logs, channel, interaction)

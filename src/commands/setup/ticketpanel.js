@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const ticketSchema = require("../../database/models/tickets");
 
 module.exports = async (client, interaction, args) => {
-    const name = interaction.options.getString('name');
+    const name = interaction.options.getString('nom');
     const description = interaction.options.getString('description');
 
     // Recherche des données du ticket dans la base de données
@@ -17,7 +17,7 @@ module.exports = async (client, interaction, args) => {
                 .setCustomId('Bot_openticket')
                 .setLabel(name)
                 .setStyle(Discord.ButtonStyle.Secondary)
-                .setEmoji('<:ticket:1209943994973429841>')
+                .setEmoji('1234815578766573658')
 
             // Création de la rangée d'actions
             const row = new Discord.ActionRowBuilder()

@@ -119,23 +119,23 @@ module.exports = async (client, interaction, args) => {
                     .addComponents(
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_transcriptTicket')
-                            .setEmoji('1209953183540191262')
+                            .setEmoji('1234811134599630888')
                             .setStyle(Discord.ButtonStyle.Secondary),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_openTicket')
-                            .setEmoji('1209953789197680723')
+                            .setEmoji('1234811470085095435')
                             .setStyle(Discord.ButtonStyle.Secondary),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_deleteTicket')
-                            .setEmoji('1209943997301137448')
+                            .setEmoji('1234810823545716768')
                             .setStyle(Discord.ButtonStyle.Secondary),
                     );
 
                 client.embed({
                     title: "Fermé",
-                    desc: `- Sauvegarder la transcription \n- Réouvrir le ticket \n- Supprimer le ticket`,
+                    desc: `- <:icons_file:1234811134599630888> - Sauvegarder la transcription \n- <:icons_unlock:1234811470085095435> Réouvrir le ticket \n- <:icons_Wrong:1234810823545716768> Supprimer le ticket`,
                     image: `https://i.imgur.com/IFqedKi.png`,
                     components: [row],
                 }, interaction.channel);

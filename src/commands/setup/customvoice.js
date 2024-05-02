@@ -3,8 +3,8 @@ const Discord = require('discord.js');
 const voiceSchema = require("../../database/models/voice");
 
 module.exports = async (client, interaction, args) => {
-    const category = interaction.options.getChannel('category');
-    const ChannelName = interaction.options.getString('channelname');
+    const category = interaction.options.getChannel('categorie');
+    const ChannelName = interaction.options.getString('nomsalon');
 
     interaction.guild.channels.create({
         name: ChannelName,

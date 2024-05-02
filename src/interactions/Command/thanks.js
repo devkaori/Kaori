@@ -15,13 +15,13 @@ module.exports = {
             subcommand
                 .setName('check')
                 .setDescription("Voir vos remerciements")
-                .addUserOption(option => option.setName('user').setDescription("Sélectionnez un utilisateur").setRequired(true))
+                .addUserOption(option => option.setName('utilisateur').setDescription("Sélectionnez un utilisateur").setRequired(true))
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('thanks')
                 .setDescription("Remercier un utilisateur")
-                .addUserOption(option => option.setName('user').setDescription("Sélectionnez un utilisateur").setRequired(true))
+                .addUserOption(option => option.setName('utilisateur').setDescription("Sélectionnez un utilisateur").setRequired(true))
         ),
 
     /** 

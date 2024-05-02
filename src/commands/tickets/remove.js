@@ -25,7 +25,7 @@ module.exports = async (client, interaction, args) => {
         }
 
         if (interaction.channel.parentId == ticketCategory.id) {
-            let user = interaction.options.getUser('user');
+            let user = interaction.options.getUser('utilisateur');
             if (ticketData && user.id == ticketData.creator) {
                 return client.errNormal({ 
                     error: "Vous ne pouvez pas supprimer le créateur du ticket de ce ticket", 

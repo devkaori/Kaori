@@ -5,8 +5,8 @@ const ticketChannels = require("../../database/models/ticketChannels");
 const ticketMessageConfig = require("../../database/models/ticketMessage");
 
 module.exports = async (client, interaction, args) => {
-    let reason = "Non spécifié";
-    if (interaction.options) reason = interaction.options.getString('reason') || "Non spécifié";
+    let raison = "Non spécifié";
+    if (interaction.options) raison = interaction.options.getString('raison') || "Non spécifié";
 
     let type = 'reply';
     if (interaction.isCommand()) type = 'editreply';
@@ -35,7 +35,7 @@ module.exports = async (client, interaction, args) => {
                     let role = interaction.guild.roles.cache.find(r => r.id === ticketRole.id);
 
                     try {
-                        var openTicket = "Merci d'avoir créé un ticket ! \nUn membre du support sera avec vous sous peu. \n\n- Fermer le ticket \n- Réclamer le ticket \n- Sauvegarder la transcription \n- Envoyer une notification";
+                        var openTicket = "Merci d'avoir créé un ticket ! \nUn membre du support sera avec vous sous peu. \n\n- <:icons_locked:1234811483414724619> Fermer le ticket \n- <:icons_star:1234810783704158258> Réclamer le ticket \n- <:icons_file:1234811134599630888> Sauvegarder la transcription \n- <:icons_callconnect:1234811433905295442> Envoyer une notification";
                         let ticketMessageData = await ticketMessageConfig.findOne({ Guild: interaction.guild.id });
                         if (ticketMessageData) {
                             openTicket = ticketMessageData.openTicket;
@@ -45,28 +45,28 @@ module.exports = async (client, interaction, args) => {
                             .addComponents(
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_closeticket')
-                                    .setEmoji('1209953195535900765')
+                                    .setEmoji('1234811483414724619')
                                     .setStyle(Discord.ButtonStyle.Secondary),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_claimTicket')
-                                    .setEmoji('take:1209953185725415474')
+                                    .setEmoji('1234810783704158258')
                                     .setStyle(Discord.ButtonStyle.Secondary),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_transcriptTicket')
-                                    .setEmoji('1209953183540191262')
+                                    .setEmoji('1234811134599630888')
                                     .setStyle(Discord.ButtonStyle.Secondary),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_noticeTicket')
-                                    .setEmoji('1209953181103165481')
+                                    .setEmoji('1234811433905295442')
                                     .setStyle(Discord.ButtonStyle.Secondary),
                             );
 
                         client.embed({
-                            title: `En cours`,
-                            desc: `Votre ticket a été ouvert`,
+                            title: `Création en cours...`,
+                            desc: `Votre ticket a été ouvert ${channel}`,
                             image: `https://i.imgur.com/IFqedKi.png`,
                             type: 'ephemeral'
                         }, interaction).then((msg) => {
@@ -134,7 +134,7 @@ module.exports = async (client, interaction, args) => {
                                                 inline: true
                                             },
                                             {
-                                                name: "Créé à",
+                                                name: "Créé le",
                                                 value: `<t:${(Date.now() / 1000).toFixed(0)}:f>`,
                                                 inline: true
                                             }
@@ -147,7 +147,7 @@ module.exports = async (client, interaction, args) => {
                                         TicketID: ticketid,
                                         channelID: channel.id,
                                         creator: interaction.user.id,
-                                        claimed: "None"
+                                        claimed: "Aucun"
                                     }).save();
 
                                     if (logsChannel) {
@@ -186,7 +186,7 @@ module.exports = async (client, interaction, args) => {
                                             },
                                             {
                                                 name: "Sujet",
-                                                value: `${reason}`,
+                                                value: `${raison}`,
                                                 inline: true
                                             },
                                             {

@@ -20,7 +20,7 @@ module.exports = async (client, interaction, args) => {
             if (perms == false) return;
 
             if (data) {
-                if (ticketData.claimed == "" || ticketData.claimed == undefined || ticketData.claimed == "None") {
+                if (ticketData.claimed == "" || ticketData.claimed == undefined || ticketData.claimed == "Aucun") {
                     const ticketCategory = interaction.guild.channels.cache.get(data.Category);
 
                     if (ticketCategory == undefined) {

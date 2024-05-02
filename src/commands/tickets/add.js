@@ -23,7 +23,7 @@ module.exports = async (client, interaction, args) => {
         }
 
         if (interaction.channel.parentId == ticketCategory.id) {
-            let user = interaction.options.getUser('user');
+            let user = interaction.options.getUser('utilisateur');
             interaction.channel.permissionOverwrites.edit(user.id, { ViewChannel: true, SendMessages: true });
 
             return client.simpleEmbed({

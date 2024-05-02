@@ -3,9 +3,9 @@ const Discord = require('discord.js');
 const ticketSchema = require("../../database/models/tickets");
 
 module.exports = async (client, interaction, args) => {
-    const category = interaction.options.getChannel('category');
+    const category = interaction.options.getChannel('categorie');
     const role = interaction.options.getRole('role');
-    const channel = interaction.options.getChannel('channel');
+    const channel = interaction.options.getChannel('salon');
     const logs = interaction.options.getChannel('logs');
 
     ticketSchema.findOne({ Guild: interaction.guild.id }, async (err, data) => {

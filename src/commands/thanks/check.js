@@ -3,7 +3,7 @@ const thanksSchema = require("../../database/models/thanks");
 
 module.exports = async (client, interaction, args) => {
 
-    const member = interaction.options.getUser('user');
+    const member = interaction.options.getUser('utilisateur');
 
     thanksSchema.findOne({ User: member.id }, async (err, data) => {
         if (data) {

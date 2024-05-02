@@ -18,7 +18,7 @@ module.exports = {
             subcommand
                 .setName('add')
                 .setDescription("Ajouter un utilisateur à un ticket")
-                .addUserOption(option => option.setName('user').setDescription("Sélectionnez un utilisateur").setRequired(true))
+                .addUserOption(option => option.setName('utilisateur').setDescription("Sélectionnez un utilisateur").setRequired(true))
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -49,7 +49,7 @@ module.exports = {
             subcommand
                 .setName('create')
                 .setDescription("Créer un ticket")
-                .addStringOption(option => option.setName('reason').setDescription("Raison d'ouvrir un ticket"))
+                .addStringOption(option => option.setName('raison').setDescription("Raison d'ouvrir un ticket"))
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -70,13 +70,13 @@ module.exports = {
             subcommand
                 .setName('remove')
                 .setDescription("Supprimer un utilisateur d'un ticket")
-                .addUserOption(option => option.setName('user').setDescription("Sélectionnez un utilisateur").setRequired(true))
+                .addUserOption(option => option.setName('utilisateur').setDescription("Sélectionnez un utilisateur").setRequired(true))
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('rename')
                 .setDescription("Renommer un ticket")
-                .addStringOption(option => option.setName('name').setDescription("Nouveau nom du ticket").setRequired(true))
+                .addStringOption(option => option.setName('nom').setDescription("Nouveau nom du ticket").setRequired(true))
         )
         .addSubcommand(subcommand =>
             subcommand

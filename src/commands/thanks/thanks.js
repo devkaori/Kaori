@@ -5,7 +5,7 @@ const thanksAuthor = require("../../database/models/thanksAuthor");
 
 module.exports = async (client, interaction, args) => {
 
-    const target = interaction.options.getUser('user');
+    const target = interaction.options.getUser('utilisateur');
     if (!target) return client.errUsage({ usage: "thanks [mention]", type: 'editreply' }, interaction);
 
     if (target.id === interaction.user.id) return client.errNormal({ error: `Vous ne pouvez pas vous remercier vous-même !`, type: 'editreply' }, interaction);

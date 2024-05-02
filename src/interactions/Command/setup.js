@@ -16,17 +16,17 @@ module.exports = {
             subcommand
                 .setName('tickets')
                 .setDescription('Configurer les tickets')
-                .addChannelOption(option => option.setName('category').setDescription('Sélectionnez une catégorie où les tickets doivent être créés').setRequired(true).addChannelTypes(ChannelType.GuildCategory))
+                .addChannelOption(option => option.setName('categorie').setDescription('Sélectionnez une catégorie où les tickets doivent être créés').setRequired(true).addChannelTypes(ChannelType.GuildCategory))
                 .addRoleOption(option => option.setName('role').setDescription('Sélectionnez le rôle de support').setRequired(true))
-                .addChannelOption(option => option.setName('channel').setDescription('Le canal pour le panneau des tickets').setRequired(true).addChannelTypes(ChannelType.GuildText))
+                .addChannelOption(option => option.setName('salon').setDescription('Le canal pour le panneau des tickets').setRequired(true).addChannelTypes(ChannelType.GuildText))
                 .addChannelOption(option => option.setName('logs').setDescription('Le canal pour les journaux des tickets').setRequired(true).addChannelTypes(ChannelType.GuildText))
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('customvoice')
                 .setDescription('Configurer les canaux vocaux personnalisés')
-                .addChannelOption(option => option.setName('category').setDescription('Sélectionnez une catégorie où les canaux seront créés').setRequired(true).addChannelTypes(ChannelType.GuildCategory))
-                .addStringOption(option => option.setName('channelname').setDescription('Le modèle des noms de canaux').setRequired(true))
+                .addChannelOption(option => option.setName('categorie').setDescription('Sélectionnez une catégorie où les canaux seront créés').setRequired(true).addChannelTypes(ChannelType.GuildCategory))
+                .addStringOption(option => option.setName('nomsalon').setDescription('Le modèle des noms de canaux').setRequired(true))
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -42,7 +42,7 @@ module.exports = {
                             { name: 'Journaux de boost', value: 'boostLogs' }
                         )
                 )
-                .addChannelOption(option => option.setName('channel').setDescription('Le canal pour les journaux').setRequired(true).addChannelTypes(ChannelType.GuildText))
+                .addChannelOption(option => option.setName('salon').setDescription('Le canal pour les journaux').setRequired(true).addChannelTypes(ChannelType.GuildText))
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -86,8 +86,8 @@ module.exports = {
                         .setDescription('La configuration que vous souhaitez')
                         .setRequired(true)
                         .addChoices(
-                            { name: 'Canaux de bienvenue', value: 'welcomechannel' },
-                            { name: 'Canaux de départ', value: 'leavechannel' }
+                            { name: 'Canaux de bienvenue', value: 'salonbienvenue' },
+                            { name: 'Canaux de départ', value: 'salondepart' }
                         )
                 )
                 .addChannelOption(option => option.setName('channel').setDescription('Le canal que vous souhaitez').setRequired(true).addChannelTypes(ChannelType.GuildText))
@@ -102,7 +102,7 @@ module.exports = {
             subcommand
                 .setName('ticketpanel')
                 .setDescription('Configurer le panneau des tickets')
-                .addStringOption(option => option.setName('name').setDescription('Le nom du panneau des tickets').setRequired(true))
+                .addStringOption(option => option.setName('nom').setDescription('Le nom du panneau des tickets').setRequired(true))
                 .addStringOption(option => option.setName('description').setDescription('La description du panneau des tickets').setRequired(true))
         )
         .addSubcommand(subcommand =>
