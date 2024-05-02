@@ -66,7 +66,7 @@ module.exports = async (client, interaction, args) => {
 
                         client.embed({
                             title: `Création en cours...`,
-                            desc: `Votre ticket a été ouvert ${channel}`,
+                            desc: `Votre ticket a été ouvert`,
                             image: `https://i.imgur.com/IFqedKi.png`,
                             type: 'ephemeral'
                         }, interaction).then((msg) => {
